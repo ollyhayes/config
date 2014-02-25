@@ -1,5 +1,5 @@
 set guifont=Consolas
-set guioptions=rm
+set guioptions=r
 set columns=160
 set lines=50
 :colorscheme desert
