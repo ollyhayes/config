@@ -21,7 +21,7 @@ set directory=~\vimfiles\swapfiles
 
 nmap <c-a> ggVG
 nmap <c-h> :%s/
-nmap ,s :source ~\_vimrc
-nmap ,v :vsplit ~\_vimrc
+nmap ,s :source ~\projects\vimrc\_vimrc
+nmap ,v :vsplit ~\projects\vimrc\_vimrc
 vnoremap < <gv
 vnoremap > >gv 
