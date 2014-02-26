@@ -1,5 +1,7 @@
 source $VIMRUNTIME/mswin.vim
 
+behave xterm
+
 if !exists("syntax_on")
 	syntax on
 endif
