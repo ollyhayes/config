@@ -34,6 +34,8 @@ nmap ,v :vsplit ~\projects\vimrc\_vimrc<CR>
 nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
 nmap <F5> :set syntax=xml<CR>
+"enable horizontal scrollbar
+nmap <F5> :set guioptions+=b<CR>
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
