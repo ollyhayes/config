@@ -35,7 +35,11 @@ nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
 nmap <F5> :set syntax=xml<CR>
 "enable horizontal scrollbar
-nmap <F5> :set guioptions+=b<CR>
+nmap <F6> :set guioptions+=b<CR>
+"home
+nmap <S-H> ^
+"end
+nmap <S-L> $
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
