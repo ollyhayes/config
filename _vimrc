@@ -37,9 +37,9 @@ nmap <F5> :set syntax=xml<CR>
 "enable horizontal scrollbar
 nmap <F6> :set guioptions+=b<CR>
 "home
-nmap <S-H> ^
+map <S-H> ^
 "end
-nmap <S-L> $
+map <S-L> $
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
