@@ -28,7 +28,7 @@ set hlsearch
 
 set ignorecase smartcase
 
-set directory=~\vimfiles\swapfiles "stop temp files appearing everywhere
+set directory=~/vimfiles/swapfiles "stop temp files appearing everywhere
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
@@ -48,9 +48,9 @@ nmap <c-a> ggVG
 "find and replace
 nmap <c-h> :%s/
 "save vimrc
-nmap ,s :source ~\Tools\vimrc\_vimrc<CR>
+nmap ,s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
-nmap ,v :vsplit ~\Tools\vimrc\_vimrc<CR>
+nmap ,v :vsplit ~/tools/vimrc/_vimrc<CR>
 "format json/xml
 nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
