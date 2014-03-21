@@ -61,6 +61,10 @@ nmap <F6> :set guioptions+=b<CR>
 map <S-H> ^
 "end
 map <S-L> $
+"page up (centering cursor in screen)
+map <S-K> <C-b>M
+"page down (centering cursor in screen)
+map <S-J> <C-f>M
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
