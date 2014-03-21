@@ -4,18 +4,18 @@ if !exists("syntax_on")
 	syntax on
 endif
 
+"use relative numbers in normal mode, normal elsewhere
 set relativenumber
-"au FocusLost * :set number
-"au FocusGained * :set relativenumber
-"autocmd InsertEnter * :set number
-"autocmd InsertLeave * :set relativenumber
-"au InsertLeave * :set number
+autocmd FocusLost * :set nu | :set nornu
+autocmd FocusGained * :set nonu | :set rnu
+autocmd InsertEnter * :set nu | :set nornu
+autocmd InsertLeave * :set nonu | :set rnu
 
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
 set diffexpr = ""
 set backspace=indent,eol,start
-set gdefault
+set gdefault "global replace as default
 
 set tabstop=4
 set expandtab
