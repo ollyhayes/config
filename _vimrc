@@ -4,13 +4,24 @@ if !exists("syntax_on")
 	syntax on
 endif
 
-set number
+set relativenumber
+"au FocusLost * :set number
+"au FocusGained * :set relativenumber
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
+"au InsertLeave * :set number
+
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
 set diffexpr = ""
 set backspace=indent,eol,start
-set ts=4
 set gdefault
+
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set autoindent
 
 set incsearch
 set hlsearch
@@ -37,9 +48,9 @@ nmap <c-a> ggVG
 "find and replace
 nmap <c-h> :%s/
 "save vimrc
-nmap ,s :source ~\projects\vimrc\_vimrc<CR>
+nmap ,s :source ~\Tools\vimrc\_vimrc<CR>
 "open vimrc
-nmap ,v :vsplit ~\projects\vimrc\_vimrc<CR>
+nmap ,v :vsplit ~\Tools\vimrc\_vimrc<CR>
 "format json/xml
 nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
