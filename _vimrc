@@ -18,7 +18,6 @@ set backspace=indent,eol,start
 set gdefault "global replace as default
 
 set tabstop=4
-set expandtab
 set shiftwidth=4
 set softtabstop=4
 set autoindent
@@ -29,6 +28,10 @@ set hlsearch
 set ignorecase smartcase
 
 set directory=~/vimfiles/swapfiles "stop temp files appearing everywhere
+
+"nmap <C-J> :%s/
+"cmap <C-Y> <C-R>
+
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
@@ -44,9 +47,9 @@ cmap <S-Insert>		<C-R>+
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q>		<C-V>
 "select all
-nmap <c-a> ggVG
+nmap <C-A> ggVG
 "find and replace
-nmap <c-h> :%s/
+nmap <C-H> :%s/
 "save vimrc
 nmap ,s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
@@ -61,10 +64,10 @@ nmap <F6> :set guioptions+=b<CR>
 map <S-H> ^
 "end
 map <S-L> $
-"page up (centering cursor in screen)
-map <S-K> <C-b>M
-"page down (centering cursor in screen)
-map <S-J> <C-f>M
+"page up
+map <S-K> 10k
+"page down
+map <S-J> 10j
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
