@@ -5,11 +5,12 @@ if !exists("syntax_on")
 endif
 
 "use relative numbers in normal mode, normal elsewhere
-set relativenumber
-autocmd FocusLost * :set nu | :set nornu
-autocmd FocusGained * :set nonu | :set rnu
-autocmd InsertEnter * :set nu | :set nornu
-autocmd InsertLeave * :set nonu | :set rnu
+"set relativenumber
+"autocmd FocusLost * :set nu | :set nornu
+"autocmd FocusGained * :set nonu | :set rnu
+"autocmd InsertEnter * :set nu | :set nornu
+"autocmd InsertLeave * :set nonu | :set rnu
+set number
 
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
