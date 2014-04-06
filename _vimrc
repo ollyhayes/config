@@ -4,6 +4,9 @@ if !exists("syntax_on")
 	syntax on
 endif
 
+"set comments to visible colour on linux
+hi comment ctermfg=blue
+
 "use relative numbers in normal mode, normal elsewhere
 "set relativenumber
 "autocmd FocusLost * :set nu | :set nornu
@@ -27,8 +30,6 @@ set incsearch
 set hlsearch
 
 set ignorecase smartcase
-
-set directory=~/vimfiles/swapfiles "stop temp files appearing everywhere
 
 "nmap <C-J> :%s/
 "cmap <C-Y> <C-R>
