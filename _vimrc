@@ -5,7 +5,7 @@ if !exists("syntax_on")
 endif
 
 "set comments to visible colour on linux
-hi comment ctermfg=blue
+hi comment ctermfg=cyan
 
 "use relative numbers in normal mode, normal elsewhere
 "set relativenumber
@@ -42,39 +42,52 @@ vnoremap <S-Del> "+x
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>		"+gP
-map <S-Insert>		"+gP
+map <C-V>		"+gp
+map <S-Insert>		"+gp
 cmap <C-V>		<C-R>+
 cmap <S-Insert>		<C-R>+
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q>		<C-V>
+" Also CTRL-B to do what CTRL-V used to do (for visual studio)
+noremap <C-B> <C-V>
 "select all
 nmap <C-A> ggVG
 "find and replace
 nmap <C-H> :%s/
+
 "save vimrc
 nmap ,s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
 nmap ,v :vsplit ~/tools/vimrc/_vimrc<CR>
+
 "format json/xml
 nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
 nmap <F5> :set syntax=xml<CR>
 "enable horizontal scrollbar
 nmap <F6> :set guioptions+=b<CR>
+
 "home
 map <S-H> ^
 "end
 map <S-L> $
 "page up
-map <S-K> 10k
+map <S-K> 4k
+map <C-K> 20k
 "page down
-map <S-J> 10j
+map <S-J> 4j
+map <C-J> 20j
+"remove highlight on escape
+nmap <Esc> :noh<CR>
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
+nmap <Tab> V>
+nmap <S-Tab> V<
 "ctrl click - select word
 noremap <C-LeftMouse> <LeftMouse>viw
+"middle mouse - repeat last action
+noremap <MiddleMouse> <LeftMouse>.
 
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
