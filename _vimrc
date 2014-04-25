@@ -1,3 +1,6 @@
+execute pathogen#infect()
+filetype plugin indent on
+
 behave xterm
 
 if !exists("syntax_on")
@@ -54,12 +57,15 @@ noremap <C-B> <C-V>
 nmap <C-A> ggVG
 "find and replace
 nmap <C-H> :%s/
+vmap <C-H> :s/
 
 "save vimrc
 nmap ,s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
 nmap ,v :vsplit ~/tools/vimrc/_vimrc<CR>
 
+"show whitespace
+nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
 "format json/xml
 nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
