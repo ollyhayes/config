@@ -3,6 +3,14 @@ filetype plugin indent on
 
 behave xterm
 
+if has("win32")
+	set directory=$home/vimfiles/swapfiles
+	set backupdir=$home/vimfiles/backups
+else
+	set directory=$home/.vim/swapfiles
+	set backupdir=$home/.vim/backups
+endif
+
 if !exists("syntax_on")
 	syntax on
 endif
@@ -86,7 +94,7 @@ map <C-K> 20k
 map <S-J> 4j
 map <C-J> 20j
 "join line
-noremap <Backspace> J
+nnoremap <Backspace> J
 "remove highlight on escape
 nmap <Esc> :noh<CR>
 "indent/outdent
