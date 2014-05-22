@@ -47,6 +47,8 @@ vnoremap <C-Insert> "+y
 " CTRL-V and SHIFT-Insert are Paste
 map <C-V>		"+gp
 map <S-Insert>		"+gp
+imap <C-V>		<C-R>+
+imap <S-Insert>	<C-R>+
 cmap <C-V>		<C-R>+
 cmap <S-Insert>		<C-R>+
 " Use CTRL-Q to do what CTRL-V used to do
@@ -83,6 +85,8 @@ map <C-K> 20k
 "page down
 map <S-J> 4j
 map <C-J> 20j
+"join line
+noremap <Backspace> J
 "remove highlight on escape
 nmap <Esc> :noh<CR>
 "indent/outdent
