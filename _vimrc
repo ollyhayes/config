@@ -11,6 +11,10 @@ else
 	set backupdir=$home/.vim/backups
 endif
 
+if !has("gui_running")
+	set mouse=
+endif
+
 if !exists("syntax_on")
 	syntax on
 endif
@@ -25,6 +29,14 @@ hi comment ctermfg=cyan
 "autocmd InsertEnter * :set nu | :set nornu
 "autocmd InsertLeave * :set nonu | :set rnu
 set number
+
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+set completeopt=longest,menuone
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
@@ -69,10 +81,19 @@ nmap <C-A> ggVG
 nmap <C-H> :%s/
 vmap <C-H> :s/
 
+"run macro
+nmap <S-Z> @a
+"switch buffer
+map <C-Tab> :b#<CR>
+
 "save vimrc
 nmap ,s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
 nmap ,v :vsplit ~/tools/vimrc/_vimrc<CR>
+"do diff
+nmap ,d :windo diffthis
+"open split
+nmap ,n :vnew
 
 "show whitespace
 nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
@@ -94,7 +115,7 @@ map <C-K> 20k
 map <S-J> 4j
 map <C-J> 20j
 "join line
-nnoremap <Backspace> J
+nnoremap <Backspace> gJ
 "remove highlight on escape
 nmap <Esc> :noh<CR>
 "indent/outdent
