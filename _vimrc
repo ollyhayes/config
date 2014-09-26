@@ -75,25 +75,26 @@ cmap <S-Insert>		<C-R>+
 noremap <C-Q>		<C-V>
 " Also CTRL-B to do what CTRL-V used to do (for visual studio)
 noremap <C-B> <C-V>
+" minus to work as command (for dvorak)
+nnoremap - :
+vnoremap - :
 "select all
 nmap <C-A> ggVG
 "find and replace
 nmap <C-H> :%s/
 vmap <C-H> :s/
-
 "run macro
 nmap <S-Z> @a
 "switch buffer
 map <C-Tab> :b#<CR>
-
 "save vimrc
 nmap ,s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
 nmap ,v :vsplit ~/tools/vimrc/_vimrc<CR>
 "do diff
-nmap ,d :windo diffthis
+nmap ,d :windo diffthis<CR>
 "open split
-nmap ,n :vnew
+nmap ,n :vnew<CR>
 
 "show whitespace
 nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
@@ -115,7 +116,9 @@ map <C-K> 20k
 map <S-J> 4j
 map <C-J> 20j
 "join line
-nnoremap <Backspace> gJ
+nnoremap <Backspace> J
+"join line for visual studio
+nnoremap gJ J
 "remove highlight on escape
 nmap <Esc> :noh<CR>
 "indent/outdent
