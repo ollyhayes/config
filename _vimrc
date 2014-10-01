@@ -100,11 +100,13 @@ nmap ,v :vsplit ~/tools/vimrc/_vimrc<CR>
 nmap ,d :windo diffthis<CR>
 "open split
 nmap ,n :vnew<CR>
+"open history of file
+nmap ,h :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory %:p<CR>
 
 "show whitespace
 nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
 "format json/xml
-nmap <F4> :%! formatter.bat<CR>
+nmap <F4> :%! formatter.bat<CR><F5>
 "sytax xml (after pasting)
 nmap <silent> <F5> :call RotateSyntax()<CR>
 "enable horizontal scrollbar
@@ -165,3 +167,5 @@ function! RotateSyntax()
 	endif
 
 endfunction
+
+
