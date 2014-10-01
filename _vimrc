@@ -38,6 +38,9 @@ set completeopt=longest,menuone
 "inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
+
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
 set diffexpr = ""
@@ -87,6 +90,8 @@ vmap <C-H> :s/
 nmap <S-Z> @a
 "switch buffer
 map <C-Tab> :b#<CR>
+"map <C-Tab> :CtrlPMRU<CR>
+map <C-K> :CtrlPMRU<CR>
 "save vimrc
 nmap ,s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
@@ -111,10 +116,8 @@ map <S-H> ^
 map <S-L> $
 "page up
 map <S-K> 4k
-map <C-K> 20k
 "page down
 map <S-J> 4j
-map <C-J> 20j
 "join line
 nnoremap <Backspace> J
 "join line for visual studio
