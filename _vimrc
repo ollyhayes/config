@@ -106,7 +106,7 @@ nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
 "format json/xml
 nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
-nmap <F5> :set syntax=xml<CR>
+nmap <silent> <F5> :call RotateSyntax()<CR>
 "enable horizontal scrollbar
 nmap <F6> :set guioptions+=b<CR>
 
@@ -141,3 +141,27 @@ let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
+
+function! RotateSyntax()
+
+	if &syntax == ""
+		set syntax=xml
+		echo "xml"
+	elseif &syntax == "text"
+		set syntax=xml
+		echo "xml"
+	elseif &syntax == "xml"
+		set syntax=json
+		echo "json"
+	elseif &syntax == "json"
+		set syntax=cs
+		echo "cs"
+	elseif &syntax == "cs"
+		set syntax=ts
+		echo "ts"
+	elseif &syntax == "ts"
+		set syntax=xml
+		echo "xml"
+	endif
+
+endfunction
