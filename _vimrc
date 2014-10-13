@@ -1,3 +1,6 @@
+:set encoding=utf-8
+:set fileencodings=utf-8
+
 execute pathogen#infect()
 filetype plugin indent on
 
@@ -21,7 +24,7 @@ endif
 
 "set comments to visible colour on linux
 hi comment ctermfg=cyan
-set cursorline
+"set cursorline
 
 "use relative numbers in normal mode, normal elsewhere
 "set relativenumber
@@ -105,6 +108,8 @@ nmap ,d :windo diffthis<CR>
 nmap ,n :vnew<CR>
 "open history of file
 nmap ,h :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory %:p<CR>
+"paste timestamp
+nmap ,ts "=strftime("%c")<CR>p
 
 "show whitespace
 nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
