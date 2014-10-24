@@ -1,18 +1,14 @@
 :set encoding=utf-8
 :set fileencodings=utf-8
 
-execute pathogen#infect()
+runtime! autoload/pathogen.vim
+if exists("g:loaded_pathogen")
+    call pathogen#infect()
+endif
+
 filetype plugin indent on
 
 behave xterm
-
-if has("win32")
-	set directory=$home/vimfiles/swapfiles
-	set backupdir=$home/vimfiles/backups
-else
-	set directory=$home/.vim/swapfiles
-	set backupdir=$home/.vim/backups
-endif
 
 if !has("gui_running")
 	set mouse=
