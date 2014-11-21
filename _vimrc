@@ -50,7 +50,9 @@ set ignorecase smartcase
 "nmap <C-J> :%s/
 "cmap <C-Y> <C-R>
 
-
+" Put cursor at end of chunk after pasting
+noremap p gp
+noremap P gP
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
@@ -58,8 +60,8 @@ vnoremap <S-Del> "+x
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>		"+gp
-map <S-Insert>		"+gp
+map <C-V>		"+p
+map <S-Insert>		"+p
 imap <C-V>		<C-R>+
 imap <S-Insert>	<C-R>+
 cmap <C-V>		<C-R>+
