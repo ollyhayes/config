@@ -47,6 +47,7 @@ set hlsearch
 
 set ignorecase smartcase
 
+let mapleader = " "
 "nmap <C-J> :%s/
 "cmap <C-Y> <C-R>
 
@@ -90,19 +91,19 @@ map <C-Tab> :b#<CR>
 "map <C-Tab> :CtrlPMRU<CR>
 map <C-K> :CtrlPMRU<CR>
 "save vimrc
-nmap ,s :source ~/tools/vimrc/_vimrc<CR>
+nmap <leader>s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
-nmap ,v :vsplit ~/tools/vimrc/_vimrc<CR>
+nmap <leader>v :vsplit ~/tools/vimrc/_vimrc<CR>
 "do diff
-nmap ,d :windo diffthis<CR>
+nmap <leader>d :windo diffthis<CR>
 "open split
-nmap ,n :vnew<CR>
+nmap <leader>n :vnew<CR>
 "open history of file
-nmap ,h :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory %:p<CR>
+nmap <leader>h :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory %:p<CR>
 "paste timestamp
-nmap ,ts "=strftime("%c")<CR>p
+nmap <leader>ts "=strftime("%c")<CR>p
 "set directory to current file
-nmap ,cd :cd %:p:h<CR>
+nmap <leader>cd :cd %:p:h<CR>
 
 "show whitespace
 nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
@@ -142,10 +143,10 @@ map <Left> <C-w>h
 map <Down> <C-w>j
 map <Up> <C-w>k
 map <Right> <C-w>l
-map ,h <C-w>h
-map ,j <C-w>j
-map ,k <C-w>k
-map ,l <C-w>l
+map <leader>h <C-w>h
+map <leader>j <C-w>j
+map <leader>k <C-w>k
+map <leader>l <C-w>l
 "Resize windows
 map <C-Left> 10<C-w><
 map <C-Down> 2<C-w>-
