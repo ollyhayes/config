@@ -21,22 +21,10 @@ endif
 "set comments to visible colour on linux
 hi comment ctermfg=cyan
 "set cursorline
-
-"use relative numbers in normal mode, normal elsewhere
-"set relativenumber
-"autocmd FocusLost * :set nu | :set nornu
-"autocmd FocusGained * :set nonu | :set rnu
-"autocmd InsertEnter * :set nu | :set nornu
-"autocmd InsertLeave * :set nonu | :set rnu
 set number
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-set completeopt=longest,menuone
-"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-"  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-"  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+set completeopt=longest,menuone,preview
 
 let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
@@ -88,6 +76,11 @@ nmap <C-A> ggVG
 "find and replace
 nmap <C-H> :%s/
 vmap <C-H> :s/
+"find current selection
+vmap * y/<C-R>"<CR>
+vmap // y/<C-R>"<CR>
+"map C-Backspace to delete previous word
+imap <C-BS> <C-W>
 "run macro
 nmap <S-Z> @a
 "switch buffer
@@ -106,11 +99,13 @@ nmap ,n :vnew<CR>
 nmap ,h :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory %:p<CR>
 "paste timestamp
 nmap ,ts "=strftime("%c")<CR>p
+"set directory to current file
+nmap ,cd :cd %:p:h<CR>
 
 "show whitespace
 nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
 "format json/xml
-nmap <F4> :%! formatter.bat<CR><F5>
+nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
 nmap <silent> <F5> :call RotateSyntax()<CR>
 "enable horizontal scrollbar
@@ -172,4 +167,6 @@ function! RotateSyntax()
 
 endfunction
 
-
+"Macros
+"jira table: ^/|/$/|/\t/|/ggV|/||
+"wiki table: ??c??b^ /?kb?kb/ /\r/-\?kb?kb\r-\r/?ku?kl?kl?kl?kl?kl?kl?kl?kbn\t/ || / \?kb|| $//^/|/ggO{|Go|} 
