@@ -135,6 +135,21 @@ noremap <C-LeftMouse> <LeftMouse>viw
 "middle mouse - repeat last action
 noremap <MiddleMouse> <LeftMouse>.
 
+"Navigate around windows
+map <Left> <C-w>h
+map <Down> <C-w>j
+map <Up> <C-w>k
+map <Right> <C-w>l
+map ,h <C-w>h
+map ,j <C-w>j
+map ,k <C-w>k
+map ,l <C-w>l
+"Resize windows
+map <C-Left> 10<C-w><
+map <C-Down> 2<C-w>-
+map <C-Up> 2<C-w>+
+map <C-Right> 10<C-w>>
+
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
 
