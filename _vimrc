@@ -114,6 +114,7 @@ nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
 nmap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
 nmap <silent> <F5> :call RotateSyntax()<CR>
+nmap <silent> <S-F5> :call ReverseRotateSyntax()<CR>
 "enable horizontal scrollbar
 nmap <F6> :set guioptions+=b<CR>
 
@@ -163,7 +164,6 @@ let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
 function! RotateSyntax()
-
 	if &syntax == ""
 		set syntax=xml
 		echo "xml"
@@ -183,7 +183,28 @@ function! RotateSyntax()
 		set syntax=xml
 		echo "xml"
 	endif
+endfunction
 
+function! ReverseRotateSyntax()
+	if &syntax == ""
+		set syntax=xml
+		echo "xml"
+	elseif &syntax == "text"
+		set syntax=xml
+		echo "xml"
+	elseif &syntax == "xml"
+		set syntax=ts
+		echo "ts"
+	elseif &syntax == "json"
+		set syntax=xml
+		echo "xml"
+	elseif &syntax == "cs"
+		set syntax=json
+		echo "json"
+	elseif &syntax == "ts"
+		set syntax=cs
+		echo "cs"
+	endif
 endfunction
 
 "Macros
