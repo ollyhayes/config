@@ -206,7 +206,3 @@ function! ReverseRotateSyntax()
 		echo "cs"
 	endif
 endfunction
-
-"Macros
-"jira table: ^/|/$/|/\t/|/ggV|/||
-"wiki table: ??c??b^ /?kb?kb/ /\r/-\?kb?kb\r-\r/?ku?kl?kl?kl?kl?kl?kl?kl?kbn\t/ || / \?kb|| $//^/|/ggO{|Go|} 
