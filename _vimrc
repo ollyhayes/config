@@ -214,3 +214,21 @@ function! ReverseRotateSyntax()
 		echo "cs"
 	endif
 endfunction
+
+"dvorak
+no - :
+no - :
+no d h
+no h j
+no t k
+no n l
+no D ^
+no H 4j
+no T 4k
+no N $
+no J D
+no j d
+no l n
+no L N
+no k t
+no K T
