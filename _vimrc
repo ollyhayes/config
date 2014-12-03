@@ -10,7 +10,10 @@ filetype plugin indent on
 
 behave xterm
 
-if !has("gui_running")
+if has("gui_running")
+	"remove highlight on escape
+	nmap <Esc> :noh<CR>
+else
 	set mouse=
 endif
 
@@ -126,8 +129,6 @@ map <S-J> 4j
 nnoremap <Backspace> J
 "join line for visual studio
 nnoremap gJ J
-"remove highlight on escape
-nmap <Esc> :noh<CR>
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
