@@ -153,10 +153,18 @@ map <C-Right> 10<C-w>>
 
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
-"status line (file, modified, readonly, value under cursor, hex, line/column, percentage through file
-set statusline=%f%m%r%14.(%b,0x%B%)%=%-14.(%l,%c%)\ %P
 "always show status line
 set laststatus=2
+
+set statusline=
+set statusline +=%1*\ %n\%*				"buffer number
+set statusline +=%4*\ %<%F%*            "full path
+set statusline +=%2*%m%*                "modified flag
+set statusline +=%3*\ [%{&ff}]%*        "file format
+set statusline +=%1*%=%5l%*             "current line
+set statusline +=%2*/%L%*               "total lines
+set statusline +=%1*%4v\ %*             "virtual column number
+set statusline +=%2*0x%04B\ %*          "character under cursor
 
 let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
