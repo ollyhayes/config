@@ -102,7 +102,7 @@ nmap <leader>d :windo diffthis<CR>
 "open split
 nmap <leader>n :vnew<CR>
 "open history of file
-nmap <leader>h :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory %:p<CR>
+nmap <leader>hi :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
 "paste timestamp
 nmap <leader>ts "=strftime("%c")<CR>p
 "set directory to current file
@@ -141,10 +141,6 @@ noremap <C-LeftMouse> <LeftMouse>viw
 noremap <MiddleMouse> <LeftMouse>.
 
 "Navigate around windows
-map <Left> <C-w>h
-map <Down> <C-w>j
-map <Up> <C-w>k
-map <Right> <C-w>l
 map <leader>h <C-w>h
 map <leader>j <C-w>j
 map <leader>k <C-w>k
