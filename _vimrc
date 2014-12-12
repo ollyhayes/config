@@ -164,7 +164,7 @@ set statusline +=%3*\ [%{&ff}]%*        "file format
 set statusline +=%1*%=%5l%*             "current line
 set statusline +=%2*/%L%*               "total lines
 set statusline +=%1*%4v\ %*             "virtual column number
-set statusline +=%2*0x%04B\ %*          "character under cursor
+set statusline +=%2*U+%04B\ %*          "character under cursor
 
 let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
