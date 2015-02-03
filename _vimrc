@@ -216,7 +216,7 @@ endfunction
 
 :colorscheme desert
 
-hi User1 guifg=#eea040 guibg=#222222 ctermfg=1 ctermbg=0
+hi User1 guifg=#eea040 guibg=#222222 ctermfg=4 ctermbg=0
 hi User2 guifg=#dd3333 guibg=#222222 ctermfg=2 ctermbg=0
 hi User3 guifg=#ff66ff guibg=#222222 ctermfg=3 ctermbg=0
 hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
