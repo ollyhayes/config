@@ -1,0 +1,4 @@
+set guifont=Consolas:h13
+set guioptions=r
+set columns=120
+set lines=30
