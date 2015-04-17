@@ -88,6 +88,8 @@ vmap // y/<C-R>"<CR>
 imap <C-BS> <C-W>
 "run macro
 nmap <S-Z> @a
+"copy inside of quotes
+nmap <S-X> "+yi"
 "switch buffer
 map <C-Tab> :b#<CR>
 "map <C-Tab> :CtrlPMRU<CR>
@@ -96,6 +98,8 @@ map <C-K> :CtrlPMRU<CR>
 nmap <leader>s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
 nmap <leader>v :vsplit ~/tools/vimrc/_vimrc<CR>
+"open bashrc
+nmap <leader>b :e ~/.bashrc<CR>
 "do diff
 nmap <leader>d :windo diffthis<CR>
 "open split
