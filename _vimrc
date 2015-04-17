@@ -12,6 +12,7 @@ behave xterm
 if has("gui_running")
 	"remove highlight on escape
 	nmap <Esc> :noh<CR>
+	:colorscheme desert
 else
 	set mouse=
 endif
@@ -92,7 +93,7 @@ nmap <S-Z> @a
 nmap <S-X> "+yi"
 "switch buffer
 map <C-Tab> :b#<CR>
-"map <C-Tab> :CtrlPMRU<CR>
+"bring up most recently used file in ctrl-p
 map <C-K> :CtrlPMRU<CR>
 "save vimrc
 nmap <leader>s :source ~/tools/vimrc/_vimrc<CR>
@@ -217,8 +218,6 @@ function! ReverseRotateSyntax()
 		echo "cs"
 	endif
 endfunction
-
-:colorscheme desert
 
 hi User1 guifg=#eea040 guibg=#222222 ctermfg=4 ctermbg=0
 hi User2 guifg=#dd3333 guibg=#222222 ctermfg=2 ctermbg=0
