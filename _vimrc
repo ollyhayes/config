@@ -15,6 +15,7 @@ if has("gui_running")
 	:colorscheme desert
 else
 	set mouse=
+	:colorscheme slate
 endif
 
 if !exists("syntax_on")
@@ -22,7 +23,8 @@ if !exists("syntax_on")
 endif
 
 "set comments to visible colour on linux
-hi comment ctermfg=cyan
+"hi comment ctermfg=cyan
+
 "set cursorline
 set number
 
