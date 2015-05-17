@@ -1,0 +1,8 @@
+[core]
+	autocrlf = false
+	excludesfile = ~/tools/config/.gitignore
+[user]
+	name = Olly Hayes
+	email = olly.hayes@gmail.com
+[push]
+	default = simple
