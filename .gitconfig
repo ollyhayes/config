@@ -13,3 +13,6 @@
 	interactive = auto
 	ui = true
 	pager = true
+[alias]
+	l = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph -n 10
+	lg = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph
