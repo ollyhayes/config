@@ -100,7 +100,7 @@ nmap <leader>s :source ~/tools/vimrc/_vimrc<CR>
 "open vimrc
 nmap <leader>v :vsplit ~/tools/vimrc/_vimrc<CR>
 "open bashrc
-nmap <leader>b :e ~/.bashrc<CR>
+nmap <silent> <leader>b :call OpenBashRc()<CR>
 "do diff
 nmap <leader>d :windo diffthis<CR>
 "open split
@@ -216,6 +216,14 @@ function! ReverseRotateSyntax()
 	elseif &syntax == "ts"
 		set syntax=cs
 		echo "cs"
+	endif
+endfunction
+
+function! OpenBashRc()
+	if filereadable(expand("~/tools/config/.bashrc"))
+		edit ~/tools/config/.bashrc
+	else
+		edit ~/.bashrc
 	endif
 endfunction
 
