@@ -1,4 +1,3 @@
 source ~/tools/vimrc/_gvimrc
-set guifont=Consolas:h10
-set columns=120
+set columns=60
 set lines=30
