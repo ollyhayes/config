@@ -13,6 +13,7 @@
 	"exports",
 	"module",
 	"process",
-	"localStorage"
+	"localStorage",
+	"__dirname"
   ]
 }
