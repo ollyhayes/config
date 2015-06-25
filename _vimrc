@@ -146,6 +146,7 @@ noremap <C-LeftMouse> <LeftMouse>viw
 "middle mouse - repeat last action
 noremap <MiddleMouse> <LeftMouse>.
 
+nnoremap <leader><F5> :call RunNode()<CR>
 "Navigate around windows
 map <leader>h <C-w>h
 map <leader>j <C-w>j
@@ -176,6 +177,12 @@ let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
+
+function! RunNode()
+	let stdin = join(getline(1, '$'), "\n")
+	let a = system('node', stdin)
+	put =a
+endfunction
 
 function! RotateSyntax()
 	if &syntax == ""
