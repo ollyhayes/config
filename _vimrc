@@ -9,9 +9,10 @@ filetype plugin indent on
 
 behave xterm
 
+"remove highlight on escape
+nmap <Esc> :noh<CR>
+
 if has("gui_running")
-	"remove highlight on escape
-	nmap <Esc> :noh<CR>
 	:colorscheme desert
 else
 	set mouse=
@@ -201,6 +202,9 @@ function! RotateSyntax()
 		set syntax=ts
 		echo "ts"
 	elseif &syntax == "ts"
+		set syntax=javascript
+		echo "javascript"
+	elseif &syntax == "javascript"
 		set syntax=xml
 		echo "xml"
 	endif
@@ -214,8 +218,8 @@ function! ReverseRotateSyntax()
 		set syntax=xml
 		echo "xml"
 	elseif &syntax == "xml"
-		set syntax=ts
-		echo "ts"
+		set syntax=javascript
+		echo "javascript"
 	elseif &syntax == "json"
 		set syntax=xml
 		echo "xml"
@@ -225,6 +229,9 @@ function! ReverseRotateSyntax()
 	elseif &syntax == "ts"
 		set syntax=cs
 		echo "cs"
+	elseif &syntax == "javascript"
+		set syntax=ts
+		echo "ts"
 	endif
 endfunction
 
