@@ -9,14 +9,14 @@ filetype plugin indent on
 
 behave xterm
 
-"remove highlight on escape
-nmap <Esc> :noh<CR>
-
-if has("gui_running")
-	:colorscheme desert
-else
+"inverted as vsvim errors on gui_running
+if !has("gui_running")
 	set mouse=
 	:colorscheme slate
+else
+	:colorscheme desert
+	"remove highlight on escape (doesn't work in terminal)
+	nmap <Esc> :noh<CR>
 endif
 
 if !exists("syntax_on")
