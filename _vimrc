@@ -29,8 +29,7 @@ endif
 "set cursorline
 set number
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-set completeopt=longest,menuone,preview
+set completeopt=longest,menuone
 
 let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
@@ -147,7 +146,6 @@ noremap <C-LeftMouse> <LeftMouse>viw
 "middle mouse - repeat last action
 noremap <MiddleMouse> <LeftMouse>.
 
-nnoremap <leader><F5> :call RunNode()<CR>
 "Navigate around windows
 map <leader>h <C-w>h
 map <leader>j <C-w>j
@@ -247,3 +245,6 @@ hi User1 guifg=#eea040 guibg=#222222 ctermfg=4 ctermbg=0
 hi User2 guifg=#dd3333 guibg=#222222 ctermfg=2 ctermbg=0
 hi User3 guifg=#ff66ff guibg=#222222 ctermfg=3 ctermbg=0
 hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
+
+autocmd FileType javascript inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+autocmd FileType javascript nnoremap <leader><F5> :call RunNode()<CR>
