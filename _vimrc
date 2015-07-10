@@ -157,6 +157,8 @@ map <C-Down> 2<C-w>-
 map <C-Up> 2<C-w>+
 map <C-Right> 10<C-w>>
 
+map <silent> <leader>g :call GitTag()<CR>A
+
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
 "always show status line
@@ -176,6 +178,12 @@ let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
+
+function! GitTag()
+	let a = system('git log -n 1 --pretty=format:"%s" | sed "s/^\(.*: \).*/\1/"')
+	delete
+	put! =a
+endfunction
 
 function! RunNode()
 	let stdin = join(getline(1, '$'), "\n")
