@@ -6,4 +6,4 @@ ln -s ~/tools/config/.gitconfig ~/.gitconfig
 ln -s ~/tools/config/.inputrc ~/.inputrc
 ln -s ~/tools/config/.jshintrc ~/.jshintrc
 ln -s ~/tools/config/vimrc/_vimrc ~/.vimrc
-ln -s ~/tools/config/vimrc/_gvimrc ~/.gvimrc
+ln -s ~/tools/config/vimrc/_gvimrc-high-res ~/.gvimrc
