@@ -1,4 +1,5 @@
 alias bob="ssh olly.fr.to -p 39404"
+alias pi="ssh pi@192.168.1.2"
 alias switchCaps="setxkbmap -option caps:swapescape"
 
 export EDITOR=vim
