@@ -23,6 +23,8 @@ if !exists("syntax_on")
 	syntax on
 endif
 
+set shell=bash
+
 "set comments to visible colour on linux
 "hi comment ctermfg=cyan
 
@@ -180,7 +182,7 @@ let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
 function! GitTag()
-	let a = system('git log -n 1 --pretty=format:"%s" | sed "s/^\(.*: \).*/\1/"')
+	let a = system('git log -n 1 --pretty=format:%s | sed \"s/^\(.*: \).*/\1/\"')
 	delete
 	put! =a
 endfunction
