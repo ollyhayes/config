@@ -1,6 +1,8 @@
 {
   "undef": true,
   "unused": true,
+  "esnext": "es6",
+  "noyield": true,
   "predef": [
 	"document",
 	"window",
@@ -12,8 +14,10 @@
 	"Audio",
 	"exports",
 	"module",
+	"export",
 	"process",
 	"localStorage",
-	"__dirname"
+	"__dirname",
+	"requestAnimationFrame"
   ]
 }
