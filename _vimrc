@@ -12,7 +12,6 @@ behave xterm
 "inverted as vsvim errors on gui_running
 if !has("gui_running")
 	set mouse=
-	:colorscheme slate
 else
 	:colorscheme desert
 	"remove highlight on escape (doesn't work in terminal)
@@ -23,7 +22,11 @@ if !exists("syntax_on")
 	syntax on
 endif
 
-set shell=bash
+"set shell=bash
+"set shellxquote=\"
+"set shellslash
+"set shell=\"C:\Program\ Files\Git\bin\bash.exe\"
+"set shellcmdflag=--login\ -c
 
 "set comments to visible colour on linux
 "hi comment ctermfg=cyan
@@ -182,15 +185,10 @@ let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
 function! GitTag()
-	let a = system('git log -n 1 --pretty=format:%s | sed \"s/^\(.*: \).*/\1/\"')
+	"set shell=/usr/bin/bash
+	let a = system('git log -n 1 --pretty=format:%s | sed "s/^\(.*: \).*/\1/"')
 	delete
 	put! =a
-endfunction
-
-function! RunNode()
-	let stdin = join(getline(1, '$'), "\n")
-	let a = system('node', stdin)
-	put =a
 endfunction
 
 function! RotateSyntax()
@@ -256,5 +254,30 @@ hi User2 guifg=#dd3333 guibg=#222222 ctermfg=2 ctermbg=0
 hi User3 guifg=#ff66ff guibg=#222222 ctermfg=3 ctermbg=0
 hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
 
-autocmd FileType javascript inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-autocmd FileType javascript nnoremap <leader><F5> :call RunNode()<CR>
+"function! RunNode()
+"	let stdin = join(getline(1, '$'), "\n")
+"	let a = system('node', stdin)
+"	put =a
+"endfunction
+"
+"autocmd FileType javascript inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"autocmd FileType javascript nnoremap <leader><F5> :call RunNode()<CR>
+
+function! SetupExecuteWindow()
+  let filetype_to_command = {
+  \   'javascript': 'node',
+  \   'python': 'python',
+  \   'html': 'open',
+  \   'sh': 'sh'
+  \ }
+
+  let cmd = get(filetype_to_command, &filetype, &filetype)
+
+  execute "w"
+  "execute "silent !chmod +x %:p"
+  let n=expand('%:t')
+  execute "silent !".cmd." %:p > C:/users/dolivhay/vimfiles/output.txt 2>&1"
+  execute "belowright pedit ~/vimfiles/output.txt"
+endfunction
+
+nnoremap <F8> :call SetupExecuteWindow()<CR>
