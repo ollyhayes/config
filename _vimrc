@@ -103,9 +103,9 @@ map <C-Tab> :b#<CR>
 "bring up most recently used file in ctrl-p
 map <C-K> :CtrlPMRU<CR>
 "save vimrc
-nmap <leader>s :source ~/tools/vimrc/_vimrc<CR>
+nmap <silent> <leader>s :call SourceVimRc()<CR>
 "open vimrc
-nmap <leader>v :vsplit ~/tools/vimrc/_vimrc<CR>
+nmap <silent> <leader>v :call OpenVimRc()<CR>
 "open bashrc
 nmap <silent> <leader>b :call OpenBashRc()<CR>
 "do diff
@@ -238,6 +238,22 @@ function! ReverseRotateSyntax()
 	elseif &syntax == "javascript"
 		set syntax=ts
 		echo "ts"
+	endif
+endfunction
+
+function! OpenVimRc()
+	if filereadable(expand("~/tools/config/vimrc/_vimrc"))
+		vsplit ~/tools/config/vimrc/_vimrc
+	else
+		vsplit ~/tools/vimrc/_vimrc
+	endif
+endfunction
+
+function! SourceVimRc()
+	if filereadable(expand("~/tools/config/vimrc/_vimrc"))
+		source ~/tools/config/vimrc/_vimrc
+	else
+		source ~/tools/vimrc/_vimrc
 	endif
 endfunction
 
