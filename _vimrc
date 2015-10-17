@@ -36,8 +36,8 @@ set number
 
 set completeopt=longest,menuone
 
-let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
+"let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
+"let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
 
 let g:vim_json_syntax_conceal = 0
 
