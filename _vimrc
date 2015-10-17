@@ -243,9 +243,9 @@ endfunction
 
 function! OpenVimRc()
 	if filereadable(expand("~/tools/config/vimrc/_vimrc"))
-		vsplit ~/tools/config/vimrc/_vimrc
+		edit ~/tools/config/vimrc/_vimrc
 	else
-		vsplit ~/tools/vimrc/_vimrc
+		edit ~/tools/vimrc/_vimrc
 	endif
 endfunction
 
