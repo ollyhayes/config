@@ -1,5 +1,4 @@
 :set encoding=utf-8
-:set fileencodings=utf-8
 
 runtime! autoload/pathogen.vim
 if exists("g:loaded_pathogen")
@@ -10,27 +9,36 @@ filetype plugin indent on
 
 behave xterm
 
-if has("gui_running")
-	"remove highlight on escape
-	nmap <Esc> :noh<CR>
-else
+"inverted as vsvim errors on gui_running
+if !has("gui_running")
 	set mouse=
+else
+	:colorscheme desert
+	"remove highlight on escape (doesn't work in terminal)
+	nmap <Esc> :noh<CR>
 endif
 
 if !exists("syntax_on")
 	syntax on
 endif
 
+"set shell=bash
+"set shellxquote=\"
+"set shellslash
+"set shell=\"C:\Program\ Files\Git\bin\bash.exe\"
+"set shellcmdflag=--login\ -c
+
 "set comments to visible colour on linux
-hi comment ctermfg=cyan
+"hi comment ctermfg=cyan
+
 "set cursorline
 set number
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-set completeopt=longest,menuone,preview
+set completeopt=longest,menuone
 
-let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
+"let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
+"let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
+let g:ctrlp_custom_ignore = 'node_modules'
 
 let g:vim_json_syntax_conceal = 0
 
@@ -89,14 +97,18 @@ vmap // y/<C-R>"<CR>
 imap <C-BS> <C-W>
 "run macro
 nmap <S-Z> @a
+"copy inside of quotes
+nmap <S-X> "+yi"
 "switch buffer
 map <C-Tab> :b#<CR>
-"map <C-Tab> :CtrlPMRU<CR>
+"bring up most recently used file in ctrl-p
 map <C-K> :CtrlPMRU<CR>
 "save vimrc
-nmap <leader>s :source ~/tools/vimrc/_vimrc<CR>
+nmap <silent> <leader>s :call SourceVimRc()<CR>
 "open vimrc
-nmap <leader>v :vsplit ~/tools/vimrc/_vimrc<CR>
+nmap <silent> <leader>v :call OpenVimRc()<CR>
+"open bashrc
+nmap <silent> <leader>b :call OpenBashRc()<CR>
 "do diff
 nmap <leader>d :windo diffthis<CR>
 "open split
@@ -151,6 +163,8 @@ map <C-Down> 2<C-w>-
 map <C-Up> 2<C-w>+
 map <C-Right> 10<C-w>>
 
+map <silent> <leader>g :call GitTag()<CR>A
+
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
 "always show status line
@@ -164,12 +178,19 @@ set statusline +=%3*\ [%{&ff}]%*        "file format
 set statusline +=%1*%=%5l%*             "current line
 set statusline +=%2*/%L%*               "total lines
 set statusline +=%1*%4v\ %*             "virtual column number
-set statusline +=%2*0x%04B\ %*          "character under cursor
+set statusline +=%2*U+%04B\ %*          "character under cursor
 
 let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
+
+function! GitTag()
+	"set shell=/usr/bin/bash
+	let a = system('git log -n 1 --pretty=format:%s | sed "s/^\(.*: \).*/\1/"')
+	delete
+	put! =a
+endfunction
 
 function! RotateSyntax()
 	if &syntax == ""
@@ -188,6 +209,9 @@ function! RotateSyntax()
 		set syntax=ts
 		echo "ts"
 	elseif &syntax == "ts"
+		set syntax=javascript
+		echo "javascript"
+	elseif &syntax == "javascript"
 		set syntax=xml
 		echo "xml"
 	endif
@@ -201,8 +225,8 @@ function! ReverseRotateSyntax()
 		set syntax=xml
 		echo "xml"
 	elseif &syntax == "xml"
-		set syntax=ts
-		echo "ts"
+		set syntax=javascript
+		echo "javascript"
 	elseif &syntax == "json"
 		set syntax=xml
 		echo "xml"
@@ -212,8 +236,68 @@ function! ReverseRotateSyntax()
 	elseif &syntax == "ts"
 		set syntax=cs
 		echo "cs"
+	elseif &syntax == "javascript"
+		set syntax=ts
+		echo "ts"
 	endif
 endfunction
+
+function! OpenVimRc()
+	if filereadable(expand("~/tools/config/vimrc/_vimrc"))
+		edit ~/tools/config/vimrc/_vimrc
+	else
+		edit ~/tools/vimrc/_vimrc
+	endif
+endfunction
+
+function! SourceVimRc()
+	if filereadable(expand("~/tools/config/vimrc/_vimrc"))
+		source ~/tools/config/vimrc/_vimrc
+	else
+		source ~/tools/vimrc/_vimrc
+	endif
+endfunction
+
+function! OpenBashRc()
+	if filereadable(expand("~/tools/config/.bashrc"))
+		edit ~/tools/config/.bashrc
+	else
+		edit ~/.bashrc
+	endif
+endfunction
+
+hi User1 guifg=#eea040 guibg=#222222 ctermfg=4 ctermbg=0
+hi User2 guifg=#dd3333 guibg=#222222 ctermfg=2 ctermbg=0
+hi User3 guifg=#ff66ff guibg=#222222 ctermfg=3 ctermbg=0
+hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
+
+"function! RunNode()
+"	let stdin = join(getline(1, '$'), "\n")
+"	let a = system('node', stdin)
+"	put =a
+"endfunction
+"
+"autocmd FileType javascript inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"autocmd FileType javascript nnoremap <leader><F5> :call RunNode()<CR>
+
+function! SetupExecuteWindow()
+  let filetype_to_command = {
+  \   'javascript': 'node',
+  \   'python': 'python',
+  \   'html': 'open',
+  \   'sh': 'sh'
+  \ }
+
+  let cmd = get(filetype_to_command, &filetype, &filetype)
+
+  execute "w"
+  "execute "silent !chmod +x %:p"
+  let n=expand('%:t')
+  execute "silent !".cmd." %:p > C:/users/dolivhay/vimfiles/output.txt 2>&1"
+  execute "belowright pedit ~/vimfiles/output.txt"
+endfunction
+
+nnoremap <F8> :call SetupExecuteWindow()<CR>
 
 "dvorak
 no - :
