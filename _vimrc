@@ -303,3 +303,9 @@ function! SetupExecuteWindow()
 endfunction
 
 nnoremap <F8> :call SetupExecuteWindow()<CR>
+
+function! Curl()
+	execute "e ~/tools/vimrc/curl-template.sh"
+	execute "sav! ~/vimfiles/curl-temp.sh"
+endfunction
+command Curl call Curl()
