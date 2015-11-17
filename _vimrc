@@ -186,7 +186,7 @@ let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
 function! GitTag()
-	"set shell=/usr/bin/bash
+	set shell=/usr/bin/bash
 	let a = system('git log -n 1 --pretty=format:%s | sed "s/^\(.*: \).*/\1/"')
 	delete
 	put! =a
@@ -293,7 +293,7 @@ function! SetupExecuteWindow()
   execute "w"
   "execute "silent !chmod +x %:p"
   let n=expand('%:t')
-  execute "silent !".cmd." %:p > C:/users/dolivhay/vimfiles/output.txt 2>&1"
+  execute "silent !".cmd." %:p 2>&1 | tee C:/users/dolivhay/vimfiles/output.txt"
   
   "these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
   normal! Hmx``
