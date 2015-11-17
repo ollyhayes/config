@@ -10,7 +10,7 @@ args=(
 	# -H "Accept:"
 )
 
-curl "${args[@]}" <url>
+curl "${args[@]}" "insert-url-here"
 
 # -x proxy
 # -o output file

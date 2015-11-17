@@ -307,5 +307,7 @@ nnoremap <F8> :call SetupExecuteWindow()<CR>
 function! Curl()
 	execute "e ~/tools/vimrc/curl-template.sh"
 	execute "sav! ~/vimfiles/curl-temp.sh"
+	/insert-url-here/
+	normal! $vi"
 endfunction
 command Curl call Curl()
