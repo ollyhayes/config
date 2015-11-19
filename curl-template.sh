@@ -1,7 +1,8 @@
 args=(
 	-x localhost:8888
-	-o download.dat
+	# -o download.dat
 	# --data-binary @file.txt
+	# --data '' #(Makes POST)
 	# -u olly_hayes:[password]
 	-H "Accept: application/vnd.fl.groupfunddata.json"
 	-H "Cache-Control: max-age=0"
