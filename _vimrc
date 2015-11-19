@@ -72,12 +72,12 @@ vnoremap <S-Del> "+x
 vnoremap <C-C> "+y
 vnoremap <C-Insert> "+y
 " CTRL-V and SHIFT-Insert are Paste
-map <C-V>		"+p
-map <S-Insert>		"+p
-imap <C-V>		<C-R>+
-imap <S-Insert>	<C-R>+
-cmap <C-V>		<C-R>+
-cmap <S-Insert>		<C-R>+
+noremap <C-V>		"+p
+noremap <S-Insert>		"+p
+inoremap <C-V>		<C-R>+
+inoremap <S-Insert>	<C-R>+
+cnoremap <C-V>		<C-R>+
+cnoremap <S-Insert>		<C-R>+
 " Use CTRL-Q to do what CTRL-V used to do
 noremap <C-Q>		<C-V>
 " Also CTRL-B to do what CTRL-V used to do (for visual studio)
@@ -86,58 +86,58 @@ noremap <C-B> <C-V>
 nnoremap - :
 vnoremap - :
 "select all
-nmap <C-A> ggVG
+nnoremap <C-A> ggVG
 "find and replace
-nmap <C-H> :%s/
-vmap <C-H> :s/
+nnoremap <C-H> :%s/
+vnoremap <C-H> :s/
 "find current selection
-vmap * y/<C-R>"<CR>
-vmap // y/<C-R>"<CR>
+vnoremap * y/<C-R>"<CR>
+vnoremap // y/<C-R>"<CR>
 "map C-Backspace to delete previous word
-imap <C-BS> <C-W>
+inoremap <C-BS> <C-W>
 "run macro
-nmap <S-Z> @a
+nnoremap <S-Z> @a
 "copy inside of quotes
-nmap <S-X> "+yi"
+nnoremap <S-X> "+yi"
 "switch buffer
-map <C-Tab> :b#<CR>
+noremap <C-Tab> :b#<CR>
 "bring up most recently used file in ctrl-p
-map <C-K> :CtrlPMRU<CR>
+noremap <C-K> :CtrlPMRU<CR>
 "save vimrc
-nmap <silent> <leader>s :call SourceVimRc()<CR>
+nnoremap <silent> <leader>s :call SourceVimRc()<CR>
 "open vimrc
-nmap <silent> <leader>v :call OpenVimRc()<CR>
+nnoremap <silent> <leader>v :call OpenVimRc()<CR>
 "open bashrc
-nmap <silent> <leader>b :call OpenBashRc()<CR>
+nnoremap <silent> <leader>b :call OpenBashRc()<CR>
 "do diff
-nmap <leader>d :windo diffthis<CR>
+nnoremap <leader>d :windo diffthis<CR>
 "open split
-nmap <leader>n :vnew<CR>
+nnoremap <leader>n :vnew<CR>
 "open history of file
-nmap <leader>hi :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
+nnoremap <leader>hi :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
 "paste timestamp
-nmap <leader>ts "=strftime("%c")<CR>p
+nnoremap <leader>ts "=strftime("%c")<CR>p
 "set directory to current file
-nmap <leader>cd :cd %:p:h<CR>
+nnoremap <leader>cd :cd %:p:h<CR>
 
 "show whitespace
-nmap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
+nnoremap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
 "format json/xml
-nmap <F4> :%! formatter.bat<CR>
+nnoremap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
-nmap <silent> <F5> :call RotateSyntax()<CR>
-nmap <silent> <S-F5> :call ReverseRotateSyntax()<CR>
+nnoremap <silent> <F5> :call RotateSyntax()<CR>
+nnoremap <silent> <S-F5> :call ReverseRotateSyntax()<CR>
 "enable horizontal scrollbar
-nmap <F6> :set guioptions+=b<CR>
+nnoremap <F6> :set guioptions+=b<CR>
 
 "home
-map <S-H> ^
+noremap <S-H> ^
 "end
-map <S-L> $
+noremap <S-L> $
 "page up
-map <S-K> 4k
+noremap <S-K> 4k
 "page down
-map <S-J> 4j
+noremap <S-J> 4j
 "join line
 nnoremap <Backspace> J
 "join line for visual studio
@@ -145,25 +145,25 @@ nnoremap gJ J
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
-nmap <Tab> V>
-nmap <S-Tab> V<
+nnoremap <Tab> V>
+nnoremap <S-Tab> V<
 "ctrl click - select word
 noremap <C-LeftMouse> <LeftMouse>viw
 "middle mouse - repeat last action
 noremap <MiddleMouse> <LeftMouse>.
 
 "Navigate around windows
-map <leader>h <C-w>h
-map <leader>j <C-w>j
-map <leader>k <C-w>k
-map <leader>l <C-w>l
+noremap <leader>h <C-w>h
+noremap <leader>j <C-w>j
+noremap <leader>k <C-w>k
+noremap <leader>l <C-w>l
 "Resize windows
-map <C-Left> 10<C-w><
-map <C-Down> 2<C-w>-
-map <C-Up> 2<C-w>+
-map <C-Right> 10<C-w>>
+noremap <C-Left> 10<C-w><
+noremap <C-Down> 2<C-w>-
+noremap <C-Up> 2<C-w>+
+noremap <C-Right> 10<C-w>>
 
-map <silent> <leader>g :call GitTag()<CR>A
+noremap <silent> <leader>g :call GitTag()<CR>A
 
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
