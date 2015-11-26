@@ -62,6 +62,9 @@ let mapleader = " "
 "nmap <C-J> :%s/
 "cmap <C-Y> <C-R>
 
+set listchars=tab:>-
+nnoremap <leader>es :set list!<CR>
+
 " Put cursor at end of chunk after pasting
 noremap p gp
 noremap P gP
