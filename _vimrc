@@ -314,3 +314,11 @@ function! Curl()
 	normal! $vi"
 endfunction
 command Curl call Curl()
+
+function! Html()
+	execute "e ~/tools/vimrc/html-template.html"
+	execute "sav! ~/vimfiles/html-temp.html"
+	/insert-content-here/
+	normal! $viW
+endfunction
+command Html call Html()
