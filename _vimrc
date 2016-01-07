@@ -284,24 +284,24 @@ hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
 "autocmd FileType javascript nnoremap <leader><F5> :call RunNode()<CR>
 
 function! SetupExecuteWindow()
-  let filetype_to_command = {
-  \   'javascript': 'node',
-  \   'python': 'python',
-  \   'html': 'open',
-  \   'sh': 'sh'
-  \ }
+	let filetype_to_command = {
+	\   'javascript': 'node',
+	\   'python': 'python',
+	\   'html': 'open',
+	\   'sh': '"C:\Program Files\Git\bin\sh"'
+	\ }
 
-  let cmd = get(filetype_to_command, &filetype, &filetype)
+	let cmd=get(filetype_to_command, &filetype, &filetype)
 
-  execute "w"
-  "execute "silent !chmod +x %:p"
-  let n=expand('%:t')
-  execute "silent !".cmd." %:p 2>&1 | tee C:/users/dolivhay/vimfiles/output.txt"
-  
-  "these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
-  normal! Hmx``
-  execute "belowright pedit ~/vimfiles/output.txt"
-  normal! `xzt``
+	execute "w"
+	"execute "silent !chmod +x %:p"
+
+	execute "silent !".cmd." %:p 2>&1 > C:/users/dolivhay/vimfiles/output.txt"
+
+	"these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
+	normal! Hmx``
+	execute "belowright pedit ~/vimfiles/output.txt"
+	normal! `xzt``
 
 endfunction
 
@@ -313,7 +313,7 @@ function! Curl()
 	/insert-url-here/
 	normal! $vi"
 endfunction
-command Curl call Curl()
+command! Curl call Curl()
 
 function! Html()
 	execute "e ~/tools/vimrc/html-template.html"
@@ -321,4 +321,4 @@ function! Html()
 	/insert-content-here/
 	normal! $viW
 endfunction
-command Html call Html()
+command! Html call Html()
