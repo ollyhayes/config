@@ -106,8 +106,6 @@ nnoremap <S-X> "+yi"
 noremap <C-Tab> :b#<CR>
 "bring up most recently used file in ctrl-p
 noremap <C-K> :CtrlPMRU<CR>
-"save vimrc
-nnoremap <silent> <leader>s :call SourceVimRc()<CR>
 "open vimrc
 nnoremap <silent> <leader>v :call OpenVimRc()<CR>
 "open bashrc
@@ -258,14 +256,6 @@ function! OpenVimRc()
 	endif
 endfunction
 
-function! SourceVimRc()
-	if filereadable(expand("~/tools/config/vimrc/_vimrc"))
-		source ~/tools/config/vimrc/_vimrc
-	else
-		source ~/tools/vimrc/_vimrc
-	endif
-endfunction
-
 function! OpenBashRc()
 	if filereadable(expand("~/tools/config/.bashrc"))
 		edit ~/tools/config/.bashrc
@@ -288,28 +278,35 @@ hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
 "autocmd FileType javascript inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 "autocmd FileType javascript nnoremap <leader><F5> :call RunNode()<CR>
 
-function! SetupExecuteWindow()
-	let filetype_to_command = {
-	\   'javascript': 'node',
-	\   'python': 'python',
-	\   'html': '"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"',
-	\   'sh': '"C:\Program Files\Git\bin\sh"',
-	\   'bash': '"C:\Program Files\Git\bin\sh"'
-	\ }
+if !exists("*SetupExecuteWindow")
+	function! SetupExecuteWindow()
 
-	let cmd=get(filetype_to_command, &filetype, &filetype)
+		execute "w"
 
-	execute "w"
-	"execute "silent !chmod +x %:p"
+		let filetype_to_command = {
+		\   'javascript': 'node',
+		\   'python': 'python',
+		\   'html': '"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"',
+		\   'sh': '"C:\Program Files\Git\bin\sh"',
+		\   'bash': '"C:\Program Files\Git\bin\sh"'
+		\ }
 
-	execute "silent !" . cmd . " %:p 2>&1 > C:/users/dolivhay/vimfiles/output.txt"
+		if &filetype == 'vim'
+			source %:p
+			return
+		endif
 
-	"these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
-	normal! Hmx``
-	execute "belowright pedit ~/vimfiles/output.txt"
-	normal! `xzt``
+		let cmd=get(filetype_to_command, &filetype, &filetype)
 
-endfunction
+		"execute "silent !chmod +x %:p"
+		execute "silent !" . cmd . " %:p 2>&1 > C:/users/dolivhay/vimfiles/output.txt"
+
+		"these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
+		normal! Hmx``
+		execute "belowright pedit ~/vimfiles/output.txt"
+		normal! `xzt``
+	endfunction
+endif
 
 nnoremap <F8> :call SetupExecuteWindow()<CR>
 
