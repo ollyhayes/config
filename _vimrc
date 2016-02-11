@@ -298,7 +298,7 @@ function! SetupExecuteWindow()
 	execute "w"
 	"execute "silent !chmod +x %:p"
 
-	execute "silent !".cmd." %:p 2>&1 > C:/users/dolivhay/vimfiles/output.txt"
+	execute "silent !" . cmd . " %:p 2>&1 > C:/users/dolivhay/vimfiles/output.txt"
 
 	"these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
 	normal! Hmx``
@@ -312,8 +312,7 @@ nnoremap <F8> :call SetupExecuteWindow()<CR>
 function! Curl()
 	execute "e ~/tools/vimrc/curl-template.sh"
 	execute "sav! ~/vimfiles/curl-temp.sh"
-	/insert-url-here/
-	normal! $vi"
+	execute "normal! /insert-url-here/\<cr>vi\""
 endfunction
 command! Curl call Curl()
 
@@ -321,6 +320,6 @@ function! Html()
 	execute "e ~/tools/vimrc/html-template.html"
 	execute "sav! ~/vimfiles/html-temp.html"
 	/insert-content-here/
-	normal! $viW
+	execute "normal! /insert-content-here/\<cr>viW"
 endfunction
 command! Html call Html()
