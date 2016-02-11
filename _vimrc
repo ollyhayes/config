@@ -168,6 +168,7 @@ noremap <C-Right> 10<C-w>>
 
 noremap <silent> <leader>g :call GitTag()<CR>A
 
+
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
 "always show status line
@@ -287,8 +288,9 @@ function! SetupExecuteWindow()
 	let filetype_to_command = {
 	\   'javascript': 'node',
 	\   'python': 'python',
-	\   'html': 'open',
-	\   'sh': '"C:\Program Files\Git\bin\sh"'
+	\   'html': '"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"',
+	\   'sh': '"C:\Program Files\Git\bin\sh"',
+	\   'bash': '"C:\Program Files\Git\bin\sh"'
 	\ }
 
 	let cmd=get(filetype_to_command, &filetype, &filetype)
