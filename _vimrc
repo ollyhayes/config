@@ -155,6 +155,10 @@ noremap <C-LeftMouse> <LeftMouse>viw
 "middle mouse - repeat last action
 noremap <MiddleMouse> <LeftMouse>.
 
+"move to mark in center of screen
+noremap <expr> ' printf("'%c zz",getchar())
+noremap <expr> ` printf("`%c zz",getchar())
+
 "Navigate around windows
 noremap <leader>h <C-w>h
 noremap <leader>j <C-w>j
