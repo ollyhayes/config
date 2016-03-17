@@ -300,7 +300,7 @@ if !exists("*SetupExecuteWindow")
 		let cmd=get(filetype_to_command, &filetype, &filetype)
 
 		"execute "silent !chmod +x %:p"
-		execute "silent !" . cmd . " %:p 2>&1 > C:/users/dolivhay/vimfiles/output.txt"
+		execute "silent !" . cmd . " %:p > C:/users/dolivhay/vimfiles/output.txt 2>&1"
 
 		"these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
 		normal! Hmx``
