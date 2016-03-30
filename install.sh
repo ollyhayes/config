@@ -9,3 +9,9 @@ ln -s ~/tools/config/.jshintrc ~/.jshintrc
 ln -s ~/tools/config/.npmrc ~/.npmrc
 ln -s ~/tools/config/vimrc/_vimrc ~/.vimrc
 ln -s ~/tools/config/vimrc/_gvimrc-high-res ~/.gvimrc
+
+#Notes:
+#DPI on raspberrypi:
+# open /etc/lightdm/lightdm.conf and add a parameter under [SeatDefaults] section:
+# xserver-command=X -dpi 90
+# http://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi
