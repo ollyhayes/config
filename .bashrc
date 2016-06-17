@@ -2,6 +2,7 @@ alias bob="ssh olly.fr.to -p 39404"
 alias pi="ssh pi@192.168.1.2"
 alias switchCaps="setxkbmap -option caps:swapescape"
 alias pc-on="wol 40:8D:5C:4A:1C:B3"
+alias pc-vnc="vncviewer 192.168.0.4:5900"
 
 export EDITOR=vim
 source /usr/share/git/completion/git-prompt.sh
