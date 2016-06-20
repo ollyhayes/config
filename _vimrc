@@ -99,9 +99,8 @@ vnoremap // y/<C-R>"<CR>
 "map C-Backspace to delete previous word
 inoremap <C-BS> <C-W>
 "run macro
-nnoremap <S-Z> @a
-"copy inside of quotes
-nnoremap <S-X> "+yi"
+nnoremap <S-Z> @z
+nnoremap <S-X> @x
 "switch buffer
 noremap <C-Tab> :b#<CR>
 "bring up most recently used file in ctrl-p
