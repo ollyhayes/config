@@ -141,7 +141,7 @@ noremap <S-J> 4j
 "join line
 nnoremap <Backspace> J
 "join line for visual studio
-nnoremap gJ J
+nnoremap gj J
 "indent/outdent
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv 
