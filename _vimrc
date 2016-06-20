@@ -130,6 +130,9 @@ nnoremap <silent> <S-F5> :call ReverseRotateSyntax()<CR>
 "enable horizontal scrollbar
 nnoremap <F6> :set guioptions+=b<CR>
 
+"enable horizontal scrollbar
+nnoremap <F7> :LivedownToggle<CR>
+
 "home
 noremap <S-H> ^
 "end
