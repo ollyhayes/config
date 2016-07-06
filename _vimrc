@@ -8,12 +8,12 @@ endif
 filetype plugin indent on
 
 behave xterm
+colorscheme desert
 
 "inverted as vsvim errors on gui_running
 if !has("gui_running")
 	set mouse=
 else
-	:colorscheme desert
 	"remove highlight on escape (doesn't work in terminal)
 	nmap <Esc> :noh<CR>
 endif
