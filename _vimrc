@@ -59,15 +59,10 @@ set hlsearch
 set ignorecase smartcase
 
 let mapleader = " "
-"nmap <C-J> :%s/
-"cmap <C-Y> <C-R>
 
 set listchars=tab:>-
 nnoremap <leader>es :set list!<CR>
 
-" Put cursor at end of chunk after pasting
-noremap p gp
-noremap P gP
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
@@ -120,8 +115,6 @@ nnoremap <leader>ts "=strftime("%c")<CR>p
 "set directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 
-"show whitespace
-nnoremap <C-E> :%s/\t/--->/<CR>:%s/ /./<CR><C-O>
 "format json/xml
 nnoremap <F4> :%! formatter.bat<CR>
 "sytax xml (after pasting)
@@ -130,7 +123,7 @@ nnoremap <silent> <S-F5> :call ReverseRotateSyntax()<CR>
 "enable horizontal scrollbar
 nnoremap <F6> :set guioptions+=b<CR>
 
-"enable horizontal scrollbar
+"turn on livedown (markdown) server
 nnoremap <F7> :LivedownToggle<CR>
 
 "home
