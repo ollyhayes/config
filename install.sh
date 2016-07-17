@@ -8,7 +8,7 @@ ln -s ~/tools/config/.inputrc ~/.inputrc
 ln -s ~/tools/config/.jshintrc ~/.jshintrc
 ln -s ~/tools/config/.npmrc ~/.npmrc
 ln -s ~/tools/config/vimrc/_vimrc ~/.vimrc
-ln -s ~/tools/config/vimrc/_gvimrc-high-res ~/.gvimrc
+ln -s ~/tools/config/vimrc/_gvimrc ~/.gvimrc
 
 #Notes:
 #DPI on raspberrypi:
