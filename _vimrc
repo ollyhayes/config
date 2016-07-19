@@ -321,20 +321,45 @@ function! Html()
 endfunction
 command! Html call Html()
 
-"dvorak
-no - :
-no - :
-no d h
-no h j
-no t k
-no n l
-no D ^
-no H 4j
-no T 4k
-no N $
-no J D
-no j d
-no l n
-no L N
-no k t
-no K T
+let s:dvorak = 0
+
+function! ToggleDvorak()
+	if s:dvorak
+		let s:dvorak = 0
+		unmap -
+		unmap d
+		unmap h
+		unmap t
+		unmap n
+		unmap D
+		unmap H
+		unmap T
+		unmap N
+		unmap J
+		unmap j
+		unmap l
+		unmap L
+		unmap k
+		unmap K
+	else
+		let s:dvorak = 1
+		noremap - :
+		noremap d h
+		noremap h j
+		noremap t k
+		noremap n l
+		noremap D ^
+		noremap H 4j
+		noremap T 4k
+		noremap N $
+		noremap J D
+		noremap j d
+		noremap l n
+		noremap L N
+		noremap k t
+		noremap K T
+	endif
+endfunction
+
+call ToggleDvorak()
+nnoremap <leader>q :call ToggleDvorak()<CR>
