@@ -41,6 +41,16 @@ function! ReadVariable(file)
     return result
 endfunction
 
+
+let s:dvorakFile = expand("~/.vim-dvorak")
+
+if !filereadable(s:dvorakFile)
+	call writefile([0], s:dvorakFile)
+endif
+
+let g:dvorak = ReadVariable(s:dvorakFile)
+
+
 "set cursorline
 set number
 
@@ -182,14 +192,15 @@ set foldlevel=99 "open files unfolded by default
 set laststatus=2
 
 set statusline=
-set statusline +=%1*\ %n\%*				"buffer number
-set statusline +=%4*\ %<%F%*            "full path
-set statusline +=%2*%m%*                "modified flag
-set statusline +=%3*\ [%{&ff}]%*        "file format
-set statusline +=%1*%=%5l%*             "current line
-set statusline +=%2*/%L%*               "total lines
-set statusline +=%1*%4v\ %*             "virtual column number
-set statusline +=%2*U+%04B\ %*          "character under cursor
+set statusline +=%1*\ %n\%*								"buffer number
+set statusline +=%4*\ %<%F%*							"full path
+set statusline +=%2*%m%*								"modified flag
+set statusline +=%3*\ [%{&ff}]%*						"file format
+set statusline +=%1*\ [%{g:dvorak?'dvorak':'qwerty'}]%*	"dvorak/qwerty
+set statusline +=%1*%=%5l%*								"current line
+set statusline +=%2*/%L%*								"total lines
+set statusline +=%1*%4v\ %*								"virtual column number
+set statusline +=%2*U+%04B\ %*							"character under cursor
 
 let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
@@ -331,17 +342,9 @@ function! Html()
 endfunction
 command! Html call Html()
 
-let s:dvorakFile = expand("~/.vim-dvorak")
-
-if !filereadable(s:dvorakFile)
-	call writefile([0], s:dvorakFile)
-endif
-
-let s:dvorak = ReadVariable(s:dvorakFile)
-
 function! ToggleDvorak()
-	if s:dvorak
-		let s:dvorak = 0
+	if g:dvorak
+		let g:dvorak = 0
 		unmap -
 		unmap d
 		unmap h
@@ -358,7 +361,7 @@ function! ToggleDvorak()
 		unmap k
 		unmap K
 	else
-		let s:dvorak = 1
+		let g:dvorak = 1
 		noremap - :
 		noremap d h
 		noremap h j
@@ -376,12 +379,12 @@ function! ToggleDvorak()
 		noremap K T
 	endif
 
-	call SaveVariable(s:dvorak, s:dvorakFile)
+	call SaveVariable(g:dvorak, s:dvorakFile)
 endfunction
 
 nnoremap <leader>q :call ToggleDvorak()<CR>
 
-if s:dvorak
-	let s:dvorak = 0
+if g:dvorak
+	let g:dvorak = 0
 	call ToggleDvorak()
 endif
