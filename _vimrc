@@ -31,6 +31,26 @@ endif
 "set comments to visible colour on linux
 "hi comment ctermfg=cyan
 
+function! SaveVariable(var, file)
+    call writefile([string(a:var)], a:file)
+endfunction
+
+function! ReadVariable(file)
+    let recover = readfile(a:file)[0]
+    execute "let result = " . recover
+    return result
+endfunction
+
+
+let s:dvorakFile = expand("~/.vim-dvorak")
+
+if !filereadable(s:dvorakFile)
+	call writefile([0], s:dvorakFile)
+endif
+
+let g:dvorak = ReadVariable(s:dvorakFile)
+
+
 "set cursorline
 set number
 
@@ -172,14 +192,15 @@ set foldlevel=99 "open files unfolded by default
 set laststatus=2
 
 set statusline=
-set statusline +=%1*\ %n\%*				"buffer number
-set statusline +=%4*\ %<%F%*            "full path
-set statusline +=%2*%m%*                "modified flag
-set statusline +=%3*\ [%{&ff}]%*        "file format
-set statusline +=%1*%=%5l%*             "current line
-set statusline +=%2*/%L%*               "total lines
-set statusline +=%1*%4v\ %*             "virtual column number
-set statusline +=%2*U+%04B\ %*          "character under cursor
+set statusline +=%1*\ %n\%*								"buffer number
+set statusline +=%4*\ %<%F%*							"full path
+set statusline +=%2*%m%*								"modified flag
+set statusline +=%3*\ [%{&ff}]%*						"file format
+set statusline +=%1*\ [%{g:dvorak?'dvorak':'qwerty'}]%*	"dvorak/qwerty
+set statusline +=%1*%=%5l%*								"current line
+set statusline +=%2*/%L%*								"total lines
+set statusline +=%1*%4v\ %*								"virtual column number
+set statusline +=%2*U+%04B\ %*							"character under cursor
 
 let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
@@ -320,3 +341,50 @@ function! Html()
 	execute "normal! /insert-content-here/\<cr>viW"
 endfunction
 command! Html call Html()
+
+function! ToggleDvorak()
+	if g:dvorak
+		let g:dvorak = 0
+		unmap -
+		unmap d
+		unmap h
+		unmap t
+		unmap n
+		unmap D
+		unmap H
+		unmap T
+		unmap N
+		unmap J
+		unmap j
+		unmap l
+		unmap L
+		unmap k
+		unmap K
+	else
+		let g:dvorak = 1
+		noremap - :
+		noremap d h
+		noremap h j
+		noremap t k
+		noremap n l
+		noremap D ^
+		noremap H 4j
+		noremap T 4k
+		noremap N $
+		noremap J D
+		noremap j d
+		noremap l n
+		noremap L N
+		noremap k t
+		noremap K T
+	endif
+
+	call SaveVariable(g:dvorak, s:dvorakFile)
+endfunction
+
+nnoremap <leader>q :call ToggleDvorak()<CR>
+
+if g:dvorak
+	let g:dvorak = 0
+	call ToggleDvorak()
+endif
