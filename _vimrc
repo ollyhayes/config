@@ -31,6 +31,16 @@ endif
 "set comments to visible colour on linux
 "hi comment ctermfg=cyan
 
+function! SaveVariable(var, file)
+    call writefile([string(a:var)], a:file)
+endfunction
+
+function! ReadVariable(file)
+    let recover = readfile(a:file)[0]
+    execute "let result = " . recover
+    return result
+endfunction
+
 "set cursorline
 set number
 
@@ -321,7 +331,13 @@ function! Html()
 endfunction
 command! Html call Html()
 
-let s:dvorak = 0
+let s:dvorakFile = expand("~/.vim-dvorak")
+
+if !filereadable(s:dvorakFile)
+	call writefile([0], s:dvorakFile)
+endif
+
+let s:dvorak = ReadVariable(s:dvorakFile)
 
 function! ToggleDvorak()
 	if s:dvorak
@@ -359,7 +375,13 @@ function! ToggleDvorak()
 		noremap k t
 		noremap K T
 	endif
+
+	call SaveVariable(s:dvorak, s:dvorakFile)
 endfunction
 
-call ToggleDvorak()
 nnoremap <leader>q :call ToggleDvorak()<CR>
+
+if s:dvorak
+	let s:dvorak = 0
+	call ToggleDvorak()
+endif
