@@ -1,8 +1,12 @@
 :set encoding=utf-8
 
-runtime! autoload/pathogen.vim
-if exists("g:loaded_pathogen")
-    call pathogen#infect()
+if filereadable(expand('~/.vim/autoload/plug.vim'))
+	call plug#begin('~/.vim/plugged')
+	Plug 'kien/ctrlp.vim'
+	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-surround'
+	Plug 'scrooloose/syntastic'
+	call plug#end()
 endif
 
 filetype plugin indent on
@@ -40,7 +44,6 @@ function! ReadVariable(file)
     execute "let result = " . recover
     return result
 endfunction
-
 
 let s:dvorakFile = expand("~/.vim-dvorak")
 
