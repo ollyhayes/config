@@ -6,6 +6,12 @@ if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vi
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 	Plug 'scrooloose/syntastic'
+	Plug 'othree/html5.vim'
+	Plug 'leafgarland/typescript-vim.git'
+	Plug 'tpope/vim-commentary'
+	Plug 'elzr/vim-json'
+	Plug 'shime/vim-livedown'
+	Plug 'PProvost/vim-ps1'
 	call plug#end()
 
 	let g:plug_timeout = 300
