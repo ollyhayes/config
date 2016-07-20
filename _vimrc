@@ -1,12 +1,14 @@
 :set encoding=utf-8
 
-if filereadable(expand('~/.vim/autoload/plug.vim'))
+if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vimfiles/autoload/plug.vim')) 
 	call plug#begin('~/.vim/plugged')
 	Plug 'kien/ctrlp.vim'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
 	Plug 'scrooloose/syntastic'
 	call plug#end()
+
+	let g:plug_timeout = 300
 endif
 
 filetype plugin indent on
