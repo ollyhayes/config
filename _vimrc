@@ -45,13 +45,13 @@ function! ReadVariable(file)
     return result
 endfunction
 
-let s:dvorakFile = expand("~/.vim-dvorak")
+let s:colmakFile = expand("~/.vim-colmak")
 
-if !filereadable(s:dvorakFile)
-	call writefile([0], s:dvorakFile)
+if !filereadable(s:colmakFile)
+	call writefile([0], s:colmakFile)
 endif
 
-let g:dvorak = ReadVariable(s:dvorakFile)
+let g:colmak = ReadVariable(s:colmakFile)
 
 
 "set cursorline
@@ -103,7 +103,7 @@ cnoremap <S-Insert>		<C-R>+
 noremap <C-Q>		<C-V>
 " Also CTRL-B to do what CTRL-V used to do (for visual studio)
 noremap <C-B> <C-V>
-" minus to work as command (for dvorak)
+" minus to work as command (for colmak)
 nnoremap - :
 vnoremap - :
 "select all
@@ -199,7 +199,7 @@ set statusline +=%1*\ %n\%*								"buffer number
 set statusline +=%4*\ %<%F%*							"full path
 set statusline +=%2*%m%*								"modified flag
 set statusline +=%3*\ [%{&ff}]%*						"file format
-set statusline +=%1*\ [%{g:dvorak?'dvorak':'qwerty'}]%*	"dvorak/qwerty
+set statusline +=%1*\ [%{g:colmak?'colmak':'qwerty'}]%*	"colmak/qwerty
 set statusline +=%1*%=%5l%*								"current line
 set statusline +=%2*/%L%*								"total lines
 set statusline +=%1*%4v\ %*								"virtual column number
@@ -345,49 +345,43 @@ function! Html()
 endfunction
 command! Html call Html()
 
-function! ToggleDvorak()
-	if g:dvorak
-		let g:dvorak = 0
-		unmap -
-		unmap d
-		unmap h
-		unmap t
+function! ToggleColmak()
+	if g:colmak
+		let g:colmak = 0
 		unmap n
-		unmap D
-		unmap H
-		unmap T
 		unmap N
-		unmap J
-		unmap j
+		unmap e
+		unmap E
+		unmap i
+		unmap I
 		unmap l
 		unmap L
 		unmap k
 		unmap K
+		unmap j
+		unmap J
 	else
-		let g:dvorak = 1
-		noremap - :
-		noremap d h
-		noremap h j
-		noremap t k
-		noremap n l
-		noremap D ^
-		noremap H 4j
-		noremap T 4k
-		noremap N $
-		noremap J D
-		noremap j d
-		noremap l n
-		noremap L N
-		noremap k t
-		noremap K T
+		let g:colmak = 1
+		noremap n j
+		noremap N 4j
+		noremap e k
+		noremap E 4k
+		noremap i l
+		noremap I $
+		noremap l i
+		noremap L I
+		noremap k n
+		noremap K N
+		noremap j e
+		noremap J E
 	endif
 
-	call SaveVariable(g:dvorak, s:dvorakFile)
+	call SaveVariable(g:colmak, s:colmakFile)
 endfunction
 
-nnoremap <leader>q :call ToggleDvorak()<CR>
+nnoremap <leader>q :call ToggleColmak()<CR>
 
-if g:dvorak
-	let g:dvorak = 0
-	call ToggleDvorak()
+if g:colmak
+	let g:colmak = 0
+	call ToggleColmak()
 endif
