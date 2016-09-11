@@ -1,20 +1,22 @@
 :set encoding=utf-8
 
-if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vimfiles/autoload/plug.vim')) 
-	call plug#begin('~/.vim/plugged')
-	Plug 'kien/ctrlp.vim'
-	Plug 'tpope/vim-repeat'
-	Plug 'tpope/vim-surround'
-	Plug 'scrooloose/syntastic'
-	Plug 'othree/html5.vim'
-	Plug 'leafgarland/typescript-vim.git'
-	Plug 'tpope/vim-commentary'
-	Plug 'elzr/vim-json'
-	Plug 'shime/vim-livedown'
-	Plug 'PProvost/vim-ps1'
-	call plug#end()
+if has("gui_running")
+	if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vimfiles/autoload/plug.vim')) 
+		call plug#begin('~/.vim/plugged')
+		Plug 'kien/ctrlp.vim'
+		Plug 'tpope/vim-repeat'
+		Plug 'tpope/vim-surround'
+		Plug 'scrooloose/syntastic'
+		Plug 'othree/html5.vim'
+		Plug 'tpope/vim-commentary'
+		Plug 'elzr/vim-json'
+		Plug 'shime/vim-livedown'
+		Plug 'PProvost/vim-ps1'
+		Plug 'ternjs/tern_for_vim'
+		call plug#end()
 
-	let g:plug_timeout = 300
+		let g:plug_timeout = 300
+	endif
 endif
 
 filetype plugin indent on
