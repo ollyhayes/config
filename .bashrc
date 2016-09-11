@@ -5,7 +5,11 @@ alias pc-on="wol 40:8D:5C:4A:1C:B3"
 alias pc-vnc="vncviewer 192.168.0.4:5900"
 
 export EDITOR=vim
-source /usr/share/git/completion/git-prompt.sh
+
+if [ -f /usr/share/git/completion/git-prompt.sh ]
+	then
+	source /usr/share/git/completion/git-prompt.sh
+fi
 
 
 export PROMPT_COMMAND=__prompt_command
