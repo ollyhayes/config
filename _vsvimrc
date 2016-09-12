@@ -1,0 +1,14 @@
+noremap n j
+noremap N 4j
+noremap e k
+noremap E 4k
+noremap i l
+noremap I $
+noremap l i
+noremap L I
+noremap k n
+noremap K N
+noremap j e
+noremap J E
+
+source ~\tools\vimrc\_vimrc

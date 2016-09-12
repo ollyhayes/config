@@ -393,7 +393,3 @@ if g:colmak
 	let g:colmak = 0
 	call ToggleColmak()
 endif
-
-"horrible hack to make colmak switching work in VsVim
-nnoremap <leader>qc :noremap n j<CR>:noremap N 4j<CR>:noremap e k<CR>:noremap E 4k<CR>:noremap i l<CR>:noremap I $<CR>:noremap l i<CR>:noremap L I<CR>:noremap k n<CR>:noremap K N<CR>:noremap j e<CR>:noremap J E<CR>
-nnoremap <leader>qq :unmap n<CR>:unmap N<CR>:unmap e<CR>:unmap E<CR>:unmap i<CR>:unmap I<CR>:unmap l<CR>:unmap L<CR>:unmap k<CR>:unmap K<CR>:unmap j<CR>:unmap J<CR>
