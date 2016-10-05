@@ -327,11 +327,11 @@ if !exists("*SetupExecuteWindow")
 		let cmd=get(filetype_to_command, &filetype, &filetype)
 
 		"execute "silent !chmod +x %:p"
-		execute "silent !" . cmd . " %:p > C:/users/dolivhay/vimfiles/output.txt 2>&1"
+		execute "silent !" . cmd . " %:p > " . $HOME . "/.vim/output.txt 2>&1"
 
 		"these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
 		normal! Hmx``
-		execute "belowright pedit ~/vimfiles/output.txt"
+		execute "belowright pedit ~/.vim/output.txt"
 		normal! `xzt``
 	endfunction
 endif
