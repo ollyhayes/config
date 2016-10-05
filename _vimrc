@@ -12,7 +12,6 @@ if has("gui_running")
 		Plug 'elzr/vim-json'
 		Plug 'shime/vim-livedown'
 		Plug 'PProvost/vim-ps1'
-		Plug 'ternjs/tern_for_vim'
 		call plug#end()
 
 		let g:plug_timeout = 300
