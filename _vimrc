@@ -148,7 +148,7 @@ nnoremap <leader>ts "=strftime("%c")<CR>p
 nnoremap <leader>cd :cd %:p:h<CR>
 
 "format json/xml
-nnoremap <F4> :%! formatter.bat<CR>
+nnoremap <F4> :execute "%! ".$HOME."/tools/formatter/formatter/bin/debug/formatter.exe"<CR>
 "sytax xml (after pasting)
 nnoremap <silent> <F5> :call RotateSyntax()<CR>
 nnoremap <silent> <S-F5> :call ReverseRotateSyntax()<CR>
