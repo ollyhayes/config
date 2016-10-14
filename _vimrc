@@ -139,7 +139,7 @@ nnoremap <silent> <leader>b :call OpenBashRc()<CR>
 "do diff
 nnoremap <leader>d :windo diffthis<CR>
 "open split
-nnoremap <leader>n :vnew<CR>
+nnoremap <leader>o :vnew<CR>
 "open history of file
 nnoremap <leader>hi :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
 "paste timestamp
@@ -186,9 +186,9 @@ noremap <expr> ` printf("`%c zz",getchar())
 
 "Navigate around windows
 noremap <leader>h <C-w>h
-noremap <leader>j <C-w>j
-noremap <leader>k <C-w>k
-noremap <leader>l <C-w>l
+noremap <leader>n <C-w>j
+noremap <leader>e <C-w>k
+noremap <leader>i <C-w>l
 "Resize windows
 noremap <C-Left> 10<C-w><
 noremap <C-Down> 2<C-w>-
@@ -196,7 +196,6 @@ noremap <C-Up> 2<C-w>+
 noremap <C-Right> 10<C-w>>
 
 noremap <silent> <leader>g :call GitTag()<CR>A
-
 
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
