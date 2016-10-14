@@ -141,7 +141,7 @@ nnoremap <leader>d :windo diffthis<CR>
 "open split
 nnoremap <leader>o :vnew<CR>
 "open history of file
-nnoremap <leader>hi :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
+nnoremap <leader>hi :!"C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
 "paste timestamp
 nnoremap <leader>ts "=strftime("%c")<CR>p
 "set directory to current file
@@ -179,10 +179,6 @@ nnoremap <S-Tab> V<
 noremap <C-LeftMouse> <LeftMouse>viw
 "middle mouse - repeat last action
 noremap <MiddleMouse> <LeftMouse>.
-
-"move to mark in center of screen
-noremap <expr> ' printf("'%c zz",getchar())
-noremap <expr> ` printf("`%c zz",getchar())
 
 "Navigate around windows
 noremap <leader>h <C-w>h
