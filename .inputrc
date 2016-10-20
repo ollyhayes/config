@@ -2,5 +2,14 @@ set completion-ignore-case On
 set editing-mode vi
 
 set keymap vi-command
-"L": end-of-line
 "H": beginning-of-line
+"i": forward-char
+"I": end-of-line
+"l": vi-insertion-mode
+"L": vi-insert-beg
+"j": vi-end-word
+"J": vi-end-word
+"n": next-history
+"e": previous-history
+"k": vi-search-again
+"K": vi-search-again
