@@ -1,8 +1,9 @@
 {
   "undef": true,
   "unused": true,
-  "esnext": "es6",
+  "esversion": "6",
   "noyield": true,
+  "varstmt": true,
   "predef": [
 	"document",
 	"window",
