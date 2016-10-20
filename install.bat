@@ -4,5 +4,5 @@ mklink %USERPROFILE%\.node-inspectorrc %USERPROFILE%\tools\config\.node-inspecto
 mklink %USERPROFILE%\.inputrc %USERPROFILE%\tools\config\.inputrc
 mklink %USERPROFILE%\.jshintrc %USERPROFILE%\tools\config\.jshintrc
 mklink %USERPROFILE%\.npmrc %USERPROFILE%\tools\config\.npmrc
-mklink %USERPROFILE%\.vimrc %USERPROFILE%\tools\config\vimrc\_vimrc
-mklink %USERPROFILE%\.gvimrc %USERPROFILE%\tools\config\vimrc\_gvimrc
+mklink %USERPROFILE%\.vimrc %USERPROFILE%\tools\vimrc\_vimrc
+mklink %USERPROFILE%\.gvimrc %USERPROFILE%\tools\vimrc\_gvimrc
