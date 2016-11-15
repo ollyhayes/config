@@ -7,8 +7,8 @@ ln -s ~/tools/config/.node-inspectorrc ~/.node-inspectorrc
 ln -s ~/tools/config/.inputrc ~/.inputrc
 ln -s ~/tools/config/.jshintrc ~/.jshintrc
 ln -s ~/tools/config/.npmrc ~/.npmrc
-ln -s ~/tools/tools/vimrc/_vimrc ~/.vimrc
-ln -s ~/tools/tools/vimrc/_gvimrc ~/.gvimrc
+ln -s ~/tools/vimrc/_vimrc ~/.vimrc
+ln -s ~/tools/vimrc/_gvimrc ~/.gvimrc
 
 #Notes:
 #DPI on raspberrypi:
