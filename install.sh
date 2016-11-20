@@ -6,6 +6,7 @@ ln -s ~/tools/config/.gitconfig ~/.gitconfig
 ln -s ~/tools/config/.node-inspectorrc ~/.node-inspectorrc
 ln -s ~/tools/config/.inputrc ~/.inputrc
 ln -s ~/tools/config/.jshintrc ~/.jshintrc
+ln -s ~/tools/config/.eslintrc.js ~/.eslintrc.js
 ln -s ~/tools/config/.npmrc ~/.npmrc
 ln -s ~/tools/vimrc/_vimrc ~/.vimrc
 ln -s ~/tools/vimrc/_gvimrc ~/.gvimrc
