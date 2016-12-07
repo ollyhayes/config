@@ -13,6 +13,7 @@ fi
 
 
 export PROMPT_COMMAND=__prompt_command
+export PATH=~/.npm-global/bin:$PATH
 
 function __prompt_command() {
 	local EXIT="$?"
