@@ -112,8 +112,6 @@ inoremap <C-V>		<C-R>+
 inoremap <S-Insert>	<C-R>+
 cnoremap <C-V>		<C-R>+
 cnoremap <S-Insert>		<C-R>+
-" Use CTRL-Q to do what CTRL-V used to do
-noremap <C-Q>		<C-V>
 " Also CTRL-B to do what CTRL-V used to do (for visual studio)
 noremap <C-B> <C-V>
 " minus to work as command (for colmak)
