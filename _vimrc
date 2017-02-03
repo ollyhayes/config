@@ -13,6 +13,9 @@ if has("gui_running")
 		Plug 'shime/vim-livedown'
 		Plug 'PProvost/vim-ps1'
 		Plug 'pangloss/vim-javascript'
+		Plug 'leafgarland/typescript-vim'
+		Plug 'OrangeT/vim-csharp'
+		Plug 'groenewege/vim-less'
 		call plug#end()
 
 		let g:plug_timeout = 300
