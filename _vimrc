@@ -143,7 +143,7 @@ nnoremap <leader>d :windo diffthis<CR>
 "open split
 nnoremap <leader>o :vnew<CR>
 "open history of file
-nnoremap <leader>hi :!"C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
+nnoremap <leader>hi :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
 "paste timestamp
 nnoremap <leader>ts "=strftime("%c")<CR>p
 "set directory to current file
