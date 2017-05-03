@@ -3,7 +3,7 @@ mklink %USERPROFILE%\.gitconfig %USERPROFILE%\tools\config\.gitconfig
 mklink %USERPROFILE%\.node-inspectorrc %USERPROFILE%\tools\config\.node-inspectorrc 
 mklink %USERPROFILE%\.inputrc %USERPROFILE%\tools\config\.inputrc
 mklink %USERPROFILE%\.jshintrc %USERPROFILE%\tools\config\.jshintrc
-mklink %USERPROFILE%\.eshintrc.js %USERPROFILE%\tools\config\.eshintrc.js
+mklink %USERPROFILE%\.eslintrc.js %USERPROFILE%\tools\config\.eslintrc.js
 mklink %USERPROFILE%\.npmrc %USERPROFILE%\tools\config\.npmrc
 mklink %USERPROFILE%\.vimrc %USERPROFILE%\tools\vimrc\_vimrc
 mklink %USERPROFILE%\.gvimrc %USERPROFILE%\tools\vimrc\_gvimrc
