@@ -4,7 +4,7 @@
 	name = Olly Hayes
 	email = olly.hayes@gmail.com
 [push]
-	default = simple
+	default = current
 [pull]
 	rebase = true
 [color]
