@@ -13,8 +13,8 @@ if [ -f /usr/share/git/completion/git-prompt.sh ]
 fi
 
 
-export PROMPT_COMMAND=__prompt_command
 export PATH=~/.npm-global/bin:$PATH
+PROMPT_COMMAND=__prompt_command
 
 function __prompt_command() {
 	local EXIT="$?"
@@ -47,5 +47,5 @@ function __prompt_command() {
 	gitFormat=$cyan'$(__git_ps1 " (%s)")'
 	end="$blue]$endColour> $white"
 
-	export PS1="${hostAndWd}${gitFormat}${end}"
+	PS1="${hostAndWd}${gitFormat}${end}"
 }
