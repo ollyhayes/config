@@ -238,9 +238,9 @@ function! RotateSyntax()
 		set syntax=cs
 		echo "cs"
 	elseif &syntax == "cs"
-		set syntax=ts
-		echo "ts"
-	elseif &syntax == "ts"
+		set syntax=typescript
+		echo "typescript"
+	elseif &syntax == "typescript"
 		set syntax=javascript
 		echo "javascript"
 	elseif &syntax == "javascript"
@@ -265,12 +265,12 @@ function! ReverseRotateSyntax()
 	elseif &syntax == "cs"
 		set syntax=json
 		echo "json"
-	elseif &syntax == "ts"
+	elseif &syntax == "typescript"
 		set syntax=cs
 		echo "cs"
 	elseif &syntax == "javascript"
-		set syntax=ts
-		echo "ts"
+		set syntax=typescript
+		echo "typescript"
 	endif
 endfunction
 
