@@ -79,6 +79,7 @@ set completeopt=longest,menuone
 let g:ctrlp_custom_ignore = 'node_modules\|bundles'
 
 let g:vim_json_syntax_conceal = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
