@@ -12,7 +12,8 @@ module.exports = {
 		"sourceType": "module",
 		"ecmaFeatures": {
 			"jsx": true
-		}
+		},
+		"ecmaVersion": 8
 	},
 	"plugins": [
 		"react"
@@ -32,6 +33,7 @@ module.exports = {
 		],
 		"react/prop-types": [
 			"off"
-		]
+		],
+		"no-console": 0
 	}
 };
