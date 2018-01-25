@@ -1,4 +1,5 @@
 mklink %USERPROFILE%\.bashrc %USERPROFILE%\tools\config\.bashrc
+mklink %USERPROFILE%\.profile %USERPROFILE%\tools\config\.profile
 mklink %USERPROFILE%\.gitconfig %USERPROFILE%\tools\config\.gitconfig
 mklink %USERPROFILE%\.node-inspectorrc %USERPROFILE%\tools\config\.node-inspectorrc 
 mklink %USERPROFILE%\.inputrc %USERPROFILE%\tools\config\.inputrc

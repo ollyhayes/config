@@ -5,15 +5,11 @@ alias pc-on="wol 40:8D:5C:4A:1C:B3"
 alias pc-on2="wakeonlan 40:8D:5C:4A:1C:B3"
 alias pc-vnc="vncviewer 192.168.0.4:5900"
 
-export EDITOR=vim
-
 if [ -f /usr/share/git/completion/git-prompt.sh ]
 	then
 	source /usr/share/git/completion/git-prompt.sh
 fi
 
-
-export PATH=~/.npm-global/bin:$PATH
 PROMPT_COMMAND=__prompt_command
 
 function __prompt_command() {
