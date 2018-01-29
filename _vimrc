@@ -314,9 +314,9 @@ if !exists("*SetupExecuteWindow")
 		let filetype_to_command = {
 		\	'javascript': 'node',
 		\	'python': 'python',
-		\	'html': '"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"',
-		\	'sh': '"C:\Program Files\Git\bin\sh"',
-		\	'bash': '"C:\Program Files\Git\bin\sh"',
+		\	'html': 'chromium-browser',
+		\	'sh': 'bash',
+		\	'bash': 'bash',
 		\	'cs': '"C:\Program Files (x86)\MSBuild\14.0\Bin\csi.exe"'
 		\ }
 
@@ -327,13 +327,15 @@ if !exists("*SetupExecuteWindow")
 
 		let cmd=get(filetype_to_command, &filetype, &filetype)
 
-		"execute "silent !chmod +x %:p"
-		execute "silent !" . cmd . " %:p > " . $HOME . "/.vim/output.txt 2>&1"
+		execute "silent !chmod +x %:p"
+		execute "terminal " . cmd . " %:p"
 
+		"this is the old way, by running the compiler as a shell command instead of a terminal
+		"execute "silent !" . cmd . " %:p > " . $HOME . "/.vim/output.txt 2>&1"
 		"these wierd commands stop the original window from scrolling: http://stackoverflow.com/questions/3932810/vim-open-preview-window-without-moving-text-in-main-window/3933547#3933547
-		normal! Hmx``
-		execute "belowright pedit ~/.vim/output.txt"
-		normal! `xzt``
+		"normal! Hmx``
+		"xecute "belowright pedit ~/.vim/output.txt"
+		"ormal! `xzt``
 	endfunction
 endif
 
@@ -341,15 +343,14 @@ nnoremap <F8> :call SetupExecuteWindow()<CR>
 
 function! Curl()
 	execute "e ~/tools/vimrc/curl-template.sh"
-	execute "sav! ~/vimfiles/curl-temp.sh"
+	execute "sav! ~/.vim/curl-temp.sh"
 	execute "normal! /insert-url-here/\<cr>vi\""
 endfunction
 command! Curl call Curl()
 
 function! Html()
 	execute "e ~/tools/vimrc/html-template.html"
-	execute "sav! ~/vimfiles/html-temp.html"
-	/insert-content-here/
+	execute "sav! ~/.vim/html-temp.html"
 	execute "normal! /insert-content-here/\<cr>viW"
 endfunction
 command! Html call Html()
