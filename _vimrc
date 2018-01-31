@@ -6,7 +6,8 @@ if has("gui_running")
 		Plug 'kien/ctrlp.vim'
 		Plug 'tpope/vim-repeat'
 		Plug 'tpope/vim-surround'
-		Plug 'scrooloose/syntastic'
+		"Plug 'scrooloose/syntastic'
+		Plug 'w0rp/ale'
 		Plug 'othree/html5.vim'
 		Plug 'tpope/vim-commentary'
 		Plug 'elzr/vim-json'
@@ -328,6 +329,8 @@ if !exists("*SetupExecuteWindow")
 		let cmd=get(filetype_to_command, &filetype, &filetype)
 
 		execute "silent !chmod +x %:p"
+
+		execute "silent! bdelete! !" . cmd
 		execute "terminal " . cmd . " %:p"
 
 		"this is the old way, by running the compiler as a shell command instead of a terminal
