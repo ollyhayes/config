@@ -5,19 +5,12 @@ module.exports = {
 		"es6": true
 	},
 	"extends": [
-		"eslint:recommended",
-		"plugin:react/recommended"
+		"eslint:recommended"
 	],
 	"parserOptions": {
 		"sourceType": "module",
-		"ecmaFeatures": {
-			"jsx": true
-		},
 		"ecmaVersion": 8
 	},
-	"plugins": [
-		"react"
-	],
 	"rules": {
 		"indent": [
 			"error",
@@ -30,9 +23,6 @@ module.exports = {
 		"semi": [
 			"error",
 			"always"
-		],
-		"react/prop-types": [
-			"off"
 		],
 		"no-console": 0
 	}
