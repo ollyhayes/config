@@ -45,3 +45,12 @@ function __prompt_command() {
 
 	PS1="${hostAndWd}${gitFormat}${end}"
 }
+
+function tmux-dev()
+{
+	tmux new-session -d
+	tmux split-window -h npm run build-watch
+	tmux split-window -v npm run run
+	tmux select-pane -t 0
+	tmux attach-session
+}
