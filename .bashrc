@@ -62,3 +62,12 @@ function tmux-dev()
 	tmux select-pane -t 0
 	tmux attach-session
 }
+
+function tmux-reverse-ssh()
+{
+	tmux new-session -d
+	tmux split-window -h autossh -M 10900 -o "PubkeyAuthentication=yes" -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -R \*:9091:localhost:9091 ubuntu@olly.fr.to
+	tmux split-window -v autossh -M 10901 -o "PubkeyAuthentication=yes" -o "ServerAliveInterval 60" -o "ServerAliveCountMax 3" -R \*:8022:localhost:22 ubuntu@olly.fr.to
+	tmux select-pane -t 0
+	tmux attach-session
+}
