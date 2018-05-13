@@ -6,9 +6,17 @@ alias pc-on2="wakeonlan 40:8D:5C:4A:1C:B3"
 alias pc-vnc="vncviewer 192.168.0.4:5900"
 
 if [ -f /usr/share/git/completion/git-prompt.sh ]
-	then
+then
 	source /usr/share/git/completion/git-prompt.sh
 fi
+
+if ! __git_ps1
+then
+	# if we don't have git-prompt.sh just make up a blank function
+	function __git_ps1() {
+		echo
+	}
+fi 
 
 PROMPT_COMMAND=__prompt_command
 
