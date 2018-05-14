@@ -10,7 +10,7 @@ then
 	source /usr/share/git/completion/git-prompt.sh
 fi
 
-if ! __git_ps1
+if ! type __git_ps1 > /dev/null 2>&1
 then
 	# if we don't have git-prompt.sh just make up a blank function
 	function __git_ps1() {
