@@ -215,6 +215,11 @@ set statusline +=%2*/%L%*								"total lines
 set statusline +=%1*%4v\ %*								"virtual column number
 set statusline +=%2*U+%04B\ %*							"character under cursor
 
+hi User1 guifg=#eea040 guibg=#222222 ctermfg=4 ctermbg=0
+hi User2 guifg=#dd3333 guibg=#222222 ctermfg=2 ctermbg=0
+hi User3 guifg=#ff66ff guibg=#222222 ctermfg=3 ctermbg=0
+hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
+
 let javaScript_fold=1         " JavaScript
 let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
@@ -292,11 +297,6 @@ function! OpenBashRc()
 		edit ~/.bashrc
 	endif
 endfunction
-
-hi User1 guifg=#eea040 guibg=#222222 ctermfg=4 ctermbg=0
-hi User2 guifg=#dd3333 guibg=#222222 ctermfg=2 ctermbg=0
-hi User3 guifg=#ff66ff guibg=#222222 ctermfg=3 ctermbg=0
-hi User4 guifg=#a0ee40 guibg=#222222 ctermfg=5 ctermbg=0
 
 "function! RunNode()
 "	let stdin = join(getline(1, '$'), "\n")
