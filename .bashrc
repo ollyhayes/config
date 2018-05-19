@@ -71,3 +71,7 @@ function tmux-reverse-ssh()
 	tmux select-pane -t 0
 	tmux attach-session
 }
+
+#Install Ruby Gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
