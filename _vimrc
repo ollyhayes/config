@@ -84,6 +84,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
+set display+=lastline
 set diffexpr = ""
 set backspace=indent,eol,start
 set gdefault "global replace as default
