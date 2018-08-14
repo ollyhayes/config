@@ -150,7 +150,8 @@ nnoremap <leader>o :vnew<CR>
 "open history of file
 nnoremap <leader>hi :!start "C:\Program Files (x86)\GitExtensions\gitex.cmd" filehistory "%:p"<CR>
 "paste timestamp
-nnoremap <leader>ts "=strftime("%c")<CR>p
+"nnoremap <leader>ts "=strftime("%c")<CR>p
+nnoremap <leader>ts :r! date<CR>kdd
 "set directory to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 
