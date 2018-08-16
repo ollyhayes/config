@@ -8,3 +8,5 @@ mklink %USERPROFILE%\.eslintrc.js %USERPROFILE%\tools\config\.eslintrc.js
 mklink %USERPROFILE%\.npmrc %USERPROFILE%\tools\config\.npmrc
 mklink %USERPROFILE%\.vimrc %USERPROFILE%\tools\vimrc\_vimrc
 mklink %USERPROFILE%\.gvimrc %USERPROFILE%\tools\vimrc\_gvimrc
+mklink %USERPROFILE%\.vsvimrc %USERPROFILE%\tools\vimrc\_vsvimrc
+mklink %USERPROFILE%\.ideavimrc %USERPROFILE%\tools\vimrc\_vsvimrc
