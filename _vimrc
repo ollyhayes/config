@@ -314,18 +314,28 @@ if !exists("*SetupExecuteWindow")
 
 		execute "w"
 
-		let filetype_to_command = {
-		\	'javascript': 'node',
-		\	'python': 'python',
-		\	'html': 'chromium-browser',
-		\	'sh': 'bash',
-		\	'bash': 'bash',
-		\	'cs': '"C:\Program Files (x86)\MSBuild\14.0\Bin\csi.exe"'
-		\ }
-
 		if &filetype == 'vim'
 			source %:p
 			return
+		endif
+
+		if has("win32")
+			let filetype_to_command = {
+			\	'javascript': 'node',
+			\	'python': 'python',
+			\	'html': 'C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe',
+			\	'sh': 'bash',
+			\	'bash': 'bash',
+			\	'cs': '"C:\Program Files (x86)\MSBuild\14.0\Bin\csi.exe"'
+			\ }
+		else
+			let filetype_to_command = {
+			\	'javascript': 'node',
+			\	'python': 'python',
+			\	'html': 'chromium-browser',
+			\	'sh': 'bash',
+			\	'bash': 'bash',
+			\ }
 		endif
 
 		let cmd=get(filetype_to_command, &filetype, &filetype)
