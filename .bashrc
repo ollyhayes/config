@@ -78,7 +78,7 @@ function tmux-reverse-ssh()
 function diary()
 {
 	#vim scp://ubuntu@olly.fr.to//home/ubuntu/Documents/diary.txt
-	vim ~/Documents/diary.txt
+	vim -c ":set wrap" ~/Documents/diary.txt
 	scp ~/Documents/diary.txt ubuntu@olly.fr.to:~/Documents/diary/diary.txt
 	ssh ubuntu@olly.fr.to /home/ubuntu/Documents/diary/backup.sh
 }
