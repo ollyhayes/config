@@ -1,5 +1,14 @@
 :set encoding=utf-8
 
+function! InstallPlug()
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	silent !mkdir -p ~/vimfiles/autoload
+	silent !cp ~/.vim/autoload/plug.vim ~/vimfiles/autoload/plug.vim
+
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endfunction
+command! InstallPlug call InstallPlug()
+
 if has("gui_running")
 	if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vimfiles/autoload/plug.vim')) 
 		call plug#begin('~/.vim/plugged')
