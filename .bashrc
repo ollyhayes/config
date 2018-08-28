@@ -50,11 +50,18 @@ function __prompt_command() {
 		endColour=$red
 	fi
 
-	hostAndWd="$blue[$yellow\h$green \w"
-	gitFormat=$cyan'$(__git_ps1 " (%s)")'
-	end="$blue]$endColour> $white"
+	bracketColour="$blue"
+	computerColour="$yellow"
+	pwdColour="$green"
+	gitColour="$cyan"
+	pointerColour="$endColour"
+	defaultColour="$white"
 
-	PS1="${hostAndWd}${gitFormat}${end}"
+	hostAndWd="$bracketColour[$computerColour\h$pwdColour \w"
+	gitFormat=$gitColour'$(__git_ps1 " (%s)")'
+	end="$bracketColour]$pointerColour> $defaultColour"
+
+	PS1="$hostAndWd$gitFormat$end"
 }
 
 function tmux-dev()
