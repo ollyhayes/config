@@ -57,6 +57,21 @@ function __prompt_command() {
 	pointerColour="$endColour"
 	defaultColour="$white"
 
+	if [[ "$TERM" =~ 256color ]]
+	then
+		bracketColour="\[\033[48;5;0;38;5;27m"
+		computerColour="\[\033[48;5;0;38;5;208m"
+		pwdColour="\[\033[48;5;0;38;5;046m"
+		gitColour="\[\033[48;5;0;38;5;036m"
+		pointerColour="$endColour"
+		defaultColour="$white"
+		# \[ start thing
+		# \033 escape character (same as \e above?)
+		# 48;5;0 set background to 0 (default)
+		# 38;5;208 set foreground to 208 (orange)
+		# m end thing
+	fi
+
 	hostAndWd="$bracketColour[$computerColour\h$pwdColour \w"
 	gitFormat=$gitColour'$(__git_ps1 " (%s)")'
 	end="$bracketColour]$pointerColour> $defaultColour"
