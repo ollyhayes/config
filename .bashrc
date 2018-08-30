@@ -50,6 +50,7 @@ function __prompt_command() {
 	local purple='\[\e[1;35m\]' # Purple
 	local cyan='\[\e[1;36m\]' # Cyan
 	local white='\[\e[1;37m\]' # White
+	local nocolor="\[\033[0m\]" # blank
 
 	endColour=$white
 
@@ -62,7 +63,7 @@ function __prompt_command() {
 	pwdColour="$green"
 	gitColour="$cyan"
 	pointerColour="$endColour"
-	defaultColour="$white"
+	defaultColour="$nocolor"
 
 	if [[ "$TERM" =~ 256color ]]
 	then
@@ -71,7 +72,7 @@ function __prompt_command() {
 		pwdColour="\[\033[48;5;0;38;5;046m\]"
 		gitColour="\[\033[48;5;0;38;5;036m\]"
 		pointerColour="$endColour"
-		defaultColour="$white"
+		defaultColour="$nocolor"
 		# \[ start thing
 		# \033 escape character (same as \e above?)
 		# 48;5;0 set background to 0 (default)
