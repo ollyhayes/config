@@ -12,6 +12,7 @@ ln -s ~/tools/config/.inputrc ~/.inputrc
 ln -s ~/tools/config/.jshintrc ~/.jshintrc
 ln -s ~/tools/config/.eslintrc.js ~/.eslintrc.js
 ln -s ~/tools/config/.npmrc ~/.npmrc
+ln -s ~/tools/config/.tmux.conf ~/.tmux.conf
 ln -s ~/tools/vimrc/_vimrc ~/.vimrc
 ln -s ~/tools/vimrc/_gvimrc ~/.gvimrc
 
