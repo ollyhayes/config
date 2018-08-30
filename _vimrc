@@ -39,13 +39,13 @@ filetype plugin indent on
 behave xterm
 colorscheme desert
 
-"inverted as vsvim errors on gui_running
-if !has("gui_running")
-	set mouse=
-else
+if has("gui_running")
 	"remove highlight on escape (doesn't work in terminal)
 	nmap <Esc> :noh<CR>
 endif
+
+set ttymouse=sgr
+set mouse=a
 
 if !exists("syntax_on")
 	syntax on
