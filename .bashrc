@@ -13,6 +13,13 @@ then
 	source /usr/share/git/completion/git-prompt.sh
 fi
 
+# this is used for setting EMAIL for git, so I can switch it and have a different email at work
+if ! [ -f ~/tools/config/.host-specific.sh ]
+then
+	echo "export EMAIL=olly.hayes@gmail.com" > ~/tools/config/.host-specific.sh
+fi
+source ~/tools/config/.host-specific.sh
+
 if ! type __git_ps1 > /dev/null 2>&1
 then
 	# if we don't have git-prompt.sh just make up a blank function
