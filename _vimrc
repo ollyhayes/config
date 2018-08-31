@@ -28,6 +28,7 @@ if has("gui_running")
 		Plug 'groenewege/vim-less'
 		Plug 'digitaltoad/vim-pug'
 		Plug 'mxw/vim-jsx'
+		Plug 'valloric/youcompleteme'
 		call plug#end()
 
 		let g:plug_timeout = 300
@@ -87,6 +88,10 @@ set completeopt=longest,menuone
 "let g:ctrlp_custom_ignore = 'v[/].(git|hg|svn)$'
 "let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co | grep -E "\.(cs|ts|less|config|cshtml)$"']
 let g:ctrlp_custom_ignore = 'node_modules\|bundles\|_site'
+
+"Had to turn off ale for typescrypt because ycm was doing it also and they conflicted.
+"Will leave it on for now but might need to investigate
+let g:ale_linters = {'typescript': []}
 
 let g:vim_json_syntax_conceal = 0
 let g:syntastic_javascript_checkers = ['eslint']
