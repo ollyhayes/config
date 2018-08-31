@@ -94,7 +94,11 @@ let g:ctrlp_custom_ignore = 'node_modules\|bundles\|_site'
 let g:ale_linters = {'typescript': []}
 
 let g:vim_json_syntax_conceal = 0
-let g:syntastic_javascript_checkers = ['eslint']
+
+let g:netrw_banner = 0
+let g:netrw_browse_split = 2
+let g:netrw_winsize=15
+let g:netrw_liststyle=3
 
 set nowrap
 set linebreak "if we do wrap, wrap on words not characters
