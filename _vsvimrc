@@ -1,3 +1,5 @@
+source ~\tools\vimrc\_vimrc
+
 noremap n j
 noremap N 4j
 noremap e k
@@ -11,4 +13,4 @@ noremap K N
 noremap j e
 noremap J E
 
-source ~\tools\vimrc\_vimrc
+nnoremap <leader>hi :action Tool_External Tools_Git History<CR>
