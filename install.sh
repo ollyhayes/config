@@ -15,6 +15,7 @@ ln -s ~/tools/config/.npmrc ~/.npmrc
 ln -s ~/tools/config/.tmux.conf ~/.tmux.conf
 ln -s ~/tools/vimrc/_vimrc ~/.vimrc
 ln -s ~/tools/vimrc/_gvimrc ~/.gvimrc
+ln -s ~/tools/vimrc/_vsvimrc ~/.ideavimrc
 
 #Notes:
 #DPI on raspberrypi:
