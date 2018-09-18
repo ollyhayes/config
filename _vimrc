@@ -29,6 +29,7 @@ if has("gui_running")
 		Plug 'digitaltoad/vim-pug'
 		Plug 'mxw/vim-jsx'
 		Plug 'valloric/youcompleteme'
+		Plug 'tomasr/molokai'
 		call plug#end()
 
 		let g:plug_timeout = 300
@@ -38,11 +39,18 @@ endif
 filetype plugin indent on
 
 behave xterm
-colorscheme desert
 
 if has("gui_running")
 	"remove highlight on escape (doesn't work in terminal)
 	nmap <Esc> :noh<CR>
+	colorscheme desert
+else
+	if filereadable(expand('~/.vim/colors/molokai.vim')) || filereadable(expand('~/vimfiles/colors/molokai.vim')) 
+		let g:molokai_original = 1
+		colorscheme molokai
+	else
+		colorscheme desert
+	endif
 endif
 
 set ttymouse=sgr
