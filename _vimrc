@@ -62,7 +62,7 @@ if has("gui_running")
 	hi User4 guifg=#a0ee40 guibg=#222222
 	hi User5 guifg=#eea040 guibg=#222222
 else
-	if filereadable(expand('~/.vim/colors/molokai.vim')) || filereadable(expand('~/vimfiles/colors/molokai.vim')) 
+	if (filereadable(expand('~/.vim/colors/molokai.vim')) || filereadable(expand('~/vimfiles/colors/molokai.vim'))) && &t_Co > 255
 		let g:molokai_original = 1
 		colorscheme molokai
 
