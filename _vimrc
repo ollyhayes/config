@@ -9,31 +9,29 @@ function! InstallPlug()
 endfunction
 command! InstallPlug call InstallPlug()
 
-if has("gui_running")
-	if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vimfiles/autoload/plug.vim')) 
-		call plug#begin('~/.vim/plugged')
-		Plug 'kien/ctrlp.vim'
-		Plug 'tpope/vim-repeat'
-		Plug 'tpope/vim-surround'
-		"Plug 'scrooloose/syntastic'
-		Plug 'w0rp/ale'
-		Plug 'othree/html5.vim'
-		Plug 'tpope/vim-commentary'
-		Plug 'elzr/vim-json'
-		Plug 'shime/vim-livedown'
-		Plug 'PProvost/vim-ps1'
-		Plug 'pangloss/vim-javascript'
-		Plug 'leafgarland/typescript-vim'
-		Plug 'OrangeT/vim-csharp'
-		Plug 'groenewege/vim-less'
-		Plug 'digitaltoad/vim-pug'
-		Plug 'mxw/vim-jsx'
-		Plug 'valloric/youcompleteme'
-		Plug 'tomasr/molokai'
-		call plug#end()
+if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vimfiles/autoload/plug.vim')) 
+	call plug#begin('~/.vim/plugged')
+	Plug 'kien/ctrlp.vim'
+	Plug 'tpope/vim-repeat'
+	Plug 'tpope/vim-surround'
+	"Plug 'scrooloose/syntastic'
+	Plug 'w0rp/ale'
+	Plug 'othree/html5.vim'
+	Plug 'tpope/vim-commentary'
+	Plug 'elzr/vim-json'
+	Plug 'shime/vim-livedown'
+	Plug 'PProvost/vim-ps1'
+	Plug 'pangloss/vim-javascript'
+	Plug 'leafgarland/typescript-vim'
+	Plug 'OrangeT/vim-csharp'
+	Plug 'groenewege/vim-less'
+	Plug 'digitaltoad/vim-pug'
+	Plug 'mxw/vim-jsx'
+	"Plug 'valloric/youcompleteme'
+	Plug 'tomasr/molokai'
+	call plug#end()
 
-		let g:plug_timeout = 300
-	endif
+	let g:plug_timeout = 300
 endif
 
 filetype plugin indent on
