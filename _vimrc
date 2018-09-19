@@ -67,8 +67,14 @@ else
 		hi User1 ctermfg=118 ctermbg=234
 		hi User2 ctermfg=135 ctermbg=234
 		hi User3 ctermfg=81 ctermbg=234
-		hi User4 ctermfg=161 ctermbg=234 cterm=bold
+		hi User4 ctermfg=161 ctermbg=234 
 		hi User5 ctermfg=208 ctermbg=234
+
+		if has("win32") " wsl terminal on windows doesn't support bold
+			hi User4 ctermfg=161 ctermbg=234 
+		else
+			hi User4 ctermfg=161 ctermbg=234 cterm=bold
+		endif
 	else
 		colorscheme desert
 
