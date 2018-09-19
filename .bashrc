@@ -7,6 +7,7 @@ alias pc-vnc="vncviewer 192.168.0.4:5900"
 alias mon-lsof="lsof -i TCP -P" # -P numeric port
 alias mon-nstat="netstat -atnp" # -t TCP, -n numeric port, -p process names
 alias win="cd /mnt/c/Users/ohayes"
+export win="/mnt/c/Users/ohayes"
 
 if [ -f /usr/share/git/completion/git-prompt.sh ]
 then
