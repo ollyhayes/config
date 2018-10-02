@@ -81,7 +81,19 @@ function __prompt_command() {
 		# m end thing
 	fi
 
-	hostAndWd="$bracketColour[$computerColour\h$pwdColour \w"
+	currentDirectory=$(pwd)
+	currentDirectoryLength=${#currentDirectory}
+
+	currentTerminalWidth=$(tput cols)
+
+	if [ $currentDirectoryLength -lt $((currentTerminalWidth * 4 / 10)) ]
+	then
+		directoryPart="\w"
+	else
+		directoryPart="../"$(basename $currentDirectory)
+	fi
+
+	hostAndWd="$bracketColour[$computerColour\h$pwdColour $directoryPart"
 	gitFormat=$gitColour'$(__git_ps1 " (%s)")'
 	end="$bracketColour]$pointerColour> $defaultColour"
 
