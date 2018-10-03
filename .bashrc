@@ -90,7 +90,7 @@ function __prompt_command() {
 	then
 		directoryPart="\w"
 	else
-		directoryPart="../"$(basename $currentDirectory)
+		directoryPart="…/"$(basename $currentDirectory)
 	fi
 
 	hostAndWd="$bracketColour[$computerColour\h$pwdColour $directoryPart"
