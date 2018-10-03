@@ -84,17 +84,28 @@ function __prompt_command() {
 	currentDirectory=$(pwd)
 	currentDirectoryLength=${#currentDirectory}
 
-	currentTerminalWidth=$(tput cols)
+	gitPrompt=$(__git_ps1 "%s")
+	gitPromptLength=${#gitPrompt}
 
-	if [ $currentDirectoryLength -lt $((currentTerminalWidth * 4 / 10)) ]
+	currentTerminalWidth=$(tput cols)
+	promptPartLimit=$((currentTerminalWidth * 4 / 10))
+
+	if [ $currentDirectoryLength -lt $promptPartLimit ]
 	then
 		directoryPart="\w"
 	else
 		directoryPart="…/"$(basename $currentDirectory)
 	fi
 
+	if [ $gitPromptLength -lt $promptPartLimit ]
+	then
+		gitPart=$gitPrompt
+	else
+		gitPart=${gitPrompt/*\//…\/} # replace generator/branch with …/branch
+	fi
+
 	hostAndWd="$bracketColour[$computerColour\h$pwdColour $directoryPart"
-	gitFormat=$gitColour'$(__git_ps1 " (%s)")'
+	gitFormat=$gitColour" $gitPart"
 	end="$bracketColour]$pointerColour> $defaultColour"
 
 	PS1="$hostAndWd$gitFormat$end"
