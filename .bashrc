@@ -88,19 +88,14 @@ function __prompt_command() {
 	gitPromptLength=${#gitPrompt}
 
 	currentTerminalWidth=$(tput cols)
-	promptPartLimit=$((currentTerminalWidth * 4 / 10))
+	promptPartLimit=$((currentTerminalWidth * 6 / 10))
 
-	if [ $currentDirectoryLength -lt $promptPartLimit ]
+	if [ $((currentDirectoryLength + gitPromptLength)) -lt $promptPartLimit ]
 	then
 		directoryPart="\w"
-	else
-		directoryPart="…/"$(basename $currentDirectory)
-	fi
-
-	if [ $gitPromptLength -lt $promptPartLimit ]
-	then
 		gitPart=$gitPrompt
 	else
+		directoryPart="…/"$(basename $currentDirectory)
 		gitPart=${gitPrompt/*\//…\/} # replace generator/branch with …/branch
 	fi
 
