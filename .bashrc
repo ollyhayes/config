@@ -99,6 +99,8 @@ function __prompt_command() {
 		gitPart=${gitPrompt/*\//…\/} # replace generator/branch with …/branch
 	fi
 
+	#checksum for prompt colouring: $(("$(cksum <<< "test" | cut -f 1 -d ' ')" % 256))
+
 	hostAndWd="$bracketColour[$computerColour\h$pwdColour $directoryPart"
 	gitFormat=$gitColour" $gitPart"
 	end="$bracketColour]$pointerColour> $defaultColour"
