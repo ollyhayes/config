@@ -17,7 +17,8 @@ fi
 # this is used for setting EMAIL for git, so I can switch it and have a different email at work
 if ! [ -f ~/tools/config/.host-specific.sh ]
 then
-	echo "export EMAIL=olly.hayes@gmail.com" > ~/tools/config/.host-specific.sh
+	echo "export EMAIL=olly.hayes@gmail.com" >> ~/tools/config/.host-specific.sh
+	echo "export HOST_COLOUR=$(($(cat /etc/hostname | cksum | cut -f 1 -d " ") % 256))" >> ~/tools/config/.host-specific.sh
 fi
 source ~/tools/config/.host-specific.sh
 
@@ -69,8 +70,8 @@ function __prompt_command() {
 	if [[ "$TERM" =~ 256color ]]
 	then
 		bracketColour="\[\033[48;5;0;38;5;027m\]"
-		computerColour="\[\033[48;5;0;38;5;208m\]"
-		pwdColour="\[\033[48;5;0;38;5;046m\]"
+		computerColour="\[\033[48;5;0;38;5;""$HOST_COLOUR""m\]"
+		pwdColour="\[\033[48;5;0;38;5;202m\]" # used to be green 046
 		gitColour="\[\033[48;5;0;38;5;036m\]"
 		pointerColour="$endColour"
 		defaultColour="$nocolor"
