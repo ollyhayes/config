@@ -84,7 +84,7 @@ function __prompt_command() {
 	currentDirectory=$(pwd)
 	currentDirectoryLength=${#currentDirectory}
 
-	gitPrompt=$(__git_ps1 "%s")
+	gitPrompt=$(__git_ps1 " %s")
 	gitPromptLength=${#gitPrompt}
 
 	currentTerminalWidth=$(tput cols)
@@ -102,7 +102,7 @@ function __prompt_command() {
 	#checksum for prompt colouring: $(("$(cksum <<< "test" | cut -f 1 -d ' ')" % 256))
 
 	hostAndWd="$bracketColour[$computerColour\h$pwdColour $directoryPart"
-	gitFormat=$gitColour" $gitPart"
+	gitFormat=$gitColour"$gitPart"
 	end="$bracketColour]$pointerColour> $defaultColour"
 
 	PS1="$hostAndWd$gitFormat$end"
