@@ -60,7 +60,6 @@ function __prompt_command() {
 		endColour=$red
 	fi
 
-	bracketColour="$blue"
 	computerColour="$yellow"
 	pwdColour="$green"
 	gitColour="$cyan"
@@ -69,7 +68,6 @@ function __prompt_command() {
 
 	if [[ "$TERM" =~ 256color ]]
 	then
-		bracketColour="\[\033[48;5;0;38;5;027m\]"
 		computerColour="\[\033[48;5;0;38;5;""$HOST_COLOUR""m\]"
 		pwdColour="\[\033[48;5;0;38;5;202m\]" # used to be green 046
 		gitColour="\[\033[48;5;0;38;5;036m\]"
@@ -102,9 +100,9 @@ function __prompt_command() {
 
 	#checksum for prompt colouring: $(("$(cksum <<< "test" | cut -f 1 -d ' ')" % 256))
 
-	hostAndWd="$bracketColour[$computerColour\h$pwdColour $directoryPart"
+	hostAndWd="$computerColour\h$pwdColour $directoryPart"
 	gitFormat=$gitColour"$gitPart"
-	end="$bracketColour]$pointerColour> $defaultColour"
+	end="$pointerColour> $defaultColour"
 
 	PS1="$hostAndWd$gitFormat$end"
 }
