@@ -15,11 +15,23 @@ then
 	source /usr/share/git/completion/git-prompt.sh
 fi
 
+function getHostColour()
+{
+	HOST_COLOUR=$(($(echo $1 | cksum | cut -f 1 -d " ") % 256))
+
+	if [ $HOST_COLOUR -eq 0 ] || [ $HOST_COLOUR -ge 16 ] && [ $HOST_COLOUR -le 19 ] || [ $HOST_COLOUR -ge 232 ] && [ $HOST_COLOUR -le 236 ]
+	then
+		getHostColour $1"+" # add a plus to retry until we get a valid colour
+	fi
+}
+
 # this is used for setting EMAIL for git, so I can switch it and have a different email at work
 if ! [ -f ~/tools/config/.host-specific.sh ]
 then
 	echo "export EMAIL=olly.hayes@gmail.com" >> ~/tools/config/.host-specific.sh
-	echo "export HOST_COLOUR=$(($(cat /etc/hostname | cksum | cut -f 1 -d " ") % 256))" >> ~/tools/config/.host-specific.sh
+
+	getHostColour $(cat /etc/hostname)
+	echo "export HOST_COLOUR=$HOST_COLOUR" >> ~/tools/config/.host-specific.sh
 fi
 source ~/tools/config/.host-specific.sh
 
