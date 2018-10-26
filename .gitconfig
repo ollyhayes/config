@@ -18,3 +18,4 @@
 	l = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph -n 10
 	lg = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph
 	ls = !git status && git l
+	br = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
