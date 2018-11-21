@@ -162,6 +162,7 @@ let mapleader = " "
 
 set listchars=tab:>-
 nnoremap <leader>es :set list!<CR>
+nnoremap <leader>no :noh<CR>
 
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
