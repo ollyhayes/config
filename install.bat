@@ -5,6 +5,7 @@ mklink %USERPROFILE%\.node-inspectorrc %USERPROFILE%\tools\config\.node-inspecto
 mklink %USERPROFILE%\.inputrc %USERPROFILE%\tools\config\.inputrc
 mklink %USERPROFILE%\.jshintrc %USERPROFILE%\tools\config\.jshintrc
 mklink %USERPROFILE%\.eslintrc.js %USERPROFILE%\tools\config\.eslintrc.js
+mklink %USERPROFILE%\.tmux.conf %USERPROFILE%\tools\config\.tmux.conf
 mklink %USERPROFILE%\.npmrc %USERPROFILE%\tools\config\.npmrc
 mklink %USERPROFILE%\.vimrc %USERPROFILE%\tools\vimrc\_vimrc
 mklink %USERPROFILE%\.gvimrc %USERPROFILE%\tools\vimrc\_gvimrc
