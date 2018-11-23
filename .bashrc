@@ -10,11 +10,6 @@ alias mon-nstat="netstat -atnp" # -t TCP, -n numeric port, -p process names
 alias win="cd /mnt/c/Users/ohayes"
 export win="/mnt/c/Users/ohayes"
 
-if [ -f /usr/share/git/completion/git-prompt.sh ]
-then
-	source /usr/share/git/completion/git-prompt.sh
-fi
-
 function getHostColour()
 {
 	HOST_COLOUR=$(($(echo $1 | cksum | cut -f 1 -d " ") % 256))
@@ -37,10 +32,11 @@ source ~/tools/config/.host-specific.sh
 
 if ! type __git_ps1 > /dev/null 2>&1
 then
-	# if we don't have git-prompt.sh just make up a blank function
-	function __git_ps1() {
-		echo
-	}
+#	# if we don't have git-prompt.sh just make up a blank function
+#	function __git_ps1() {
+#		echo
+#	}
+	source ~/tools/config/snippets/git-prompt.sh
 fi 
 
 PROMPT_COMMAND=__prompt_command
