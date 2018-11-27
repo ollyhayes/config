@@ -34,8 +34,12 @@ rsync  -avslh $DRYRUN $DELETE /mnt/data/root/media/Music /mnt/backup-drive/root/
 echo "Backing up gopro videos..."
 rsync  -avslh $DRYRUN $DELETE /mnt/data/root/media/GoPro /mnt/backup-drive/root/media
 
+echo "Printing drive stats..."
+df -h | grep -E "(Filesystem|/mnt/backup-drive/)"
+
 echo "Unmounting drive"
 umount /mnt/backup-drive
+
 echo "Done!"
 
 date 
