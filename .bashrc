@@ -8,6 +8,7 @@ alias pc-vnc="vncviewer 192.168.0.4:5900"
 alias mon-lsof="lsof -i TCP -P" # -P numeric port
 alias mon-nstat="netstat -atnp" # -t TCP, -n numeric port, -p process names
 alias win="cd /mnt/c/Users/ohayes"
+alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
 export win="/mnt/c/Users/ohayes"
 
 function getHostColour()
