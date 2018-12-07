@@ -18,6 +18,7 @@
 	l = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph -n 10
 	lg = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph
 	ls = !git status && git l
-	br = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
+	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --count=15
+	bra = for-each-ref --sort=-committerdate refs/heads/ --format='%(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)'
 [http]
 	#proxy = http://localhost:8888
