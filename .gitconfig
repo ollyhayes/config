@@ -18,9 +18,9 @@
 	l = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph -n 10
 	lg = log --pretty=format:'%Cred%h %Cgreen%an %Creset%s %Cblue%ar' --graph
 	ls = !git status && git l
-	b = for-each-ref --sort=-committerdate refs/heads/ --format='%(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --count=15
-	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)'
-	ba = for-each-ref --sort=-committerdate refs/heads/ refs/remotes/origin --format='%(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --count=15
-	bra = for-each-ref --sort=-committerdate refs/heads/ refs/remotes/origin --format='%(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)'
+	br = !git for-each-ref --sort=-committerdate refs/heads/ --format='   %(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --color --count=15 | sed '/Olly Hayes/ s/^   /-->/'
+	bra = !git for-each-ref --sort=-committerdate refs/heads/ --format='   %(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --color | sed '/Olly Hayes/ s/^   /-->/'
+	brr = !git for-each-ref --sort=-committerdate refs/remotes/origin  --format='   %(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --color --count=15 | sed '/Olly Hayes/ s/^   /-->/'
+	brar = !git for-each-ref --sort=-committerdate refs/remotes/origin  --format='   %(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --color | sed '/Olly Hayes/ s/^   /-->/'
 [http]
 	#proxy = http://localhost:8888
