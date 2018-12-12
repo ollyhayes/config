@@ -1,0 +1,18 @@
+source ~\tools\vimrc\_vimrc
+
+noremap n j
+noremap N 4j
+noremap e k
+noremap E 4k
+noremap i l
+noremap I $
+noremap l i
+noremap L I
+noremap k n
+noremap K N
+noremap j e
+noremap J E
+"noremap <S-H> ^ " not sure which of these two fixed intelliJ on linux
+noremap H ^
+
+nnoremap <leader>hi :action Tool_External Tools_Git History<CR>

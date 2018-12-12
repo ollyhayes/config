@@ -1,0 +1,7 @@
+set guioptions=r
+
+if has ("win32")
+	set guifont=Consolas
+	set columns=160
+	set lines=50
+endif
