@@ -13,9 +13,9 @@ ln -s ~/tools/config/.jshintrc ~/.jshintrc
 ln -s ~/tools/config/.eslintrc.js ~/.eslintrc.js
 ln -s ~/tools/config/.npmrc ~/.npmrc
 ln -s ~/tools/config/.tmux.conf ~/.tmux.conf
-ln -s ~/tools/vimrc/_vimrc ~/.vimrc
-ln -s ~/tools/vimrc/_gvimrc ~/.gvimrc
-ln -s ~/tools/vimrc/_vsvimrc ~/.ideavimrc
+ln -s ~/tools/config/_vimrc ~/.vimrc
+ln -s ~/tools/config/_gvimrc ~/.gvimrc
+ln -s ~/tools/config/_vsvimrc ~/.ideavimrc
 
 #Notes:
 #DPI on raspberrypi:
