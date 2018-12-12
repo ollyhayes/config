@@ -9,10 +9,11 @@ alias mon-lsof="lsof -i TCP -P" # -P numeric port
 alias mon-nstat="netstat -atnp" # -t TCP, -n numeric port, -p process names
 alias win="cd /mnt/c/Users/ohayes"
 export win="/mnt/c/Users/ohayes"
+alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
 
-if [ -f /usr/share/git/completion/git-prompt.sh ]
+if [ $(uname -s) == 'MINGW64_NT-6.1' ]
 then
-	source /usr/share/git/completion/git-prompt.sh
+	alias gitk="gitk &"
 fi
 
 function getHostColour()
@@ -37,10 +38,11 @@ source ~/tools/config/.host-specific.sh
 
 if ! type __git_ps1 > /dev/null 2>&1
 then
-	# if we don't have git-prompt.sh just make up a blank function
-	function __git_ps1() {
-		echo
-	}
+#	# if we don't have git-prompt.sh just make up a blank function
+#	function __git_ps1() {
+#		echo
+#	}
+	source ~/tools/config/snippets/git-prompt.sh
 fi 
 
 PROMPT_COMMAND=__prompt_command
