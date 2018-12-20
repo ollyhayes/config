@@ -11,11 +11,6 @@ alias win="cd /mnt/c/Users/ohayes"
 export win="/mnt/c/Users/ohayes"
 alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
 
-if [ $(uname -s) == 'MINGW64_NT-6.1' ]
-then
-	alias gitk="gitk &"
-fi
-
 function getHostColour()
 {
 	HOST_COLOUR=$(($(echo $1 | cksum | cut -f 1 -d " ") % 256))
