@@ -1,0 +1,139 @@
+{
+  "workbench.editor.enablePreview": false,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.parameterHints": false,
+  "vim.easymotion": false,
+  "vim.sneak": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": false,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+  ],
+  "vim.visualModeKeyBindings": [
+	{
+		"before": ["n"],
+		"after": ["j"]
+	},
+	{
+		"before": ["N"],
+		"after": ["4", "j"]
+	},
+    {
+      "before": ["e"],
+      "after": ["k"]
+    },
+	{
+		"before": ["E"],
+		"after": ["4", "k"]
+	},
+    {
+      "before": ["i"],
+      "after": ["l"]
+    },
+    {
+      "before": ["I"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["l"],
+      "after": ["i"]
+    },
+    {
+      "before": ["L"],
+      "after": ["I"]
+    },
+    {
+      "before": ["k"],
+      "after": ["n"]
+    },
+    {
+      "before": ["K"],
+      "after": ["N"]
+    },
+    {
+      "before": ["j"],
+      "after": ["e"]
+    },
+    {
+      "before": ["J"],
+      "after": ["E"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+	  {
+		  "before": ["n"],
+		  "after": ["j"]
+	  },
+	  {
+		  "before": ["N"],
+		  "after": ["4", "j"]
+	  },
+    {
+      "before": ["e"],
+      "after": ["k"]
+    },
+	  {
+		  "before": ["E"],
+		  "after": ["4", "k"]
+	  },
+    {
+      "before": ["i"],
+      "after": ["l"]
+    },
+    {
+      "before": ["I"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["l"],
+      "after": ["i"]
+    },
+    {
+      "before": ["L"],
+      "after": ["I"]
+    },
+    {
+      "before": ["k"],
+      "after": ["n"]
+    },
+    {
+      "before": ["K"],
+      "after": ["N"]
+    },
+    {
+      "before": ["j"],
+      "after": ["e"]
+    },
+    {
+      "before": ["J"],
+      "after": ["E"]
+    },
+    {
+      "before": ["g", "j"],
+      "after": ["J"]
+    },
+    {
+      "before": ["d", "n"],
+      "after": ["d", "j"]
+    },
+    {
+      "before": ["d", "e"],
+      "after": ["d", "k"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+}
