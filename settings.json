@@ -19,24 +19,16 @@
 	{
 		"before": ["E"],
 		"after": ["4", "E"]
-	},
-    {
-      "before": ["I"],
-      "after": ["$"]
-    },
-    {
-      "before": ["H"],
-      "after": ["^"]
-    }
+	}
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
 	  {
 		  "before": ["N"],
-		  "after": ["4", "j"]
+		  "after": ["4", "n"]
 	  },
 	  {
 		  "before": ["E"],
-		  "after": ["4", "k"]
+		  "after": ["4", "e"]
 	  },
     {
       "before": ["I"],
