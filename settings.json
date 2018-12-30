@@ -14,11 +14,11 @@
   "vim.visualModeKeyBindings": [
 	{
 		"before": ["N"],
-		"after": ["4", "N"]
+		"after": ["4", "n"]
 	},
 	{
 		"before": ["E"],
-		"after": ["4", "E"]
+		"after": ["4", "e"]
 	}
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
