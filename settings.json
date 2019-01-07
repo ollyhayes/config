@@ -1,5 +1,5 @@
 {
-  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "editor.parameterHints": false,
