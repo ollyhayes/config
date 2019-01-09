@@ -1,7 +1,6 @@
 {
   "workbench.editor.enablePreview": true,
   "editor.minimap.enabled": false,
-  "editor.tabSize": 2,
   "editor.parameterHints": false,
   "vim.easymotion": false,
   "vim.sneak": false,
@@ -48,4 +47,5 @@
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
   },
+  "javascript.updateImportsOnFileMove.enabled": "always",
 }
