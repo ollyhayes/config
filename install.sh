@@ -18,8 +18,16 @@ ln -s ~/tools/config/_gvimrc ~/.gvimrc
 ln -s ~/tools/config/_vsvimrc ~/.ideavimrc
 ln -s ~/tools/config/settings.json ~/.config/Code/User/settings.json
 
+echo "Cloning tpm..."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+echo "Cloning vim-plug..."
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p ~/vimfiles/autoload                                                                                        #Notes:
+cp ~/.vim/autoload/plug.vim ~/vimfiles/autoload/plug.vim                                                            #DPI on raspberrypi:
+
 #Notes:
-#DPI on raspberrypi:
+# Changing the DFI on raspberrypi
 # open /etc/lightdm/lightdm.conf and add a parameter under [SeatDefaults] section:
 # xserver-command=X -dpi 90
 # http://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi
