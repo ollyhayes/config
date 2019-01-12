@@ -332,7 +332,7 @@ function! OpenVimRc()
 	if filereadable(expand("~/tools/config/vimrc/_vimrc"))
 		edit ~/tools/config/vimrc/_vimrc
 	else
-		edit ~/tools/vimrc/_vimrc
+		edit ~/tools/config/_vimrc
 	endif
 endfunction
 
@@ -401,14 +401,14 @@ endif
 nnoremap <F8> :call SetupExecuteWindow()<CR>
 
 function! Curl()
-	execute "e ~/tools/vimrc/curl-template.sh"
+	execute "e ~/tools/config/curl-template.sh"
 	execute "sav! ~/.vim/curl-temp.sh"
 	execute "normal! /insert-url-here/\<cr>vi\""
 endfunction
 command! Curl call Curl()
 
 function! Html()
-	execute "e ~/tools/vimrc/html-template.html"
+	execute "e ~/tools/config/html-template.html"
 	execute "sav! ~/.vim/html-temp.html"
 	execute "normal! /insert-content-here/\<cr>viW"
 endfunction
