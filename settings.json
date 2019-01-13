@@ -49,4 +49,5 @@
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "keyboard.dispatch": "keyCode",
+  "editor.insertSpaces": false,
 }
