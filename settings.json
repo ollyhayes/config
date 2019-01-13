@@ -48,4 +48,5 @@
     "suppressShowKeyBindingsNotice": true
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "keyboard.dispatch": "keyCode",
 }
