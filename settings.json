@@ -1,7 +1,7 @@
 {
   "workbench.editor.enablePreview": true,
   "editor.minimap.enabled": false,
-  "editor.parameterHints": false,
+  "editor.parameterHints.enabled": false,
   "vim.easymotion": false,
   "vim.sneak": false,
   "vim.incsearch": true,
