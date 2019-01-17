@@ -40,6 +40,17 @@
     {
       "before": ["g", "j"],
       "after": ["J"]
+    },
+    {
+      "before": ["u"],
+      "after": [],
+      "commands": [
+          {
+              "command": "undo",
+              "args": []
+          }
+
+      ]
     }
   ],
   "vim.leader": "<space>",
