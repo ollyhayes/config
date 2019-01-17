@@ -104,6 +104,42 @@
 					"args": []
 				}
 			]
-		}
+		},
+		{
+			"before": [
+				"/"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "actions.find",
+					"args": []
+				}
+			]
+		},
+		{
+			"before": [
+				"k"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "editor.action.nextMatchFindAction",
+					"args": []
+				}
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "editor.action.previousMatchFindAction",
+					"args": []
+				}
+			]
+		},
 	]
 }
