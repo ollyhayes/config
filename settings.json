@@ -1,73 +1,108 @@
 {
-  "workbench.editor.enablePreview": true,
-  "editor.minimap.enabled": false,
-  "editor.parameterHints.enabled": false,
-  "vim.easymotion": false,
-  "vim.sneak": false,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": false,
-  "vim.hlsearch": true,
-  "vim.insertModeKeyBindings": [
-  ],
-  "vim.visualModeKeyBindings": [
-	{
-		"before": ["N"],
-		"after": ["4", "n"]
+	"workbench.editor.enablePreview": true,
+	"editor.minimap.enabled": false,
+	"editor.parameterHints.enabled": false,
+	"vim.easymotion": false,
+	"vim.sneak": false,
+	"vim.incsearch": true,
+	"vim.useSystemClipboard": true,
+	"vim.useCtrlKeys": false,
+	"vim.hlsearch": true,
+	"vim.insertModeKeyBindings": [],
+	"vim.visualModeKeyBindings": [
+		{
+			"before": [
+				"N"
+			],
+			"after": [
+				"4",
+				"n"
+			]
+		},
+		{
+			"before": [
+				"E"
+			],
+			"after": [
+				"4",
+				"e"
+			]
+		},
+		{
+			"before": [
+				"<tab>"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "editor.action.indentLines"
+				}
+			]
+		}
+	],
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"N"
+			],
+			"after": [
+				"4",
+				"n"
+			]
+		},
+		{
+			"before": [
+				"E"
+			],
+			"after": [
+				"4",
+				"e"
+			]
+		},
+		{
+			"before": [
+				"I"
+			],
+			"after": [
+				"$"
+			]
+		},
+		{
+			"before": [
+				"H"
+			],
+			"after": [
+				"^"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"j"
+			],
+			"after": [
+				"J"
+			]
+		},
+		{
+			"before": [
+				"u"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "undo",
+					"args": []
+				}
+			]
+		}
+	],
+	"vim.leader": "<space>",
+	"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+	"gitlens.advanced.messages": {
+		"suppressShowKeyBindingsNotice": true
 	},
-	{
-		"before": ["E"],
-		"after": ["4", "e"]
-  },
-    {
-      "before": ["<tab>"],
-      "after": [],
-      "commands": [
-        {
-          "command": "editor.action.indentLines"
-        }
-      ]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-	  {
-		  "before": ["N"],
-		  "after": ["4", "n"]
-	  },
-	  {
-		  "before": ["E"],
-		  "after": ["4", "e"]
-	  },
-    {
-      "before": ["I"],
-      "after": ["$"]
-    },
-    {
-      "before": ["H"],
-      "after": ["^"]
-    },
-    {
-      "before": ["g", "j"],
-      "after": ["J"]
-    },
-    {
-      "before": ["u"],
-      "after": [],
-      "commands": [
-          {
-              "command": "undo",
-              "args": []
-          }
-
-      ]
-    }
-  ],
-  "vim.leader": "<space>",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "keyboard.dispatch": "keyCode",
-  "editor.insertSpaces": false,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"keyboard.dispatch": "keyCode",
+	"editor.insertSpaces": false,
 }
