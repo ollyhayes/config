@@ -2,6 +2,15 @@
 	"workbench.editor.enablePreview": true,
 	"editor.minimap.enabled": false,
 	"editor.parameterHints.enabled": false,
+	"editor.insertSpaces": false,
+	"keyboard.dispatch": "keyCode",
+
+	"javascript.updateImportsOnFileMove.enabled": "always",
+
+	"gitlens.advanced.messages": {
+		"suppressShowKeyBindingsNotice": true
+	},
+	"vim.leader": "<space>",
 	"vim.easymotion": false,
 	"vim.sneak": false,
 	"vim.incsearch": true,
@@ -96,13 +105,5 @@
 				}
 			]
 		}
-	],
-	"vim.leader": "<space>",
-	"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-	"gitlens.advanced.messages": {
-		"suppressShowKeyBindingsNotice": true
-	},
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"keyboard.dispatch": "keyCode",
-	"editor.insertSpaces": false,
+	]
 }
