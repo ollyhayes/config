@@ -12,3 +12,4 @@ mklink %USERPROFILE%\.gvimrc %USERPROFILE%\tools\config\_gvimrc
 mklink %USERPROFILE%\.vsvimrc %USERPROFILE%\tools\config\_vsvimrc
 mklink %USERPROFILE%\.ideavimrc %USERPROFILE%\tools\config\_vsvimrc
 mklink %USERPROFILE%\AppData\Roaming\Code\User\settings.json %USERPROFILE%\tools\config\settings.json
+mklink %USERPROFILE%\AppData\Roaming\Code\User\keybindings.json %USERPROFILE%\tools\config\keybindings.json
