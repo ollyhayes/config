@@ -7,5 +7,19 @@
 	{
 		"key": "shift+alt+x",
 		"command": "workbench.action.navigateForward"
+	},
+	{
+		"key": "ctrl+k h",
+		"command": "extension.launchHistory"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-extension.vim_ctrl+d",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+y",
+		"command": "-extension.vim_ctrl+y",
+		"when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
 	}
 ]
