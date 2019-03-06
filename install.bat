@@ -1,3 +1,19 @@
+del %USERPROFILE%\.bashrc
+del %USERPROFILE%\.profile
+del %USERPROFILE%\.gitconfig
+del %USERPROFILE%\.node-inspectorrc
+del %USERPROFILE%\.inputrc
+del %USERPROFILE%\.jshintrc
+del %USERPROFILE%\.eslintrc.js
+del %USERPROFILE%\.tmux.conf
+del %USERPROFILE%\.npmrc
+del %USERPROFILE%\.vimrc
+del %USERPROFILE%\.gvimrc
+del %USERPROFILE%\.vsvimrc
+del %USERPROFILE%\.ideavimrc
+del %USERPROFILE%\AppData\Roaming\Code\User\settings.json
+del %USERPROFILE%\AppData\Roaming\Code\User\keybindings.json
+
 mklink %USERPROFILE%\.bashrc %USERPROFILE%\tools\config\.bashrc
 mklink %USERPROFILE%\.profile %USERPROFILE%\tools\config\.profile
 mklink %USERPROFILE%\.gitconfig %USERPROFILE%\tools\config\.gitconfig
