@@ -3,6 +3,7 @@
 	"editor.minimap.enabled": false,
 	"editor.parameterHints.enabled": false,
 	"editor.insertSpaces": false,
+	"editor.multiCursorModifier": "ctrlCmd",
 	"keyboard.dispatch": "keyCode",
 
 	"javascript.updateImportsOnFileMove.enabled": "always",
