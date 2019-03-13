@@ -158,6 +158,17 @@
 				}
 			]
 		},
+		{
+			"before": [
+				"<tab>"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "editor.action.indentLines"
+				}
+			]
+		}
 	],
 	"liveshare.connectionMode": "direct"
 }
