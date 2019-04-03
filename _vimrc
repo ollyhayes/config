@@ -20,6 +20,7 @@ if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vi
 	Plug 'mxw/vim-jsx'
 	"Plug 'valloric/youcompleteme'
 	Plug 'tomasr/molokai'
+	Plug 'ollyhayes/todo-vim'
 	call plug#end()
 
 	let g:plug_timeout = 300
