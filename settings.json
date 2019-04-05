@@ -133,6 +133,14 @@
 					"command": "editor.action.indentLines"
 				}
 			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"n",
+				"o"
+			],
+			"after": [":", "n", "o", "h", "enter" ]
 		}
 	],
 
