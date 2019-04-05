@@ -135,5 +135,9 @@
 			]
 		}
 	],
-	"liveshare.connectionMode": "direct"
+
+	"cSpell.language": "en-GB",
+
+	"liveshare.connectionMode": "direct",
+	"liveshare.featureSet": "insiders"
 }
