@@ -1,6 +1,6 @@
 {
 	"workbench.editor.enablePreview": true,
-	"workbench.colorTheme": "Solarized Light",
+	"workbench.colorTheme": "Solarized Dark",
 	"editor.minimap.enabled": false,
 	"editor.parameterHints.enabled": false,
 	"editor.insertSpaces": false,
