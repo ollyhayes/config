@@ -19,6 +19,8 @@
 	"vim.useSystemClipboard": true,
 	"vim.useCtrlKeys": false,
 	"vim.hlsearch": true,
+	"vim.substituteGlobalFlag": true,
+	"vim.handleKeys": {"<C-h>": true},
 	"vim.insertModeKeyBindings": [],
 	"vim.visualModeKeyBindings": [
 		{
@@ -65,6 +67,10 @@
 					"command": "editor.action.indentLines"
 				}
 			]
+		},
+		{
+			"before":["<C-h>"],
+			"after": [":","s","/"]
 		}
 	],
 	"vim.normalModeKeyBindingsNonRecursive": [
@@ -147,6 +153,10 @@
 				"Z"
 			],
 			"after": ["@", "z"]
+		},
+		{
+			"before":["<C-h>"],
+			"after": [":","s","/"]
 		}
 	],
 
