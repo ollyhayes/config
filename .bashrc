@@ -1,6 +1,7 @@
 alias bob="ssh olly@home.olly.fr.to"
 alias amazon="ssh ubuntu@olly.fr.to"
 alias pi="ssh pi@192.168.0.7"
+alias darron="ssh pi@80.192.66.173"
 alias switchCaps="setxkbmap -option caps:swapescape"
 alias pc-on="wol 40:8D:5C:4A:1C:B3"
 alias pc-on2="wakeonlan 40:8D:5C:4A:1C:B3"
