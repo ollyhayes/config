@@ -19,5 +19,10 @@
 	{
 		"key": "ctrl+shift+s",
 		"command": "-workbench.action.files.saveAs"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-extension.vim_ctrl+d",
+		"when": "editorTextFocus && vim.active && !inDebugRepl"
 	}
 ]
