@@ -105,7 +105,7 @@ function __prompt_command() {
 		directoryPart="\w"
 		gitPart=$gitPrompt
 	else
-		directoryPart="…/"$(basename $currentDirectory)
+		directoryPart="…/"$(basename "$currentDirectory")
 		gitPart=${gitPrompt/*\//…\/} # replace generator/branch with …/branch
 	fi
 
