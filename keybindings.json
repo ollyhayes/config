@@ -24,5 +24,10 @@
 		"key": "ctrl+d",
 		"command": "-extension.vim_ctrl+d",
 		"when": "editorTextFocus && vim.active && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+q",
+		"command": "workbench.files.action.showActiveFileInExplorer",
+		"when": "editorTextFocus"
 	}
 ]
