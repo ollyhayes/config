@@ -1,4 +1,4 @@
-alias bob="ssh olly@home.olly.fr.to"
+alias bob="ssh olly@olly.fr.to"
 alias amazon="ssh ubuntu@olly.fr.to"
 alias pi="ssh pi@192.168.0.7"
 alias darron="ssh pi@80.192.66.173"
