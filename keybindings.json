@@ -31,7 +31,7 @@
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "alt+q",
+		"key": "ctrl+oem_8",
 		"command": "workbench.action.focusNextGroup"
 	}
 ]
