@@ -29,5 +29,9 @@
 		"key": "ctrl+q",
 		"command": "workbench.files.action.showActiveFileInExplorer",
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+q",
+		"command": "workbench.action.focusNextGroup"
 	}
 ]
