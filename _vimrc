@@ -252,6 +252,7 @@ noremap <C-Up> 2<C-w>+
 noremap <C-Right> 10<C-w>>
 
 noremap <silent> <leader>g :call GitTag()<CR>A
+noremap <leader>c :g /^\t\+\*/ delete<CR> "clear todo
 
 set foldmethod=syntax
 set foldlevel=99 "open files unfolded by default
