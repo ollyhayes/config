@@ -14,10 +14,6 @@
 	},
 	{
 		"key": "ctrl+shift+s",
-		"command": "workbench.action.files.saveAll"
-	},
-	{
-		"key": "ctrl+shift+s",
 		"command": "-workbench.action.files.saveAs"
 	},
 	{
@@ -33,5 +29,13 @@
 	{
 		"key": "ctrl+oem_8",
 		"command": "workbench.action.focusNextGroup"
+	},
+	{
+		"key": "ctrl+s",
+		"command": "-workbench.action.files.save"
+	},
+	{
+		"key": "ctrl+s",
+		"command": "workbench.action.files.saveAll"
 	}
 ]
