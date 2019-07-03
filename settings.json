@@ -5,6 +5,7 @@
 	"editor.minimap.enabled": false,
 	"editor.parameterHints.enabled": false,
 	"editor.insertSpaces": false,
+	"editor.cursorBlinking": "phase",
 	"keyboard.dispatch": "keyCode",
 
 	"javascript.updateImportsOnFileMove.enabled": "always",
@@ -12,6 +13,7 @@
 	"gitlens.advanced.messages": {
 		"suppressShowKeyBindingsNotice": true
 	},
+	"vim.cursorStylePerMode.insert": "underline",
 	"vim.leader": "<space>",
 	"vim.easymotion": false,
 	"vim.sneak": false,
