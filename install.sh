@@ -20,8 +20,8 @@ ln -s ~/tools/config/settings.json ~/.config/Code/User/settings.json
 ln -s ~/tools/config/keybindings.json ~/.config/Code/User/keybindings.json
 ln -s ~/tools/config/ssh_config ~/.ssh/config
 
-echo "Cloning tpm..."
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#echo "Cloning tpm..."
+#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Cloning vim-plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
