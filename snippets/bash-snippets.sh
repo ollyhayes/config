@@ -6,3 +6,7 @@ function startTest()
 	tmux resize-pane -t 0 -y 5 # set test server window small
 	tmux send-keys "[command to launch tests]" # get tests ready
 }
+
+# change email address of commits:
+# git filter-branch --env-filter 'export GIT_COMMITTER_EMAIL=olly.hayes@gmail.com
+# > export GIT_AUTHOR_EMAIL=olly.hayes@gmail.com' c85c8481d..
