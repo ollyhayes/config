@@ -161,9 +161,11 @@
 			"after": [":","%","s","/"]
 		}
 	],
-
 	"cSpell.language": "en-GB",
 
 	"liveshare.connectionMode": "direct",
-	"liveshare.featureSet": "insiders"
+	"liveshare.featureSet": "insiders",
+	"editor.autoClosingBrackets": "never",
+	"editor.autoClosingOvertype": "never",
+	"editor.autoClosingQuotes": "never"
 }
