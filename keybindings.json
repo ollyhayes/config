@@ -1,14 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
 	{
-		"key": "alt+x",
-		"command": "workbench.action.navigateBack"
-	},
-	{
-		"key": "shift+alt+x",
-		"command": "workbench.action.navigateForward"
-	},
-	{
 		"key": "ctrl+k h",
 		"command": "extension.launchHistory"
 	},
