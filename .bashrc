@@ -11,6 +11,7 @@ alias mon-nstat="netstat -atnp" # -t TCP, -n numeric port, -p process names
 alias win="cd /mnt/c/Users/ohayes"
 export win="/mnt/c/Users/ohayes"
 alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
+alias copy-passwords='scp /home/olly/Documents/passwords.kdbx olly.fr.to:/mnt/data/root/data/Documents'
 
 function getHostColour()
 {
