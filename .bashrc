@@ -145,4 +145,22 @@ function diary()
 	ssh ubuntu@olly.fr.to /home/ubuntu/Documents/diary/backup.sh
 }
 
+function executeInDirectories()
+{
+	purple='\033[0;35m'
+	none='\033[0m'
+
+	for dir in *
+	do
+		if [ -d "$dir" ]
+		then
+			( # () starts a subshell so cd doesn't affect all
+				cd "$dir"
+				echo -e ${purple}`pwd`:${none}
+				eval $@ # () starts a subshell so cd doesn't affect all
+			)
+		fi
+	done
+}
+
 ~/tools/config/snippets/check-repositories.sh
