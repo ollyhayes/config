@@ -154,10 +154,10 @@ function executeInDirectories()
 	do
 		if [ -d "$dir" ]
 		then
-			( # () starts a subshell so cd doesn't affect all
+			( # () starts a subshell so cd doesn't affect everything
 				cd "$dir"
 				echo -e ${purple}`pwd`:${none}
-				eval $@ # () starts a subshell so cd doesn't affect all
+				eval $@
 			)
 		fi
 	done
