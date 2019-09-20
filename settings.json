@@ -1,7 +1,7 @@
 {
 	"workbench.editor.enablePreview": true,
+	"workbench.colorTheme": "Solarized Light",
 	"workbench.editor.enablePreviewFromQuickOpen": false,
-	"workbench.colorTheme": "Kimbie Dark",
 	"editor.minimap.enabled": false,
 	"editor.parameterHints.enabled": false,
 	"editor.insertSpaces": false,
@@ -27,25 +27,25 @@
 	"vim.visualModeKeyBindings": [
 		{
 			"before": [
-				"N"
+				"J"
 			],
 			"after": [
 				"4",
-				"n"
+				"j"
 			]
 		},
 		{
 			"before": [
-				"E"
+				"K"
 			],
 			"after": [
 				"4",
-				"e"
+				"k"
 			]
 		},
 		{
 			"before": [
-				"I"
+				"L"
 			],
 			"after": [
 				"$"
@@ -78,25 +78,25 @@
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
 			"before": [
-				"N"
+				"J"
 			],
 			"after": [
 				"4",
-				"n"
+				"j"
 			]
 		},
 		{
 			"before": [
-				"E"
+				"K"
 			],
 			"after": [
 				"4",
-				"e"
+				"k"
 			]
 		},
 		{
 			"before": [
-				"I"
+				"L"
 			],
 			"after": [
 				"$"
