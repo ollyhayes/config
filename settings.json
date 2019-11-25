@@ -18,6 +18,7 @@
 	"vim.incsearch": true,
 	"vim.useSystemClipboard": true,
 	"vim.useCtrlKeys": false,
+	"vim.gdefault": true,
 	"vim.hlsearch": true,
 	"vim.handleKeys": { "<C-h>": true },
 	"vim.insertModeKeyBindings": [],
