@@ -7,9 +7,7 @@
 	"editor.insertSpaces": false,
 	"editor.cursorBlinking": "phase",
 	"keyboard.dispatch": "keyCode",
-
 	"javascript.updateImportsOnFileMove.enabled": "always",
-
 	"gitlens.advanced.messages": {
 		"suppressShowKeyBindingsNotice": true
 	},
@@ -21,151 +19,87 @@
 	"vim.useSystemClipboard": true,
 	"vim.useCtrlKeys": false,
 	"vim.hlsearch": true,
-	"vim.substituteGlobalFlag": true,
-	"vim.handleKeys": {"<C-h>": true},
+	"vim.handleKeys": { "<C-h>": true },
 	"vim.insertModeKeyBindings": [],
 	"vim.visualModeKeyBindings": [
 		{
-			"before": [
-				"N"
-			],
-			"after": [
-				"4",
-				"n"
-			]
+			"before": [ "N" ],
+			"after": [ "4", "n" ]
 		},
 		{
-			"before": [
-				"E"
-			],
-			"after": [
-				"4",
-				"e"
-			]
+			"before": [ "E" ],
+			"after": [ "4", "e" ]
 		},
 		{
-			"before": [
-				"I"
-			],
-			"after": [
-				"$"
-			]
+			"before": [ "I" ],
+			"after": [ "$" ] },
+		{
+			"before": [ "H" ],
+			"after": [ "^" ]
 		},
 		{
-			"before": [
-				"H"
-			],
-			"after": [
-				"^"
-			]
+			"before": [ "<tab>" ],
+			"commands": [ { "command": "editor.action.indentLines" } ]
 		},
 		{
-			"before": [
-				"<tab>"
-			],
-			"after": [],
-			"commands": [
-				{
-					"command": "editor.action.indentLines"
-				}
-			]
+			"before": [ "<shift+tab>" ],
+			"commands": [ { "command": "editor.action.outdentLines" } ]
 		},
 		{
-			"before":["<C-h>"],
-			"after": [":","s","/"]
+			"before": [ "<C-h>" ],
+			"after": [ ":", "s", "/" ]
 		}
 	],
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
-			"before": [
-				"N"
-			],
-			"after": [
-				"4",
-				"n"
-			]
+			"before": [ "N" ],
+			"after": [ "4", "n" ]
 		},
 		{
-			"before": [
-				"E"
-			],
-			"after": [
-				"4",
-				"e"
-			]
+			"before": [ "E" ],
+			"after": [ "4", "e" ]
 		},
 		{
-			"before": [
-				"I"
-			],
-			"after": [
-				"$"
-			]
+			"before": [ "I" ],
+			"after": [ "$" ]
 		},
 		{
-			"before": [
-				"H"
-			],
-			"after": [
-				"^"
-			]
+			"before": [ "H" ],
+			"after": [ "^" ]
 		},
 		{
-			"before": [
-				"g",
-				"j"
-			],
-			"after": [
-				"J"
-			]
+			"before": [ "g", "j" ],
+			"after": [ "J" ]
 		},
 		{
-			"before": [
-				"u"
-			],
-			"after": [],
-			"commands": [
-				{
-					"command": "undo",
-					"args": []
-				}
-			]
+			"before": [ "u" ],
+			"commands": [ { "command": "undo", } ]
 		},
 		{
-			"before": [
-				"<tab>"
-			],
-			"after": [],
-			"commands": [
-				{
-					"command": "editor.action.indentLines"
-				}
-			]
+			"before": [ "<tab>" ],
+			"commands": [ { "command": "editor.action.indentLines" } ]
 		},
 		{
-			"before": [
-				"<leader>",
-				"n",
-				"o"
-			],
-			"after": [":", "n", "o", "h", "enter" ]
+			"before": [ "<shift+tab>" ],
+			"commands": [ { "command": "editor.action.outdentLines" } ]
 		},
 		{
-			"before": [
-				"Z"
-			],
-			"after": ["@", "z"]
+			"before": [ "<leader>", "n", "o" ],
+			"after": [ ":", "n", "o", "h", "enter" ]
 		},
 		{
-			"before":["<C-h>"],
-			"after": [":","%","s","/"]
+			"before": [ "Z" ],
+			"after": [ "@", "z" ]
+		},
+		{
+			"before": [ "<C-h>" ],
+			"after": [ ":", "%", "s", "/" ]
 		}
 	],
 	"cSpell.language": "en-GB",
-
 	"liveshare.connectionMode": "direct",
 	"liveshare.featureSet": "insiders",
 	"editor.autoClosingBrackets": "never",
 	"editor.autoClosingOvertype": "never",
-	"editor.autoClosingQuotes": "never"
+	"editor.autoClosingQuotes": "never",
 }
