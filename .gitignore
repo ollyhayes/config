@@ -3,3 +3,5 @@
 *.swo
 
 .host-specific.sh
+
+/venv
