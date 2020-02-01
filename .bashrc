@@ -163,4 +163,9 @@ function executeInDirectories()
 	done
 }
 
+function fzo()
+{
+	vim $(fzf)
+}
+
 ~/tools/config/snippets/check-repositories.sh
