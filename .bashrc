@@ -169,4 +169,12 @@ function fzo()
 	vim $(fzf)
 }
 
+function fzb() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
 ~/tools/config/snippets/check-repositories.sh
