@@ -105,4 +105,6 @@
 	"editor.autoClosingOvertype": "never",
 	"editor.autoClosingQuotes": "never",
 	"editor.tabSize": 3,
+	"window.menuBarVisibility": "default",
+	"window.titleBarStyle": "custom",
 }

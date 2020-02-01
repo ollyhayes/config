@@ -266,7 +266,7 @@ let xml_syntax_folding=1      " XML
 
 function! GitTag()
 	set shell=/usr/bin/bash
-	let a = system('git log -n 1 --pretty=format:%s | sed "s/^\(.*: [A-Z]\{2\}-[0-9]\{4\} \).*/\1/"')
+	let a = system('git log -n 1 --pretty=format:%s | sed "s/^\([A-Z]\{2\}-[0-9]\{1,6\} \).*/\1/"')
 	delete
 	put! =a
 endfunction
