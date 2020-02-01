@@ -36,3 +36,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
 	sudo apt install git tmux orpie fzf silversearcher-ag
 fi
+
+# use this command for a keyboard shortcut to orpie: "gnome-terminal --geometry=100x25 -- orpie"
