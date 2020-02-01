@@ -22,13 +22,17 @@ ln -s ~/tools/config/keybindings.json ~/.config/Code/User/keybindings.json
 #echo "Cloning tpm..."
 #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-echo "Cloning vim-plug..."
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-mkdir -p ~/vimfiles/autoload                                                                                        #Notes:
-cp ~/.vim/autoload/plug.vim ~/vimfiles/autoload/plug.vim                                                            #DPI on raspberrypi:
+read -p "Install vim-plug?" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	echo "Cloning vim-plug..."
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	mkdir -p ~/vimfiles/autoload
+	cp ~/.vim/autoload/plug.vim ~/vimfiles/autoload/plug.vim
+fi
 
-#Notes:
-# Changing the DFI on raspberrypi
-# open /etc/lightdm/lightdm.conf and add a parameter under [SeatDefaults] section:
-# xserver-command=X -dpi 90
-# http://askubuntu.com/questions/197828/how-to-find-and-change-the-screen-dpi
+read -p "Install programs with apt?" -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	sudo apt install git tmux orpie fzf silversearcher-ag
+fi
