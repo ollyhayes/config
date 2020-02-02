@@ -1,5 +1,5 @@
-alias bob="ssh olly@olly.fr.to"
-alias amazon="ssh ubuntu@olly.fr.to"
+alias bob="ssh olly@olly.fr.to -p 39404"
+alias bob-local="ssh olly@192.168.0.2"
 alias pi="ssh pi@192.168.0.9"
 alias darron="ssh pi@80.192.66.173"
 alias switchCaps="setxkbmap -option caps:swapescape"
@@ -11,7 +11,7 @@ alias mon-nstat="netstat -atnp" # -t TCP, -n numeric port, -p process names
 alias win="cd /mnt/c/Users/ohayes"
 export win="/mnt/c/Users/ohayes"
 alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
-alias copy-passwords='scp /home/olly/Documents/passwords.kdbx olly.fr.to:/mnt/data/root/data/Documents'
+alias copy-passwords='scp -P 39404 /home/olly/Documents/passwords.kdbx olly.fr.to:/mnt/data/root/data/Documents'
 alias tmux='tmux new-session -A -s main' # connect to existing session if it exists
 
 function getHostColour()
