@@ -11,11 +11,11 @@
 	"gitlens.advanced.messages": {
 		"suppressShowKeyBindingsNotice": true
 	},
+	"gitlens.codeLens.enabled": false,
 	"vim.cursorStylePerMode.insert": "underline",
 	"vim.leader": "<space>",
 	"vim.easymotion": false,
 	"vim.sneak": false,
-	"vim.gdefault": true,
 	"vim.incsearch": true,
 	"vim.useSystemClipboard": true,
 	"vim.useCtrlKeys": false,
