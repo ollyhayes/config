@@ -34,6 +34,11 @@ then
 fi
 source ~/tools/config/.host-specific.sh
 
+if which fzf
+then
+	source ~/tools/config/fzf-stuff.bash
+fi
+
 if ! type __git_ps1 > /dev/null 2>&1
 then
 #	# if we don't have git-prompt.sh just make up a blank function
