@@ -34,7 +34,7 @@ then
 fi
 source ~/tools/config/.host-specific.sh
 
-if which fzf
+if which fzf > /dev/null 2>&1
 then
 	source ~/tools/config/fzf-stuff.bash
 fi
