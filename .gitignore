@@ -5,3 +5,4 @@
 .host-specific.sh
 
 /venv
+.envrc
