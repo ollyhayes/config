@@ -29,12 +29,16 @@ then
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	mkdir -p ~/vimfiles/autoload
 	cp ~/.vim/autoload/plug.vim ~/vimfiles/autoload/plug.vim
+else
+	echo
 fi
 
 read -p "Install programs with apt?" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-	sudo apt install git tmux orpie fzf silversearcher-ag
+	sudo apt install git tmux orpie fzf silversearcher-ag curl
+else
+	echo
 fi
 
 # use this command for a keyboard shortcut to orpie: "gnome-terminal --geometry=100x25 -- orpie"
