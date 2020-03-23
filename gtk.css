@@ -1,0 +1,17 @@
+* {
+	border-radius: 0px;
+}
+
+headerbar,
+.titlebar {
+	min-height: 0px;
+}
+
+button,
+separator {
+	min-height: 0px;
+	min-width: 0px;
+	padding: 2px 5px;
+	margin-top: 0;
+	margin-bottom: 0;
+}

@@ -19,6 +19,7 @@ ln -s ~/tools/config/_vsvimrc ~/.ideavimrc
 ln -s ~/tools/config/ssh_config ~/.ssh/config
 ln -s ~/tools/config/settings.json ~/.config/Code/User/settings.json
 ln -s ~/tools/config/keybindings.json ~/.config/Code/User/keybindings.json
+ln -s ~/tools/config/gtk.css ~/.config/gtk-3.0/gtk.css
 
 #echo "Cloning tpm..."
 #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
