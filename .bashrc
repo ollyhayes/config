@@ -12,7 +12,23 @@ alias win="cd /mnt/c/Users/ohayes"
 export win="/mnt/c/Users/ohayes"
 alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
 alias copy-passwords='scp /home/olly/Documents/passwords.kdbx olly.fr.to:/mnt/data/root/data/Documents'
-alias tmux='tmux new-session -A -s main' # connect to existing session if it exists
+
+function tmux() {
+	if [[ $@ == "" ]]; then
+		command tmux new-session -A -s main # connect to existing session if it exists
+	else
+		command tmux $@
+	fi
+}
+
+function git() {
+	if [[ $@ == "commit -a" ]]; then
+		command echo do something special
+		command git $@
+	else
+		command git $@
+	fi
+}
 
 function getHostColour()
 {
