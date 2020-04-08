@@ -107,4 +107,5 @@
 	"editor.tabSize": 3,
 	"window.menuBarVisibility": "default",
 	"window.titleBarStyle": "custom",
+	"window.zoomLevel": -1,
 }
