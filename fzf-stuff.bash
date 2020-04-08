@@ -106,4 +106,24 @@ bind '"\ec": "\C-x\C-addl`__fzf_cd__`\C-x\C-e\C-x\C-r\C-m"'
 #bind -m vi-command '"\ec": "ddi`__fzf_cd__`\C-x\C-e\C-x\C-r\C-m"'
 bind -m vi-command '"\ec": "ddl`__fzf_cd__`\C-x\C-e\C-x\C-r\C-m"'
 
+function fzba() {
+  local branches branch result
+  branches=$(git bra) &&
+
+  result=$(echo "$branches" | fzf --ansi -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  branch=$(echo "$result" | sed -E "s/^-->[0-9-]* ([^ ]*).*$/\1/")
+
+  echo $branch
+}
+
+fzbaw() {
+  local selected="$(fzba)"
+  READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$selected${READLINE_LINE:$READLINE_POINT}"
+  READLINE_POINT=$(( READLINE_POINT + ${#selected} ))
+}
+
+bind -x '"\C-t": "fzbaw"'
+
 fi
+
+
