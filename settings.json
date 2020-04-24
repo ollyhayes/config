@@ -96,6 +96,10 @@
 		{
 			"before": [ "<C-h>" ],
 			"after": [ ":", "%", "s", "/" ]
+		},
+		{
+			"before": [ "<enter>" ],
+			"after": [ "a", "<enter>", "<esc>", "i", "x" ]
 		}
 	],
 	"cSpell.language": "en-GB",

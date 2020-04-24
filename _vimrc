@@ -240,6 +240,7 @@ noremap <C-LeftMouse> <LeftMouse>viw
 "middle mouse - repeat last action
 noremap <MiddleMouse> <LeftMouse>.
 
+noremap <CR> a<CR><Esc>
 "Navigate around windows
 noremap <leader>h <C-w>h
 noremap <leader>n <C-w>j
