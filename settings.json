@@ -1,7 +1,7 @@
 {
 	"workbench.editor.enablePreview": true,
 	"workbench.editor.enablePreviewFromQuickOpen": false,
-	"workbench.colorTheme": "Kimbie Dark",
+	"workbench.colorTheme": "Monokai Dimmed",
 	"editor.minimap.enabled": false,
 	"editor.parameterHints.enabled": false,
 	"editor.insertSpaces": false,
