@@ -111,7 +111,7 @@ function fzba() {
   branches=$(git bra) &&
 
   result=$(echo "$branches" | fzf --ansi -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  branch=$(echo "$result" | sed -E "s/^-->[0-9-]* ([^ ]*).*$/\1/")
+  branch=$(echo "$result" | sed -E "s/^[ ->]{3}[0-9-]* ([^ ]*).*$/\1/")
 
   echo $branch
 }
