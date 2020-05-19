@@ -190,22 +190,4 @@ function fzo()
 	vim $(fzf)
 }
 
-function fzbr() {
-  local branches branch
-  branches=$(git brar) &&
-
-  branch=$(echo "$branches" | fzf --ansi -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-
-  git checkout $(echo "$branch" | sed -E "s/^-->[0-9-]* .*\/([^ ]*).*$/\1/")
-}
-
-function fzb() {
-  local branches branch
-  branches=$(git bra) &&
-
-  branch=$(echo "$branches" | fzf --ansi -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-
-  git checkout $(echo "$branch" | sed -E "s/^-->[0-9-]* ([^ ]*).*$/\1/")
-}
-
 ~/tools/config/snippets/check-repositories.sh

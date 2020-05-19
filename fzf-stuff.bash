@@ -106,7 +106,7 @@ bind '"\ec": "\C-x\C-addl`__fzf_cd__`\C-x\C-e\C-x\C-r\C-m"'
 #bind -m vi-command '"\ec": "ddi`__fzf_cd__`\C-x\C-e\C-x\C-r\C-m"'
 bind -m vi-command '"\ec": "ddl`__fzf_cd__`\C-x\C-e\C-x\C-r\C-m"'
 
-function fzba() {
+function echo-fzf-selected-local-branch() {
   local branches branch result
   branches=$(git bra) &&
 
@@ -116,14 +116,18 @@ function fzba() {
   echo $branch
 }
 
-fzbaw() {
-  local selected="$(fzba)"
+function fzf-select-local-branch() {
+  local selected="$(echo-fzf-selected-local-branch)"
   READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$selected${READLINE_LINE:$READLINE_POINT}"
   READLINE_POINT=$(( READLINE_POINT + ${#selected} ))
 }
 
-bind -x '"\C-t": "fzbaw"'
+bind -x '"\C-t": "fzf-select-local-branch"'
 
 fi
 
-
+# current fzf keys:
+# - alt-c change to child directory
+# - ctrl-r command from history
+# - ctrl-t file widget (overwritten)
+# - ctrl-t git branch - local
