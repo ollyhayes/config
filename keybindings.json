@@ -63,4 +63,8 @@
 		"key": "ctrl+shift+-",
 		"command": "-workbench.action.navigateForward"
 	},
+	{
+		"key": "alt+`",
+		"command": "editor.togglequotes"
+	},
 ]
