@@ -108,7 +108,16 @@ bind -m vi-command '"\ec": "ddl`__fzf_cd__`\C-x\C-e\C-x\C-r\C-m"'
 
 function echo-fzf-selected-local-branch() {
   local branches branch result
-  branches=$(git bboth) &&
+  branches=$(git bra) &&
+
+  result=$(echo "$branches" | fzf --ansi -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  branch=$(echo "$result" | sed -E "s/^[ ->]{3}[0-9-]* ([^ ]*).*$/\1/")
+
+  echo $branch
+}
+function echo-fzf-selected-remote-branch() {
+  local branches branch result
+  branches=$(git brar) &&
 
   result=$(echo "$branches" | fzf --ansi -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   branch=$(echo "$result" | sed -E "s/^[ ->]{3}[0-9-]* ([^ ]*).*$/\1/")
@@ -121,8 +130,14 @@ function fzf-select-local-branch() {
   READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$selected${READLINE_LINE:$READLINE_POINT}"
   READLINE_POINT=$(( READLINE_POINT + ${#selected} ))
 }
+function fzf-select-remote-branch() {
+  local selected="$(echo-fzf-selected-remote-branch)"
+  READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}$selected${READLINE_LINE:$READLINE_POINT}"
+  READLINE_POINT=$(( READLINE_POINT + ${#selected} ))
+}
 
 bind -x '"\C-t": "fzf-select-local-branch"'
+bind -x '"\C-p": "fzf-select-remote-branch"'
 
 fi
 
@@ -131,3 +146,4 @@ fi
 # - ctrl-r command from history
 # - ctrl-t file widget (overwritten)
 # - ctrl-t git branch - local
+# - ctrl-p git branch - remote

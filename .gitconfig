@@ -26,7 +26,8 @@
 	brar = !git for-each-ref --sort=-committerdate refs/remotes/origin  --format='   %(color: red)%(committerdate:short) %(color: cyan)%(refname:short) %(color: magenta)%(authorname)' --color | sed '/Olly Hayes/ s/^   /-->/'
 
 	# this one has duplicates in and is used for fzf, but maybe that's okay for now
-	bboth = !git for-each-ref --sort=-committerdate refs/heads refs/remotes/origin  --format='   %(color: red)%(committerdate:short) %(color: cyan)%(refname:lstrip=-1) %(color: magenta)%(authorname)' --color | sed '/Olly Hayes/ s/^   /-->/'
+	# now it's not actually used, I have separate shortcuts
+	# bboth = !git for-each-ref --sort=-committerdate refs/heads refs/remotes/origin  --format='   %(color: red)%(committerdate:short) %(color: cyan)%(refname:lstrip=-1) %(color: magenta)%(authorname)' --color | sed '/Olly Hayes/ s/^   /-->/'
 
 [http]
 	#proxy = http://localhost:8888
