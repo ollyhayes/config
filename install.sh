@@ -38,7 +38,7 @@ fi
 read -p "Install programs with apt?" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-	sudo apt install git tmux orpie fzf silversearcher-ag curl xclip
+	sudo apt install git tmux orpie fzf silversearcher-ag curl xclip ranger
 else
 	echo
 fi
