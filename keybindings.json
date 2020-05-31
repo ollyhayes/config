@@ -67,4 +67,12 @@
 		"key": "alt+`",
 		"command": "editor.togglequotes"
 	},
+	{
+		"key": "alt+i",
+		"command": "workbench.action.increaseViewSize"
+	},
+	{
+		"key": "alt+h",
+		"command": "workbench.action.decreaseViewSize"
+	},
 ]
