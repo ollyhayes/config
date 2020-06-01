@@ -43,4 +43,5 @@ else
 	echo
 fi
 
-# use this command for a keyboard shortcut to orpie: "gnome-terminal --geometry=100x25 -- orpie"
+# use this command for a keyboard shortcut to orpie: "gnome-terminal --title="calc" --geometry=100x25 -- orpie"
+# could totally automate the keybindings with this: https://askubuntu.com/a/597414/883419

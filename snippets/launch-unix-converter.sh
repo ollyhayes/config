@@ -11,4 +11,4 @@ fi
 # parameterise the session-name and launch, so we can use it for orpie and others
 
 # command for shortcut:
-# gnome-terminal -- /home/olly/tools/config/snippets/launch-unix-converter.sh
+# gnome-terminal --title="calc" -- /home/olly/tools/config/snippets/launch-unix-converter.sh
