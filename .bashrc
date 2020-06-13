@@ -21,15 +21,6 @@ function tmux() {
 	fi
 }
 
-function git() {
-	if [[ $@ == "commit -a" ]]; then
-		command echo do something special
-		command git $@
-	else
-		command git $@
-	fi
-}
-
 function getHostColour()
 {
 	HOST_COLOUR=$(($(echo $1 | cksum | cut -f 1 -d " ") % 256))
