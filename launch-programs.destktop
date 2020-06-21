@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Launch-programs
+Type=Application
+Exec=/home/olly/tools/config/launch-programs.sh
+Terminal=false
