@@ -111,4 +111,5 @@
 	"window.menuBarVisibility": "default",
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": -1,
+	"jestrunner.disableCodeLens": true
 }
