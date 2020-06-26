@@ -2,6 +2,8 @@ from subprocess import run, Popen, PIPE
 from datetime import datetime
 import re
 
+# inspired by https://unix.stackexchange.com/a/67398
+
 def findMatch(regex, row):
 	"""find and return single regex group match"""
 	matches = re.findall(regex, row)
