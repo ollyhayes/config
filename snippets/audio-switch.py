@@ -2,15 +2,19 @@ from subprocess import run, Popen, PIPE
 from datetime import datetime
 import re
 
+
 def findMatch(regex, row):
+	"""find and return single regex group match"""
 	matches = re.findall(regex, row)
 	return next((match for match in matches), None)
 
 def getOutput(command):
+	"""run command in shell and return stdout as string"""
 	output = run(command, shell=True, capture_output=True)
 	return output.stdout.decode("utf-8")
 
 def getApplications():
+	"""find relevant applications and their sink-ids"""
 	output = getOutput("pactl list sink-inputs")
 
 	applications = {
@@ -41,6 +45,7 @@ def getApplications():
 	return applications
 
 def getSinks():
+	"""find relevant sinks and their sink-ids"""
 	output = getOutput("pactl list short sinks")
 
 	sinks = {
@@ -60,6 +65,7 @@ def getSinks():
 	return sinks
 
 def switchAllToSink(sink_id, applications):
+	"""set all applications to use specified sink"""
 	run(f"pactl set-default-sink {sink_id}", shell=True)
 
 	for application_name in applications:
@@ -70,6 +76,7 @@ def switchAllToSink(sink_id, applications):
 			run(command, shell=True)
 
 def subscribe(callback):
+	"""call callback when connected sink list is modified"""
 	proc = Popen(["pactl", "subscribe"], stdout=PIPE, encoding="utf-8")
 	last_check = datetime.now()
 	while True:
@@ -80,6 +87,7 @@ def subscribe(callback):
 current_sink = "line-out"
 
 def handleSinksChanged():
+	"""set all applications to use boom if connected, otherwise line-out"""
 	global current_sink
 	sinks = getSinks()
 	boom = sinks['boom']
