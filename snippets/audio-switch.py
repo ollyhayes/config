@@ -2,7 +2,6 @@ from subprocess import run, Popen, PIPE
 from datetime import datetime
 import re
 
-
 def findMatch(regex, row):
 	"""find and return single regex group match"""
 	matches = re.findall(regex, row)
@@ -37,6 +36,7 @@ def getApplications():
 			current_sink_id = sink_id
 
 		found_application_name = findMatch(r'application.name = \"(.*)\"', row)
+
 		if found_application_name is not None:
 			for application_name in applications:
 				if re.search(applications[application_name]['regex'], found_application_name):
@@ -78,29 +78,29 @@ def switchAllToSink(sink_id, applications):
 def subscribe(callback):
 	"""call callback when connected sink list is modified"""
 	proc = Popen(["pactl", "subscribe"], stdout=PIPE, encoding="utf-8")
-	last_check = datetime.now()
+
 	while True:
 		line = proc.stdout.readline()
 		if "sink" in line:
 			callback()
 
-current_sink = "line-out"
+current_default_sink = "line-out"
 
 def handleSinksChanged():
-	"""set all applications to use boom if connected, otherwise line-out"""
-	global current_sink
+	"""set all applications to use boom if connected, otherwise use line-out"""
+	global current_default_sink
 	sinks = getSinks()
 	boom = sinks['boom']
 
 	if "sink_id" in sinks["boom"]:
-		if current_sink == "line-out":
+		if current_default_sink == "line-out":
 			print("switching to boom")
 			switchAllToSink(sinks["boom"]["sink_id"], getApplications())
-			current_sink = "boom"
+			current_default_sink = "boom"
 	else:
-		if current_sink == "boom":
+		if current_default_sink == "boom":
 			print("switching to line-out")
 			switchAllToSink(sinks["line-out"]["sink_id"], getApplications())
-			current_sink = "line-out"
+			current_default_sink = "line-out"
 
 subscribe(handleSinksChanged)
