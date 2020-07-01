@@ -120,7 +120,7 @@ function echo-fzf-selected-remote-branch() {
   branches=$(git brar) &&
 
   result=$(echo "$branches" | fzf --ansi -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  branch=$(echo "$result" | sed -E "s/^[ ->]{3}[0-9-]* ([^ ]*).*$/\1/")
+  branch=$(echo "$result" | sed -E "s/^[ ->]{3}[0-9-]* origin\/([^ ]*).*$/\1/")
 
   echo $branch
 }
