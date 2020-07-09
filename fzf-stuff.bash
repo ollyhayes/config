@@ -136,14 +136,14 @@ function fzf-select-remote-branch() {
   READLINE_POINT=$(( READLINE_POINT + ${#selected} ))
 }
 
-bind -x '"\C-t": "fzf-select-local-branch"'
-bind -x '"\C-p": "fzf-select-remote-branch"'
+bind -x '"\el": "fzf-select-local-branch"'
+bind -x '"\er": "fzf-select-remote-branch"'
 
 fi
 
 # current fzf keys:
 # - alt-c change to child directory
 # - ctrl-r command from history
-# - ctrl-t file widget (overwritten)
-# - ctrl-t git branch - local
-# - ctrl-p git branch - remote
+# - ctrl-t file widget
+# - alt-l git branch - local
+# - alt-r git branch - remote
