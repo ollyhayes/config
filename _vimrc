@@ -252,7 +252,7 @@ noremap <C-Down> 2<C-w>-
 noremap <C-Up> 2<C-w>+
 noremap <C-Right> 10<C-w>>
 
-noremap <silent> <leader>g :call GitTag()<CR>A
+noremap <silent> <leader>g :call GitTag()<CR>^
 noremap <leader>c :g /^\t\+\*/ delete<CR> "clear todo
 
 set foldmethod=syntax
@@ -267,7 +267,7 @@ let xml_syntax_folding=1      " XML
 
 function! GitTag()
 	"set shell=/usr/bin/bash
-	let a = system('git log -n 1 --pretty=format:%s | sed "s/^\([A-Z]\{2\}-[0-9]\{1,6\} \).*/\1/"')
+	let a = system('git log -n 1 --pretty=format:%s')
 	delete
 	put! =a
 endfunction
