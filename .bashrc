@@ -58,10 +58,11 @@ fi
 PROMPT_COMMAND=__prompt_command
 
 function __prompt_command() {
+	local EXIT="$?"
+
 	history -a # append history
 	history -n # reload history (new items only for fastness https://metaredux.com/posts/2020/07/07/supercharge-your-bash-history.html)
 
-	local EXIT="$?"
 	PS1=""
 
 	local darkblack='\[\e[0;30m\]' # Black - Regular
