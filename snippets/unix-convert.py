@@ -15,9 +15,11 @@ def cyan(message):
 def green(message):
 	return f'\033[32m{message}\033[0m'
 
-def print_date(date, type):
-	print(f'format: \'{green(type)}\', date: {cyan(date)}')
+def magenta(message):
+	return f'\033[35m{message}\033[0m'
 
+def print_date(input, date, type):
+	print(f'input: \'{magenta(input)}\' format: \'{green(type)}\', date: {cyan(date)}')
 
 input_value = sys.argv[1]
 
@@ -35,7 +37,7 @@ else:
 	input_type = 'unix'
 	output_date = datetime.utcfromtimestamp(input_int)
 
-print_date(output_date, input_type)
+print_date(input_value, output_date, input_type)
 
 # for binding to keyboard shortcut
 # ~/tools/config/snippets/unix-convert.py $(xclip -o -sel clip)
