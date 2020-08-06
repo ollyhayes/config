@@ -2,16 +2,18 @@ alias bob="ssh olly@olly.fr.to"
 alias bob-local="ssh olly@192.168.0.2"
 alias pi="ssh pi@192.168.0.9"
 alias darron="ssh pi@80.192.66.173"
-alias switchCaps="setxkbmap -option caps:swapescape"
-alias pc-on="wol 40:8D:5C:4A:1C:B3"
-alias pc-on2="wakeonlan 40:8D:5C:4A:1C:B3"
+# alias switchCaps="setxkbmap -option caps:swapescape"
+# alias pc-on="wol 40:8D:5C:4A:1C:B3"
+alias pc-on="wakeonlan 40:8D:5C:4A:1C:B3"
 alias pc-vnc="vncviewer 192.168.0.4:5900"
 alias mon-lsof="lsof -i TCP -P" # -P numeric port
 alias mon-nstat="netstat -atnp" # -t TCP, -n numeric port, -p process names
-alias win="cd /mnt/c/Users/ohayes"
-export win="/mnt/c/Users/ohayes"
-alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
+# alias win="cd /mnt/c/Users/ohayes"
+# export win="/mnt/c/Users/ohayes"
+# alias killAll='cmd /C "taskkill.exe /F /IM node.exe /T"'
 alias copy-passwords='scp /home/olly/Documents/passwords.kdbx olly.fr.to:/mnt/data/root/data/Documents'
+alias copy-branch="git branch --show-current | tr -d '\n' | xclip -sel c"
+alias copy-path="pwd | tr -d '\n' | xclip -sel c"
 
 function tmux() {
 	if [[ $@ == "" ]]; then
@@ -154,13 +156,13 @@ function tmux-reverse-ssh()
 	tmux attach-session
 }
 
-function diary()
-{
-	#vim scp://ubuntu@olly.fr.to//home/ubuntu/Documents/diary.txt
-	vim -c ":set wrap" ~/Documents/diary.txt
-	scp ~/Documents/diary.txt ubuntu@olly.fr.to:~/Documents/diary/diary.txt
-	ssh ubuntu@olly.fr.to /home/ubuntu/Documents/diary/backup.sh
-}
+# function diary()
+# {
+# 	#vim scp://ubuntu@olly.fr.to//home/ubuntu/Documents/diary.txt
+# 	vim -c ":set wrap" ~/Documents/diary.txt
+# 	scp ~/Documents/diary.txt ubuntu@olly.fr.to:~/Documents/diary/diary.txt
+# 	ssh ubuntu@olly.fr.to /home/ubuntu/Documents/diary/backup.sh
+# }
 
 function executeInDirectories()
 {
@@ -178,11 +180,6 @@ function executeInDirectories()
 			)
 		fi
 	done
-}
-
-function fzo()
-{
-	vim $(fzf)
 }
 
 ~/tools/config/snippets/check-repositories.sh
