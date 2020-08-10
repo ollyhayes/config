@@ -63,7 +63,7 @@ function __prompt_command() {
 	local EXIT="$?"
 
 	history -a # append history
-	history -n # reload history (new items only for fastness https://metaredux.com/posts/2020/07/07/supercharge-your-bash-history.html)
+	# history -n # reload history (new items only for fastness https://metaredux.com/posts/2020/07/07/supercharge-your-bash-history.html)
 
 	PS1=""
 
