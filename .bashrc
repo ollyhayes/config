@@ -16,6 +16,8 @@ alias copy-branch="git branch --show-current | tr -d '\n' | xclip -sel c"
 alias copy-path="pwd | tr -d '\n' | xclip -sel c"
 
 export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=50000
+export HISTFILESIZE=50000
 
 function tmux() {
 	if [[ $@ == "" ]]; then
