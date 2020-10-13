@@ -17,7 +17,7 @@
 	"vim.easymotion": false,
 	"vim.sneak": false,
 	"vim.incsearch": true,
-	"vim.useSystemClipboard": true,
+	"vim.useSystemClipboard": false,
 	"vim.useCtrlKeys": false,
 	"vim.gdefault": true,
 	"vim.hlsearch": true,
@@ -112,5 +112,8 @@
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": -1,
 	"jestrunner.disableCodeLens": true,
-	"python.languageServer": "Pylance"
+	"python.languageServer": "Pylance",
+	"editor.fontSize": 12,
+	"editor.find.autoFindInSelection": "multiline",
+	"files.autoSave": "off"
 }
