@@ -112,7 +112,6 @@
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0,
 	"jestrunner.disableCodeLens": true,
-	"python.languageServer": "Pylance",
 	"editor.fontSize": 12,
 	"editor.find.autoFindInSelection": "multiline",
 	"files.autoSave": "off"
