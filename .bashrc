@@ -1,7 +1,7 @@
 alias bob="ssh olly@olly.fr.to"
 alias bob-local="ssh olly@192.168.0.2"
 alias pi="ssh pi@192.168.0.9"
-alias darron="ssh pi@80.192.66.173"
+alias darron="ssh pi@thermostat.olly.fr.to"
 # alias switchCaps="setxkbmap -option caps:swapescape"
 # alias pc-on="wol 40:8D:5C:4A:1C:B3"
 alias pc-on="wakeonlan 40:8D:5C:4A:1C:B3"
