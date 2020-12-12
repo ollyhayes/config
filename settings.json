@@ -119,5 +119,6 @@
 			"viewType": "jupyter.notebook.ipynb",
 			"filenamePattern": "*.ipynb"
 		}
-	]
+	],
+	"editor.stickyTabStops": true
 }
