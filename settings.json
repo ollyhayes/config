@@ -120,5 +120,6 @@
 			"filenamePattern": "*.ipynb"
 		}
 	],
-	"editor.stickyTabStops": true
+	"editor.stickyTabStops": true,
+	"gitlens.advanced.fileHistoryFollowsRenames": true
 }
