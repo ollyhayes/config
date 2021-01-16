@@ -121,5 +121,6 @@
 		}
 	],
 	"editor.stickyTabStops": true,
-	"gitlens.advanced.fileHistoryFollowsRenames": true
+	"gitlens.advanced.fileHistoryFollowsRenames": true,
+	"workbench.colorTheme": "Monokai Dimmed"
 }
