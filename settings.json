@@ -114,13 +114,8 @@
 	"editor.fontSize": 12,
 	"editor.find.autoFindInSelection": "multiline",
 	"files.autoSave": "off",
-	"workbench.editorAssociations": [
-		{
-			"viewType": "jupyter.notebook.ipynb",
-			"filenamePattern": "*.ipynb"
-		}
-	],
+	"workbench.editorAssociations": [],
 	"editor.stickyTabStops": true,
 	"gitlens.advanced.fileHistoryFollowsRenames": true,
-	"workbench.colorTheme": "Monokai Dimmed"
+	"workbench.colorTheme": "Kimbie Dark"
 }
