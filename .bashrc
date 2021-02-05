@@ -1,3 +1,4 @@
+alias rm='rm -i' # oops
 alias bob="ssh olly@olly.fr.to"
 alias bob-local="ssh olly@192.168.0.2"
 alias pi="ssh pi@192.168.0.9"
