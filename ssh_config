@@ -10,3 +10,4 @@ Host 192.168.0.9
 
 Host bob-local
 	HostName 192.168.0.2
+	User olly
