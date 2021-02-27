@@ -117,5 +117,5 @@
 	"workbench.editorAssociations": [],
 	"editor.stickyTabStops": true,
 	"gitlens.advanced.fileHistoryFollowsRenames": true,
-	"workbench.colorTheme": "Kimbie Dark"
+	"workbench.colorTheme": "Monokai Dimmed"
 }
