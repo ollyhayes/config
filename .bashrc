@@ -16,7 +16,7 @@ alias copy-passwords='scp /home/olly/Documents/passwords.kdbx olly.fr.to:/mnt/da
 alias copy-branch="git branch --show-current | tr -d '\n' | xclip -sel c"
 alias copy-path="pwd | tr -d '\n' | xclip -sel c"
 
-export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL=ignoreboth
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 
