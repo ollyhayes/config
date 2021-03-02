@@ -1,4 +1,5 @@
 set encoding=utf-8
+set noswapfile
 
 if filereadable(expand('~/.vim/autoload/plug.vim')) || filereadable(expand('~/vimfiles/autoload/plug.vim')) 
 	call plug#begin('~/.vim/plugged')
