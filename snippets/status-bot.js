@@ -50,12 +50,15 @@ function start() {
 			return;
 		}
 
-		// ignore status messages a few minutes old
+		if (Date.now() / 1000 - ctx.update.message.date > 60) {
+			console.log('Message older than a minute, ignoring');
+			return;
+		}
 
 		if (ctx.update.message.text.toLowerCase().includes('status')) {
 			ctx.reply('👍'); // don't post if another has
 
-			await new Promise(resolve => setTimeout(resolve, 1000));
+			await new Promise(resolve => setTimeout(resolve, Math.random() * 5000));
 
 			ctx.reply(`uptime: ${uptime()}, disk space: ${diskSpace()}`);
 		}
