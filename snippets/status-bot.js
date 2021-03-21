@@ -9,7 +9,7 @@ function run(command) {
 }
 
 function getConfig() {
-	const config = run('ssh olly@olly.fr.to cat ~/config.json')
+	const config = run('ssh olly@olly.fr.to cat config.json')
 	return JSON.parse(config).messageInterface;
 }
 
