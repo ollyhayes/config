@@ -45,8 +45,6 @@ function start() {
 		console.log(`From: ${ctx.update.message.from.first_name} - ${ctx.update.message.from.id}`);
 		console.log(`Text: ${ctx.update.message.text}`);
 
-		console.log(chatIdWhitelist);
-
 		if (!chatIdWhitelist.includes(ctx.update.message.chat.id)) {
 			console.log('Message from unknown chat, ignoring');
 			return;
