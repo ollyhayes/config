@@ -56,7 +56,7 @@ function start() {
 		}
 
 		if (ctx.update.message.text.toLowerCase().includes('status')) {
-			ctx.reply('👍'); // don't post if another has
+			ctx.reply('👀'); // don't post if another has ?
 
 			await new Promise(resolve => setTimeout(resolve, Math.random() * 5000));
 
