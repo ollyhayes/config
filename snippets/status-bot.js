@@ -50,8 +50,10 @@ function start() {
 			return;
 		}
 
+		// ignore status messages a few minutes old
+
 		if (ctx.update.message.text.toLowerCase().includes('status')) {
-			ctx.reply('👍');
+			ctx.reply('👍'); // don't post if another has
 
 			await new Promise(resolve => setTimeout(resolve, 1000));
 
