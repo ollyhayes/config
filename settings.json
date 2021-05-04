@@ -20,7 +20,12 @@
 	"vim.useCtrlKeys": false,
 	"vim.gdefault": true,
 	"vim.hlsearch": true,
-	"vim.handleKeys": { "<C-h>": true },
+	"vim.handleKeys": { 
+		"<C-h>": true,
+		"<C-x>": true,
+		"<C-c>": true,
+		"<C-v>": true,
+	},
 	"vim.insertModeKeyBindings": [],
 	"vim.visualModeKeyBindings": [
 		{
@@ -49,6 +54,18 @@
 		{
 			"before": [ "<C-h>" ],
 			"after": [ ":", "s", "/" ]
+		},
+		{
+			"before": ["<C-x>"],
+			"after": ["\"", "+", "d"]
+		},
+		{
+			"before": ["<C-c>"],
+			"after": ["\"", "+", "y"]
+		},
+		{
+			"before": ["<C-v>"], 
+			"after":  ["\"", "+", "p"]
 		}
 	],
 	"vim.normalModeKeyBindingsNonRecursive": [
@@ -99,6 +116,10 @@
 		{
 			"before": [ "<enter>" ],
 			"after": [ "a", "<enter>", "<esc>", "i", "x" ]
+		}
+		{
+			"before": ["<C-v>"], 
+			"after":  ["\"", "+", "p"]
 		}
 	],
 	"cSpell.language": "en-GB",
