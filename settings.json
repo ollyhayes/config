@@ -107,7 +107,6 @@
 	"editor.autoClosingOvertype": "never",
 	"editor.autoClosingQuotes": "never",
 	"editor.tabSize": 3,
-	"window.menuBarVisibility": "default",
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 0,
 	"jestrunner.disableCodeLens": true,
