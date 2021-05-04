@@ -116,7 +116,7 @@
 		{
 			"before": [ "<enter>" ],
 			"after": [ "a", "<enter>", "<esc>", "i", "x" ]
-		}
+		},
 		{
 			"before": ["<C-v>"], 
 			"after":  ["\"", "+", "p"]
