@@ -32,36 +32,24 @@ filetype plugin indent on
 behave xterm
 
 set statusline=
-set statusline +=%1*\ %n\%*								"buffer number
-set statusline +=%4*\ %<%F%*							"full path
-set statusline +=%2*%m%*								"modified flag
-set statusline +=%3*\ [%{&ff}]%*						"file format
-set statusline +=%5*\ [%{g:colmak?'colmak':'qwerty'}]%*	"colmak/qwerty
-set statusline +=%1*%=%5l%*								"current line
-set statusline +=%2*/%L%*								"total lines
-set statusline +=%1*%4v\ %*								"virtual column number
-set statusline +=%2*U+%04B\ %*							"character under cursor
+set statusline+=%#Function#%n\ 							"buffer number
+set statusline+=%#Keyword#\ %<%F						"full path
+set statusline+=%#Constant#%m%*							"modified flag
+set statusline+=%#Type#\ [%{&ff}]						"file format
+set statusline+=%#Identifier#\ [%{g:colmak?'colmak':'qwerty'}]	"colmak/qwerty
+set statusline+=%#Function#%=%5l						"current line
+set statusline+=%#Constant#/%L							"total lines
+set statusline+=%#Function#%4v\ 						"virtual column number
+set statusline+=%#Constant#U+%04B\						"character under cursor
 
 if has("gui_running")
 	"remove highlight on escape (doesn't work in terminal)
 	nmap <Esc> :noh<CR>
 	colorscheme desert
-
-	hi User1 guifg=#eea040 guibg=#222222
-	hi User2 guifg=#dd3333 guibg=#222222
-	hi User3 guifg=#ff66ff guibg=#222222
-	hi User4 guifg=#a0ee40 guibg=#222222
-	hi User5 guifg=#eea040 guibg=#222222
 else
 	if (filereadable(expand('~/.vim/plugged/molokai/colors/molokai.vim')) || filereadable(expand('~/vimfiles/plugged/molokai/colors/molokai.vim'))) && &t_Co > 255
 		let g:molokai_original = 1
 		colorscheme molokai
-
-		hi User1 ctermfg=118 ctermbg=234
-		hi User2 ctermfg=135 ctermbg=234
-		hi User3 ctermfg=81 ctermbg=234
-		hi User4 ctermfg=161 ctermbg=234 
-		hi User5 ctermfg=208 ctermbg=234
 
 		if has("win32") " wsl terminal on windows doesn't support bold
 			hi User4 ctermfg=161 ctermbg=234 
@@ -70,12 +58,6 @@ else
 		endif
 	else
 		colorscheme desert
-
-		hi User1 ctermfg=4 ctermbg=0
-		hi User2 ctermfg=2 ctermbg=0
-		hi User3 ctermfg=3 ctermbg=0
-		hi User4 ctermfg=5 ctermbg=0
-		hi User5 ctermfg=4 ctermbg=0
 	endif
 endif
 
