@@ -86,5 +86,15 @@
 	{
 		"key": "ctrl+;",
 		"command": "workbench.view.extension.test"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-list.focusPageDown",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-extension.vim_ctrl+d",
+		"when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
 	}
 ]
