@@ -134,8 +134,13 @@
 	"editor.fontSize": 12,
 	"editor.find.autoFindInSelection": "multiline",
 	"files.autoSave": "off",
-	"workbench.editorAssociations": [],
+	"workbench.editorAssociations": [
+		{
+			"viewType": "luna.editor",
+			"filenamePattern": "*.png"
+		}
+	],
 	"editor.stickyTabStops": true,
 	"gitlens.advanced.fileHistoryFollowsRenames": true,
-	"workbench.colorTheme": "Monokai Dimmed"
+	"workbench.colorTheme": "Red"
 }
