@@ -1,6 +1,4 @@
-/*** Proton Tabs Tweaks ***/
-
-/* Adjust tab corner shape, optionally remove space below tabs */
+/* mostly from here: https://www.userchrome.org/firefox-89-styling-proton-ui.html */
 
 @media (-moz-proton) {
     .tab-background {
