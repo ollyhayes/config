@@ -2,10 +2,6 @@
 
 /* Adjust tab corner shape, optionally remove space below tabs */
 
-#tabbrowser-tabs {
-    --user-tab-rounding: 0px;
-}
-
 @media (-moz-proton) {
     .tab-background {
         border-radius: 0 !important;
@@ -19,8 +15,8 @@
 	/* active tab indicator (uses the context-line normally for containers) */
     .tabbrowser-tab[selected=true] > .tab-stack > .tab-background > .tab-context-line {
 		margin: 0 0;
-		background-color: #729bfc !important;
-		height: 4px;
+		background-color: #0dfc05 !important;
+		height: 3px;
 		border-radius: 0;
 	}
     .tabbrowser-tab:not([selected=true]) > .tab-stack > .tab-background > .tab-context-line {
@@ -68,6 +64,13 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+}
+
+hbox#urlbar moz-input-box {
+	font-family: monospace;
+}
+hbox#urlbar-background {
+	border-radius: 0 !important;
 }
 
 /* Tweak Options as of 6/12/2021; Generated Sun Jun 13 2021 09:53:06 GMT+0200 (Central European Summer Time) */
