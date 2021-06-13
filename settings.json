@@ -135,7 +135,8 @@
 	"editor.find.autoFindInSelection": "multiline",
 	"files.autoSave": "off",
 	"workbench.editorAssociations": {
-		"*.png": "luna.editor"
+		"*.png": "luna.editor",
+		"*.ipynb": "jupyter-notebook"
 	},
 	"editor.stickyTabStops": true,
 	"gitlens.advanced.fileHistoryFollowsRenames": true,
