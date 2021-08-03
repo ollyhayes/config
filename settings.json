@@ -129,7 +129,6 @@
 	"editor.autoClosingQuotes": "never",
 	"editor.tabSize": 3,
 	"window.titleBarStyle": "custom",
-	"window.zoomLevel": 0,
 	"jestrunner.disableCodeLens": true,
 	"editor.fontSize": 12,
 	"editor.find.autoFindInSelection": "multiline",
@@ -140,5 +139,5 @@
 	},
 	"editor.stickyTabStops": true,
 	"gitlens.advanced.fileHistoryFollowsRenames": true,
-	"workbench.colorTheme": "Red"
+	"workbench.colorTheme": "Monokai"
 }
