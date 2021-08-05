@@ -96,5 +96,9 @@
 		"key": "ctrl+d",
 		"command": "-extension.vim_ctrl+d",
 		"when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+shift+j",
+		"command": "workbench.action.toggleMaximizedPanel",
 	}
 ]
