@@ -139,5 +139,7 @@
 	},
 	"editor.stickyTabStops": true,
 	"gitlens.advanced.fileHistoryFollowsRenames": true,
-	"workbench.colorTheme": "Monokai"
+	"workbench.colorTheme": "Monokai",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.suggest.preview": true
 }
