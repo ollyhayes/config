@@ -1,4 +1,5 @@
 # export PATH="~/.npm-global/bin:~/.npm-global:~/gems/bin:$PATH"
+export PATH="~/.npm-global/bin:$PATH"
 export EDITOR=/usr/bin/vim
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore node_modules --ignore .git -g ""'
