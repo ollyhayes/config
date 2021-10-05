@@ -9,7 +9,7 @@ function run(command) {
 }
 
 function getConfig() {
-	const config = run('ssh olly@olly.fr.to cat config.json')
+	const config = run('ssh bob-local cat config.json')
 	return JSON.parse(config).messageInterface;
 }
 
@@ -28,7 +28,7 @@ function diskSpace() {
 function start() {
 	const config = getConfig();
 
-	console.log('connecting to telegram');
+	console.log(`${new Date()} connecting to telegram`);
 
 	const bot = new Telegraf(config.botTokens[os.hostname()]);
 
@@ -37,7 +37,7 @@ function start() {
 
 	const chatIdWhitelist = Object.values(config.chats);
 
-	// bot.telegram.sendMessage(messageInterface.chatId, 'started up');
+	bot.telegram.sendMessage(config.chats.bots, 'started up');
 
 	bot.on('text', async ctx => {
 		console.log('Message received');
@@ -66,3 +66,8 @@ function start() {
 }
 
 start(); // add if to check if it's started by another process?
+
+process.on('unhandledRejection', error => {
+	console.log(`failed: ${error}`);
+	// start(); // careful, messages are backed up so this will result in quite a few
+});
