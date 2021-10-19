@@ -141,5 +141,6 @@
 	"gitlens.advanced.fileHistoryFollowsRenames": true,
 	"workbench.colorTheme": "Monokai",
 	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": true,
 	"editor.suggest.preview": true
 }
