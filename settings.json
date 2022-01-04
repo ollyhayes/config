@@ -138,7 +138,7 @@
 		"*.ipynb": "jupyter-notebook"
 	},
 	"editor.stickyTabStops": true,
-	"gitlens.advanced.fileHistoryFollowsRenames": true,
+	"gitlens.advanced.fileHistoryFollowsRenames": false,
 	"editor.bracketPairColorization.enabled": true,
 	"editor.guides.bracketPairs": true,
 	"editor.suggest.preview": true,
