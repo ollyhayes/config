@@ -7,6 +7,9 @@ Host olly.fr.to
 Host 192.168.0.9
 	HostName 192.168.0.9
 	User pi
+	#RemoteForward /home/olly/.gnupg/S.gpg-agent /Users/jburke/.gnupg/S.gpg-agent.extra
+	#RemoteForward /home/olly/.gnupg/S.gpg-agent.ssh /Users/jburke/.gnupg/S.gpg-agent.ssh
+	##ForwardAgent yes
 
 Host bob-local
 	HostName 192.168.0.2
