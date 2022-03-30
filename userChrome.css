@@ -1,67 +1,58 @@
 /* mostly from here: https://www.userchrome.org/firefox-89-styling-proton-ui.html */
+.tab-background {
+    border-radius: 0 !important;
+    margin-block: 1px 0 !important;
+}
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+}
 
-@media (-moz-proton) {
-    .tab-background {
-        border-radius: 0 !important;
-        margin-block: 1px 0 !important;
-    }
-    #scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
-        border-top-width: 1px !important;
-        border-bottom-width: 0 !important;
-    }
+/* active tab indicator (uses the context-line normally for containers) */
+.tabbrowser-tab[selected=true] > .tab-stack > .tab-background > .tab-context-line {
+    margin: 0 0;
+    background-color: #0dfc05 !important;
+    height: 3px;
+    border-radius: 0;
+}
+.tabbrowser-tab:not([selected=true]) > .tab-stack > .tab-background > .tab-context-line {
+    display: none;
+}
 
-	/* active tab indicator (uses the context-line normally for containers) */
-    .tabbrowser-tab[selected=true] > .tab-stack > .tab-background > .tab-context-line {
-		margin: 0 0;
-		background-color: #0dfc05 !important;
-		height: 3px;
-		border-radius: 0;
-	}
-    .tabbrowser-tab:not([selected=true]) > .tab-stack > .tab-background > .tab-context-line {
-		display: none;
-	}
-
-	/* container color bar */
-    .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background::after {
-	 	content: '';
-		height: 3px;
-		display: block;
-		margin: 3px 10px;
-		background-color: var(--identity-icon-color);
-	}
+/* container color bar */
+.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background::after {
+    content: '';
+    height: 3px;
+    display: block;
+    margin: 3px 10px;
+    background-color: var(--identity-icon-color);
 }
 
 /* Override Normal Density height to Compact Density height only for tabs */
-
-@media (-moz-proton) {
-    #tabbrowser-tabs {
-        --tab-min-height: 29px !important;
-    }
-    #scrollbutton-up,
-    #scrollbutton-down {
-        border-top-width: 0 !important;
-        border-bottom-width: 0 !important;
-    }
+#tabbrowser-tabs {
+    --tab-min-height: 29px !important;
+}
+#scrollbutton-up,
+#scrollbutton-down {
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
 }
 
 /* Inactive tabs: Separator line style */
-
-@media (-moz-proton) {
-    .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
-        border-right: 1px solid var(--lwt-background-tab-separator-color, rgba(0, 0, 0, .20)) !important;
-    }
-    /* For dark backgrounds */
-    [brighttext="true"] .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
-        border-right: 1px solid var(--lwt-background-tab-separator-color, var(--lwt-selected-tab-background-color, rgba(255, 255, 255, .20))) !important;
-    }
-    .tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
-        border-radius: 0 !important;
-    }
-    /* Remove padding between tabs */
-    .tabbrowser-tab {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 1px solid var(--lwt-background-tab-separator-color, rgba(0, 0, 0, .20)) !important;
+}
+/* For dark backgrounds */
+[brighttext="true"] .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
+    border-right: 1px solid var(--lwt-background-tab-separator-color, var(--lwt-selected-tab-background-color, rgba(255, 255, 255, .20))) !important;
+}
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+    border-radius: 0 !important;
+}
+/* Remove padding between tabs */
+.tabbrowser-tab {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 hbox#urlbar moz-input-box {
