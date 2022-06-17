@@ -142,5 +142,6 @@
 	"editor.bracketPairColorization.enabled": true,
 	"editor.guides.bracketPairs": true,
 	"editor.suggest.preview": true,
-	"workbench.colorTheme": "Cute"
+	"workbench.colorTheme": "Cute",
+	"jestrunner.preserveEditorFocus": true
 }
