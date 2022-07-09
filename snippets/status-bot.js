@@ -37,7 +37,7 @@ function start() {
 
 	const chatIdWhitelist = Object.values(config.chats);
 
-	bot.telegram.sendMessage(config.chats.bots, 'started up');
+	// bot.telegram.sendMessage(config.chats.bots, 'started up');
 
 	bot.on('text', async ctx => {
 		console.log('Message received');
